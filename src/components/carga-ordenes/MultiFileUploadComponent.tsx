@@ -13,11 +13,12 @@ import {
   CardContent,
   CardActions,
   Container,
+  createTheme,
+  ThemeProvider,
 } from '@mui/material';
 import { AttachFile, VideoFile, InsertDriveFile } from '@mui/icons-material';
 
-// Lista de extensiones permitidas
-const ALLOWED_EXTENSIONS = ['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png', '.mp4', '.avi'];
+const ALLOWED_EXTENSIONS = ['.mp4'];
 
 const MultiFileUploadComponent: React.FC = () => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
@@ -59,73 +60,88 @@ const MultiFileUploadComponent: React.FC = () => {
     return <InsertDriveFile />;
   };
 
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+      primary: {
+        main: '#FF00FF', // Fucsia
+      },
+      background: {
+        default: '#121212',
+        paper: '#1E1E1E',
+      },
+    },
+  });
+
   return (
-    <Container maxWidth="sm">
-      <Card elevation={3} sx={{ mt: 4, mb: 4, borderRadius: 2 }}>
-        <CardContent>
-          <Typography variant="h5" gutterBottom align="center" sx={{ fontWeight: 'bold', mb: 3 }}>
-            Cargar Múltiples Archivos
-          </Typography>
-          <Box sx={{ marginY: 2 }}>
+    <ThemeProvider theme={darkTheme}>
+      <Container maxWidth="sm">
+        <Card elevation={3} sx={{ mt: 4, mb: 4, borderRadius: 2, bgcolor: 'background.paper' }}>
+          <CardContent>
+            <Typography variant="h5" gutterBottom align="center" sx={{ fontWeight: 'bold', mb: 3, color: 'text.primary' }}>
+              Cargar Múltiples Archivos
+            </Typography>
+            <Box sx={{ marginY: 2 }}>
+              <Button
+                variant="contained"
+                component="label"
+                startIcon={<AttachFile />}
+                fullWidth
+                sx={{ 
+                  borderRadius: 2,
+                  py: 1.5,
+                  bgcolor: 'primary.main',
+                  '&:hover': {
+                    bgcolor: 'primary.dark',
+                  },
+                }}
+              >
+                Agregar Archivos
+                <input type="file" multiple hidden onChange={handleFileChange} accept={ALLOWED_EXTENSIONS.join(',')} />
+              </Button>
+            </Box>
+            {selectedFiles.length > 0 && (
+              <Paper variant="outlined" sx={{ mt: 2, mb: 2, maxHeight: 200, overflow: 'auto', bgcolor: 'background.default' }}>
+                <List>
+                  {selectedFiles.map((file, index) => (
+                    <ListItem key={index}>
+                      <ListItemIcon>
+                        {getFileIcon(file)}
+                      </ListItemIcon>
+                      <ListItemText 
+                        primary={file.name} 
+                        secondary={`${(file.size / 1024 / 1024).toFixed(2)} MB`} 
+                      />
+                    </ListItem>
+                  ))}
+                </List>
+              </Paper>
+            )}
+            <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1, mb: 2 }}>
+              {ALLOWED_EXTENSIONS.map((ext) => (
+                <Chip key={ext} label={ext} variant="outlined" size="small" sx={{ borderRadius: 1 }} />
+              ))}
+            </Box>
+          </CardContent>
+          <CardActions>
             <Button
               variant="contained"
-              component="label"
-              startIcon={<AttachFile />}
+              color="primary"
+              onClick={handleSubmit}
               fullWidth
+              disabled={selectedFiles.length === 0}
               sx={{ 
                 borderRadius: 2,
                 py: 1.5,
-                backgroundColor: 'primary.main',
-                '&:hover': {
-                  backgroundColor: 'primary.dark',
-                },
+                fontWeight: 'bold',
               }}
             >
-              Agregar Archivos
-              <input type="file" multiple hidden onChange={handleFileChange} accept={ALLOWED_EXTENSIONS.join(',')} />
+              Subir Archivos
             </Button>
-          </Box>
-          {selectedFiles.length > 0 && (
-            <Paper variant="outlined" sx={{ mt: 2, mb: 2, maxHeight: 200, overflow: 'auto' }}>
-              <List>
-                {selectedFiles.map((file, index) => (
-                  <ListItem key={index}>
-                    <ListItemIcon>
-                      {getFileIcon(file)}
-                    </ListItemIcon>
-                    <ListItemText 
-                      primary={file.name} 
-                      secondary={`${(file.size / 1024 / 1024).toFixed(2)} MB`} 
-                    />
-                  </ListItem>
-                ))}
-              </List>
-            </Paper>
-          )}
-          <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1, mb: 2 }}>
-            {ALLOWED_EXTENSIONS.map((ext) => (
-              <Chip key={ext} label={ext} variant="outlined" size="small" sx={{ borderRadius: 1 }} />
-            ))}
-          </Box>
-        </CardContent>
-        <CardActions>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleSubmit}
-            fullWidth
-            disabled={selectedFiles.length === 0}
-            sx={{ 
-              borderRadius: 2,
-              py: 1.5,
-              fontWeight: 'bold',
-            }}
-          >
-            Subir Archivos
-          </Button>
-        </CardActions>
-      </Card>
-    </Container>
+          </CardActions>
+        </Card>
+      </Container>
+    </ThemeProvider>
   );
 };
 
