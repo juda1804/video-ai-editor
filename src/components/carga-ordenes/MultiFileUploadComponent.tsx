@@ -15,8 +15,10 @@ import {
   Container,
   createTheme,
   ThemeProvider,
+  Alert,
+  Collapse,
 } from '@mui/material';
-import { AttachFile, VideoFile, InsertDriveFile } from '@mui/icons-material';
+import { AttachFile, VideoFile, InsertDriveFile, Clear } from '@mui/icons-material';
 
 const ALLOWED_EXTENSIONS = ['.mp4'];
 
@@ -25,6 +27,7 @@ const MultiFileUploadComponent: React.FC = () => {
   const [responseMessage, setResponseMessage] = useState<string>('');
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [uploadSuccess, setUploadSuccess] = useState<boolean>(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const isFileAllowed = useCallback((file: File) => {
@@ -44,6 +47,20 @@ const MultiFileUploadComponent: React.FC = () => {
     }
   };
 
+  const uploadAndCombineVideos = async (formData: FormData): Promise<string> => {
+    const response = await fetch('http://localhost:3000/upload', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error('Error al subir los videos.');
+    }
+
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+  };
+
   const handleSubmit = async () => {
     if (selectedFiles.length === 0) {
       setResponseMessage('Por favor, selecciona archivos para cargar.');
@@ -60,21 +77,13 @@ const MultiFileUploadComponent: React.FC = () => {
     });
 
     try {
-      const response = await fetch('http://localhost:3000/upload', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error('Error al subir los videos.');
-      }
-
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
+      const url = await uploadAndCombineVideos(formData);
       setDownloadUrl(url);
       setResponseMessage('Videos combinados con éxito.');
+      setUploadSuccess(true);
     } catch (error) {
       setResponseMessage(`Error: ${(error as Error).message}`);
+      setUploadSuccess(false);
     } finally {
       setIsUploading(false);
     }
@@ -100,6 +109,33 @@ const MultiFileUploadComponent: React.FC = () => {
       },
     },
   });
+
+  const ResponseMessage: React.FC<{ message: string; success: boolean }> = ({ message, success }) => (
+    <Collapse in={!!message}>
+      <Alert 
+        severity={success ? "success" : "error"}
+        sx={{ 
+          mt: 2, 
+          borderRadius: 2,
+          '& .MuiAlert-icon': {
+            fontSize: '1.5rem',
+          },
+        }}
+      >
+        {message}
+      </Alert>
+    </Collapse>
+  );
+
+  const handleClearFields = () => {
+    setSelectedFiles([]);
+    setResponseMessage('');
+    setDownloadUrl(null);
+    setUploadSuccess(false);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -157,13 +193,9 @@ const MultiFileUploadComponent: React.FC = () => {
                 <Chip key={ext} label={ext} variant="outlined" size="small" sx={{ borderRadius: 1 }} />
               ))}
             </Box>
-            {responseMessage && (
-              <Typography color="error" sx={{ mt: 2 }}>
-                {responseMessage}
-              </Typography>
-            )}
+            <ResponseMessage message={responseMessage} success={uploadSuccess} />
           </CardContent>
-          <CardActions>
+          <CardActions sx={{ flexDirection: 'column', gap: 1 }}>
             <Button
               variant="contained"
               color="primary"
@@ -179,7 +211,7 @@ const MultiFileUploadComponent: React.FC = () => {
               {isUploading ? 'Subiendo...' : 'Subir y Combinar Videos'}
             </Button>
           </CardActions>
-          {downloadUrl && (
+          {uploadSuccess && downloadUrl && (
             <CardActions>
               <Button
                 href={downloadUrl}
@@ -194,6 +226,24 @@ const MultiFileUploadComponent: React.FC = () => {
                 }}
               >
                 Descargar Video Combinado
+              </Button>
+            </CardActions>
+          )}
+          {selectedFiles.length > 0 && (
+            <CardActions>
+              <Button
+                variant="outlined"
+                color="primary"
+                onClick={handleClearFields}
+                fullWidth
+                startIcon={<Clear />}
+                sx={{ 
+                  borderRadius: 2,
+                  py: 1.5,
+                  fontWeight: 'bold',
+                }}
+              >
+                Limpiar Campos
               </Button>
             </CardActions>
           )}

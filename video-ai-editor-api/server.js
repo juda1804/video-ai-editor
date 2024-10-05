@@ -5,6 +5,7 @@ const ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
 const winston = require('winston');
 const cors = require('cors');
+const os = require('os');
 const app = express();
 
 app.use(cors({
@@ -33,44 +34,47 @@ if (!fs.existsSync(uploadsFolderPath)) {
   fs.mkdirSync(uploadsFolderPath);
 }
 
-// Configuración del almacenamiento de Multer
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, uploadsFolderPath); // Carpeta donde se guardarán los videos subidos
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)); // Guardar el archivo con su nombre original y extensión
-  }
-});
-
-// Configuración de Multer para aceptar múltiples videos
+// Cambiar el almacenamiento de Multer para usar memoria en lugar de disco
 const upload = multer({
-  storage: storage,
-  limits: { fileSize: 100 * 1024 * 1024 } // Limitar a 100 MB por archivo
-}).array('videos', 10); // Aceptar hasta 10 archivos con el campo 'videos'
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 50 * 1024 * 1024 } // Limitar tamaño de archivo a 50MB
+}).array('videos', 10);
 
 // Función para unir múltiples videos
-function mergeVideos(videoPaths, outputVideoPath, callback) {
+function mergeVideos(videoBuffers, outputVideoPath, callback) {
   const ffmpegCommand = ffmpeg();
 
-  videoPaths.forEach(videoPath => {
-    ffmpegCommand.input(videoPath); // Añadir cada video como entrada
+  videoBuffers.forEach((buffer, index) => {
+    const tempFilePath = path.join(os.tmpdir(), `temp-video-${index}.mp4`);
+    fs.writeFileSync(tempFilePath, buffer);
+    ffmpegCommand.input(tempFilePath);
   });
 
   // Configuración de salida del video
   ffmpegCommand
+    .outputOptions([
+      '-c:v libx264',  // Usar codec H.264 para video
+      '-c:a aac',      // Usar codec AAC para audio
+      '-preset ultrafast',  // Usar preset ultrafast para codificación más rápida
+      '-crf 23',       // Calidad constante, balance entre calidad y tamaño
+      '-shortest'      // Terminar con el video más corto si las duraciones son diferentes
+    ])
     .on('start', (commandLine) => {
       logger.info(`FFmpeg ejecutando comando: ${commandLine}`);
     })
     .on('end', () => {
       logger.info('Videos unidos exitosamente');
+      // Limpiar archivos temporales
+      videoBuffers.forEach((_, index) => {
+        fs.unlinkSync(path.join(os.tmpdir(), `temp-video-${index}.mp4`));
+      });
       callback(null, outputVideoPath);
     })
     .on('error', (err) => {
       logger.error('Error al unir los videos: ' + err.message);
       callback(err, null);
     })
-    .mergeToFile(outputVideoPath, uploadsFolderPath); // Guardar el archivo final en la carpeta uploads
+    .mergeToFile(outputVideoPath, uploadsFolderPath);
 }
 
 // Ruta para subir y unir videos
@@ -84,12 +88,12 @@ app.post('/upload', (req, res) => {
 
     if (req.files && req.files.length > 0) {
       logger.info(`Received ${req.files.length} files`);
-      const videoPaths = req.files.map(file => file.path);
-      const outputVideoPath = path.join(__dirname, 'uploads', 'edited-video.mp4'); // Nombre cambiado a 'edited-video.mp4'
+      const videoBuffers = req.files.map(file => file.buffer);
+      const outputVideoPath = path.join(os.tmpdir(), 'edited-video.mp4');
 
       logger.info('Starting video merge');
       // Unir videos
-      mergeVideos(videoPaths, outputVideoPath, (mergeError, mergedVideo) => {
+      mergeVideos(videoBuffers, outputVideoPath, (mergeError, mergedVideo) => {
         if (mergeError) {
           logger.error('Error merging videos:', mergeError);
           return res.status(500).send('Error al unir los videos: ' + mergeError.message);
@@ -97,8 +101,13 @@ app.post('/upload', (req, res) => {
 
         logger.info('Video merge completed, sending response');
         // Enviar el video final al cliente
-        
-        res.download(mergedVideo, 'merged-video.mp4');
+        res.download(mergedVideo, 'merged-video.mp4', (err) => {
+          if (err) {
+            logger.error('Error sending merged video:', err);
+          }
+          // Eliminar el archivo fusionado después de enviarlo
+          fs.unlinkSync(mergedVideo);
+        });
       });
     } else {
       logger.warn('No files received');
