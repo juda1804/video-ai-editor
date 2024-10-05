@@ -1,0 +1,64 @@
+2024-10-05T21:47:32.511Z info: Servidor corriendo en http://localhost:3000
+2024-10-05T21:47:37.545Z info: Received upload request
+2024-10-05T21:47:37.556Z info: Received 1 files
+2024-10-05T21:47:37.556Z info: Starting video merge
+2024-10-05T21:47:37.560Z error: Error al unir los videos: Cannot find ffprobe
+2024-10-05T21:47:37.561Z error: Error merging videos: Cannot find ffprobe
+2024-10-05T21:49:36.801Z info: Servidor corriendo en http://localhost:3000
+2024-10-05T21:49:39.195Z info: Received upload request
+2024-10-05T21:49:39.207Z info: Received 1 files
+2024-10-05T21:49:39.207Z info: Starting video merge
+2024-10-05T21:49:39.210Z error: Error al unir los videos: Cannot find ffprobe
+2024-10-05T21:49:39.211Z error: Error merging videos: Cannot find ffprobe
+2024-10-05T21:54:22.945Z info: Servidor corriendo en http://localhost:3000
+2024-10-05T21:54:30.735Z info: Received upload request
+2024-10-05T21:54:30.751Z info: Received 2 files
+2024-10-05T21:54:30.751Z info: Starting video merge
+2024-10-05T21:54:42.330Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165270740.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165270745.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
+2024-10-05T21:54:42.716Z info: Videos unidos exitosamente
+2024-10-05T21:54:42.716Z info: Video merge completed, sending response
+2024-10-05T21:57:52.708Z info: Received upload request
+2024-10-05T21:57:52.718Z info: Received 2 files
+2024-10-05T21:57:52.718Z info: Starting video merge
+2024-10-05T21:57:52.824Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165472710.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165472714.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
+2024-10-05T21:57:53.274Z info: Videos unidos exitosamente
+2024-10-05T21:57:53.274Z info: Video merge completed, sending response
+2024-10-05T21:58:38.756Z info: Received upload request
+2024-10-05T21:58:38.763Z info: Received 2 files
+2024-10-05T21:58:38.763Z info: Starting video merge
+2024-10-05T21:58:38.874Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165518758.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165518760.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
+2024-10-05T21:58:39.270Z info: Videos unidos exitosamente
+2024-10-05T21:58:39.270Z info: Video merge completed, sending response
+2024-10-05T21:58:45.417Z info: Received upload request
+2024-10-05T21:58:45.423Z info: Received 2 files
+2024-10-05T21:58:45.423Z info: Starting video merge
+2024-10-05T21:58:45.476Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165525418.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165525420.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
+2024-10-05T21:58:45.864Z info: Videos unidos exitosamente
+2024-10-05T21:58:45.864Z info: Video merge completed, sending response
+2024-10-05T22:00:09.663Z info: Servidor corriendo en http://localhost:3000
+2024-10-05T22:00:27.684Z info: Received upload request
+2024-10-05T22:00:27.703Z info: Received 2 files
+2024-10-05T22:00:27.703Z info: Starting video merge
+2024-10-05T22:00:27.871Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165627688.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165627699.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
+2024-10-05T22:00:28.264Z info: Videos unidos exitosamente
+2024-10-05T22:00:28.264Z info: Video merge completed, sending response
+2024-10-05T22:03:22.715Z info: Servidor corriendo en http://localhost:3000
+2024-10-05T22:03:25.912Z info: Received upload request
+2024-10-05T22:03:25.926Z info: Received 2 files
+2024-10-05T22:03:25.926Z info: Starting video merge
+2024-10-05T22:03:26.090Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165805917.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165805922.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
+2024-10-05T22:03:26.504Z info: Videos unidos exitosamente
+2024-10-05T22:03:26.504Z info: Video merge completed, sending response
+2024-10-05T22:03:28.725Z info: Received upload request
+2024-10-05T22:03:28.734Z info: Received 2 files
+2024-10-05T22:03:28.735Z info: Starting video merge
+2024-10-05T22:03:28.784Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165808727.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165808730.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
+2024-10-05T22:03:29.163Z info: Videos unidos exitosamente
+2024-10-05T22:03:29.163Z info: Video merge completed, sending response
+2024-10-05T22:07:04.918Z info: Servidor corriendo en http://localhost:3000
+2024-10-05T22:07:20.792Z info: Received upload request
+2024-10-05T22:07:20.805Z info: Received 2 files
+2024-10-05T22:07:20.806Z info: Starting video merge
+2024-10-05T22:07:20.979Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166040796.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166040802.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
+2024-10-05T22:07:21.367Z info: Videos unidos exitosamente
+2024-10-05T22:07:21.367Z info: Video merge completed, sending response

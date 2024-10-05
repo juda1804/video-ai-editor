@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Paper, Typography } from '@mui/material';
 import MultiFileUploadComponent from './carga-ordenes/MultiFileUploadComponent';
+import VideoMerger from './VideoMerger';
 
 const DefaultPage: React.FC = () => {
   return (
@@ -10,6 +11,9 @@ const DefaultPage: React.FC = () => {
           Batch de videos
         </Typography>
         <MultiFileUploadComponent />
+      </Paper>
+      <Paper elevation={3} sx={{ p: 3, mt: 4 }}>
+        <VideoMerger />
       </Paper>
     </Container>
   );
