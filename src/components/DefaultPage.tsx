@@ -12,9 +12,6 @@ const DefaultPage: React.FC = () => {
         </Typography>
         <MultiFileUploadComponent />
       </Paper>
-      <Paper elevation={3} sx={{ p: 3, mt: 4 }}>
-        <VideoMerger />
-      </Paper>
     </Container>
   );
 };
