@@ -7,7 +7,7 @@ import './style.css';
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  
+
   useEffect(() => {
     const userContext = localStorage.getItem('userContext');
     if (userContext) {
@@ -32,9 +32,7 @@ const App: React.FC = () => {
     <Router>
       {isAuthenticated && <Header onLogout={logout} />}
       <Routes>
-        <Route path="/login" element={
-          isAuthenticated ? <Navigate to="/" /> : <Login onLogin={login} />
-        } />
+        <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login onLogin={login} />} />
         <Route path="/" element={
           <ProtectedRoute>
             <DefaultPage />
@@ -45,4 +43,5 @@ const App: React.FC = () => {
   );
 }
 
+// Esta es la parte importante: debes asegurarte de exportarlo como default
 export default App;

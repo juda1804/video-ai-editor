@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Paper, Typography } from '@mui/material';
 import MultiFileUploadComponent from './carga-ordenes/MultiFileUploadComponent';
 import VideoMerger from './VideoMerger';
+import ProductInfoBanner from './carga-ordenes/ProductInfoBanner';
 
 const DefaultPage: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const DefaultPage: React.FC = () => {
           Batch de videos
         </Typography>
         <MultiFileUploadComponent />
+        <ProductInfoBanner/>
       </Paper>
     </Container>
   );

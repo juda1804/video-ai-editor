@@ -129,3 +129,715 @@
 2024-10-05T22:32:44.247Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-0.mp4 -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/edited-video.mp4
 2024-10-05T22:32:44.374Z info: Videos unidos exitosamente
 2024-10-05T22:32:44.374Z info: Video merge completed, sending response
+2024-10-05T23:35:10.406Z info: Servidor corriendo en http://localhost:3000
+2024-10-05T23:37:16.094Z info: Received upload request
+2024-10-05T23:37:16.107Z info: Received 2 files
+2024-10-05T23:37:16.107Z info: Starting video merge
+2024-10-05T23:37:16.112Z error: Error al unir los videos: Cannot find ffprobe
+2024-10-05T23:37:16.112Z error: Error merging videos: Cannot find ffprobe
+2024-10-05T23:39:58.390Z info: Servidor corriendo en http://localhost:3000
+2024-10-05T23:40:23.482Z info: Received upload request
+2024-10-05T23:40:23.493Z info: Received 2 files
+2024-10-05T23:40:23.493Z info: Starting video merge
+2024-10-05T23:40:23.497Z error: Error al unir los videos: Cannot find ffprobe
+2024-10-05T23:40:23.498Z error: Error merging videos: Cannot find ffprobe
+2024-10-05T23:40:24.542Z info: Received upload request
+2024-10-05T23:40:24.545Z info: Received 2 files
+2024-10-05T23:40:24.545Z info: Starting video merge
+2024-10-05T23:40:24.546Z error: Error al unir los videos: Cannot find ffprobe
+2024-10-05T23:40:24.547Z error: Error merging videos: Cannot find ffprobe
+2024-10-05T23:40:46.037Z info: Received upload request
+2024-10-05T23:40:46.040Z info: Received 1 files
+2024-10-05T23:40:46.040Z info: Starting video merge
+2024-10-05T23:40:46.041Z error: Error al unir los videos: Cannot find ffprobe
+2024-10-05T23:40:46.041Z error: Error merging videos: Cannot find ffprobe
+2024-10-05T23:40:46.983Z info: Received upload request
+2024-10-05T23:40:46.985Z info: Received 1 files
+2024-10-05T23:40:46.985Z info: Starting video merge
+2024-10-05T23:40:46.985Z error: Error al unir los videos: Cannot find ffprobe
+2024-10-05T23:40:46.985Z error: Error merging videos: Cannot find ffprobe
+2024-10-05T23:40:55.667Z info: Received upload request
+2024-10-05T23:40:55.673Z info: Received 2 files
+2024-10-05T23:40:55.673Z info: Starting video merge
+2024-10-05T23:40:55.675Z error: Error al unir los videos: Cannot find ffprobe
+2024-10-05T23:40:55.675Z error: Error merging videos: Cannot find ffprobe
+2024-10-05T23:40:56.909Z info: Received upload request
+2024-10-05T23:40:56.912Z info: Received 2 files
+2024-10-05T23:40:56.912Z info: Starting video merge
+2024-10-05T23:40:56.913Z error: Error al unir los videos: Cannot find ffprobe
+2024-10-05T23:40:56.913Z error: Error merging videos: Cannot find ffprobe
+2024-10-05T23:43:14.372Z info: Received upload request
+2024-10-05T23:43:14.378Z info: Received 2 files
+2024-10-05T23:43:14.378Z info: Starting video merge
+2024-10-05T23:43:14.381Z error: Error al unir los videos: Cannot find ffprobe
+2024-10-05T23:43:14.381Z error: Error merging videos: Cannot find ffprobe
+2024-10-06T00:08:58.321Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T00:10:06.722Z info: Received upload request
+2024-10-06T00:10:06.735Z info: Received 2 files
+2024-10-06T00:10:06.736Z info: Starting video merge
+2024-10-06T00:10:06.739Z error: Error al unir los videos: Cannot find ffprobe
+2024-10-06T00:10:06.739Z error: Error merging videos: Cannot find ffprobe
+2024-10-06T00:27:47.601Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T00:29:49.908Z info: Received upload request
+2024-10-06T00:29:49.921Z info: Received 2 files
+2024-10-06T00:29:49.922Z info: Starting video merge
+2024-10-06T00:29:51.746Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T00:29:51.833Z info: Videos unidos exitosamente
+2024-10-06T00:29:51.834Z info: Video merge completed, sending response
+2024-10-06T00:30:05.183Z info: Received upload request
+2024-10-06T00:30:05.195Z info: Received 2 files
+2024-10-06T00:30:05.196Z info: Starting video merge
+2024-10-06T00:30:05.252Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T00:30:05.632Z info: Videos unidos exitosamente
+2024-10-06T00:30:05.633Z info: Video merge completed, sending response
+2024-10-06T01:01:53.359Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T01:01:58.657Z info: Received upload request
+2024-10-06T01:01:58.676Z info: Received 2 files
+2024-10-06T01:01:58.676Z info: Starting video merge
+2024-10-06T01:01:58.856Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T01:01:59.202Z info: Videos unidos exitosamente
+2024-10-06T01:01:59.203Z info: Video merge completed, sending response
+2024-10-06T01:13:08.020Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T01:28:50.892Z info: Received upload request
+2024-10-06T01:28:50.922Z info: Received 2 files
+2024-10-06T01:28:50.923Z info: Starting video merge
+2024-10-06T01:28:51.095Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T01:28:51.845Z info: Videos unidos exitosamente
+2024-10-06T01:28:51.846Z info: Video merge completed, sending response
+2024-10-06T01:48:33.147Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T01:48:50.564Z info: Received upload request
+2024-10-06T01:48:50.579Z info: Received 2 files
+2024-10-06T01:48:50.579Z info: Starting video merge with highlights
+2024-10-06T01:49:22.382Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T01:49:31.495Z info: Received upload request
+2024-10-06T01:49:31.512Z info: Received 2 files
+2024-10-06T01:49:31.512Z info: Starting video merge with highlights
+2024-10-06T01:59:35.932Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T01:59:52.040Z info: Received upload request
+2024-10-06T01:59:52.057Z info: Received 2 files
+2024-10-06T01:59:52.057Z info: Starting video merge with highlights
+2024-10-06T02:01:54.594Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T02:01:57.981Z info: Received upload request
+2024-10-06T02:01:57.998Z info: Received 2 files
+2024-10-06T02:01:57.998Z info: Starting video merge with highlights
+2024-10-06T02:01:59.325Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:02:08.762Z info: Detectadas 7 escenas destacadas
+2024-10-06T02:02:09.748Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:02:14.376Z info: Detectadas 3 escenas destacadas
+2024-10-06T02:02:14.612Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=10:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T02:02:15.149Z info: Videos unidos exitosamente
+2024-10-06T02:02:15.150Z info: Video merge completed, sending response
+2024-10-06T02:02:16.741Z info: Received upload request
+2024-10-06T02:02:16.752Z info: Received 2 files
+2024-10-06T02:02:16.753Z info: Starting video merge with highlights
+2024-10-06T02:02:17.590Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:02:22.464Z info: Detectadas 3 escenas destacadas
+2024-10-06T02:02:23.384Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:02:32.803Z info: Detectadas 7 escenas destacadas
+2024-10-06T02:02:32.840Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 4 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=10:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T02:02:33.291Z info: Videos unidos exitosamente
+2024-10-06T02:02:33.291Z info: Video merge completed, sending response
+2024-10-06T02:03:51.633Z info: Received upload request
+2024-10-06T02:03:51.640Z info: Received 2 files
+2024-10-06T02:03:51.640Z info: Starting video merge with highlights
+2024-10-06T02:03:52.229Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:03:59.572Z info: Detectadas 2 escenas destacadas
+2024-10-06T02:04:00.183Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:04:19.201Z info: Detectadas 3 escenas destacadas
+2024-10-06T02:04:19.329Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 1 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=5:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T02:04:19.362Z error: Error al unir los videos: ffmpeg exited with code 234: Error opening input file /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4.
+Error opening input files: Invalid argument
+
+2024-10-06T02:04:19.363Z error: Error merging videos: ffmpeg exited with code 234: Error opening input file /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4.
+Error opening input files: Invalid argument
+
+2024-10-06T02:06:11.055Z info: Received upload request
+2024-10-06T02:06:11.069Z info: Received 2 files
+2024-10-06T02:06:11.070Z info: Starting video merge with highlights
+2024-10-06T02:06:12.124Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:06:26.852Z info: Detectadas 7 escenas destacadas
+2024-10-06T02:06:27.940Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:06:42.770Z info: Detectadas 3 escenas destacadas
+2024-10-06T02:06:42.885Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=10:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T02:06:43.372Z info: Videos unidos exitosamente
+2024-10-06T02:06:43.372Z info: Video merge completed, sending response
+2024-10-06T02:06:55.411Z info: Received upload request
+2024-10-06T02:06:55.422Z info: Received 2 files
+2024-10-06T02:06:55.423Z info: Starting video merge with highlights
+2024-10-06T02:06:57.522Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:07:12.175Z info: Detectadas 7 escenas destacadas
+2024-10-06T02:07:13.278Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:07:28.035Z info: Detectadas 3 escenas destacadas
+2024-10-06T02:07:28.139Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=10:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T02:07:28.667Z info: Videos unidos exitosamente
+2024-10-06T02:07:28.668Z info: Video merge completed, sending response
+2024-10-06T02:10:53.046Z info: Received upload request
+2024-10-06T02:10:53.060Z info: Received 2 files
+2024-10-06T02:10:53.060Z info: Starting video merge with highlights
+2024-10-06T02:10:54.371Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:10:59.993Z info: Detectadas 7 escenas destacadas
+2024-10-06T02:11:01.121Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:11:06.726Z info: Detectadas 3 escenas destacadas
+2024-10-06T02:11:06.863Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=10:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T02:11:07.366Z info: Videos unidos exitosamente
+2024-10-06T02:11:07.367Z info: Video merge completed, sending response
+2024-10-06T02:14:46.395Z info: Received upload request
+2024-10-06T02:14:46.415Z info: Received 2 files
+2024-10-06T02:14:46.415Z info: Starting video merge with highlights
+2024-10-06T02:14:47.622Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:14:51.442Z info: Detectadas 7 escenas destacadas
+2024-10-06T02:14:52.544Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:15:07.243Z info: Detectadas 3 escenas destacadas
+2024-10-06T02:15:07.369Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=10:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T02:15:07.926Z info: Videos unidos exitosamente
+2024-10-06T02:15:07.927Z info: Video merge completed, sending response
+2024-10-06T02:17:52.167Z info: Received upload request
+2024-10-06T02:17:52.179Z info: Received 2 files
+2024-10-06T02:17:52.179Z info: Starting video merge with highlights
+2024-10-06T02:17:53.632Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:18:24.412Z info: Detectadas 7 escenas destacadas
+2024-10-06T02:18:25.433Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:18:34.405Z info: Detectadas 3 escenas destacadas
+2024-10-06T02:18:34.531Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=10:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T02:18:34.948Z info: Videos unidos exitosamente
+2024-10-06T02:18:34.949Z info: Video merge completed, sending response
+2024-10-06T02:21:25.730Z info: Received upload request
+2024-10-06T02:21:25.740Z info: Received 2 files
+2024-10-06T02:21:25.741Z info: Starting video merge with highlights
+2024-10-06T02:21:26.941Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:21:38.343Z info: Detectadas 7 escenas destacadas
+2024-10-06T02:21:39.659Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:21:49.100Z info: Detectadas 3 escenas destacadas
+2024-10-06T02:21:49.227Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=10:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T02:21:49.708Z info: Videos unidos exitosamente
+2024-10-06T02:21:49.708Z info: Video merge completed, sending response
+2024-10-06T02:43:21.296Z info: Received upload request
+2024-10-06T02:43:21.311Z info: Received 2 files
+2024-10-06T02:43:21.311Z info: Starting video merge with highlights
+2024-10-06T02:43:22.276Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:43:27.275Z info: Detectadas 3 escenas destacadas
+2024-10-06T02:43:29.596Z info: Procesando video con Google Cloud Video Intelligence...
+2024-10-06T02:43:31.415Z info: Detectadas 7 escenas destacadas
+2024-10-06T02:43:31.535Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 4 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=10:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T02:43:32.042Z info: Videos unidos exitosamente
+2024-10-06T02:43:32.043Z info: Video merge completed, sending response
+2024-10-06T03:09:43.533Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T03:10:42.490Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T03:11:24.669Z info: Received upload request
+2024-10-06T03:11:24.686Z info: Received 2 files
+2024-10-06T03:11:24.686Z info: Comenzando los recortes inteligentes basados en escenas clave.
+2024-10-06T03:11:26.152Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-06T03:11:45.718Z info: Detectadas 7 escenas clave y 36 objetos.
+2024-10-06T03:11:45.721Z info: Objeto detectado: microwave oven desde 0s hasta 0s
+2024-10-06T03:11:45.721Z info: Objeto detectado: packaged goods desde 0s hasta 0s
+2024-10-06T03:11:45.721Z info: Objeto detectado: painting desde 0s hasta 0s
+2024-10-06T03:11:45.721Z info: Objeto detectado: luggage & bags desde 0s hasta 1s
+2024-10-06T03:11:45.721Z info: Objeto detectado: person desde 1s hasta 2s
+2024-10-06T03:11:45.722Z info: Objeto detectado: shoe desde 1s hasta 2s
+2024-10-06T03:11:45.722Z info: Objeto detectado: luggage & bags desde 1s hasta 2s
+2024-10-06T03:11:45.722Z info: Objeto detectado: sunglasses desde 1s hasta 1s
+2024-10-06T03:11:45.722Z info: Objeto detectado: packaged goods desde 1s hasta 2s
+2024-10-06T03:11:45.722Z info: Objeto detectado: person desde 2s hasta 2s
+2024-10-06T03:11:45.722Z info: Objeto detectado: bag desde 2s hasta 3s
+2024-10-06T03:11:45.722Z info: Objeto detectado: bag desde 2s hasta 3s
+2024-10-06T03:11:45.722Z info: Objeto detectado: bracelet desde 2s hasta 2s
+2024-10-06T03:11:45.722Z info: Objeto detectado: shoe desde 2s hasta 2s
+2024-10-06T03:11:45.722Z info: Objeto detectado: shoe desde 2s hasta 2s
+2024-10-06T03:11:45.722Z info: Objeto detectado: bracelet desde 3s hasta 3s
+2024-10-06T03:11:45.722Z info: Objeto detectado: baby desde 4s hasta 5s
+2024-10-06T03:11:45.722Z info: Objeto detectado: lunch box desde 4s hasta 4s
+2024-10-06T03:11:45.722Z info: Objeto detectado: toy desde 4s hasta 4s
+2024-10-06T03:11:45.722Z info: Objeto detectado: packaged goods desde 4s hasta 5s
+2024-10-06T03:11:45.722Z info: Objeto detectado: clothing desde 5s hasta 5s
+2024-10-06T03:11:45.722Z info: Objeto detectado: baby desde 5s hasta 8s
+2024-10-06T03:11:45.722Z info: Objeto detectado: furniture desde 5s hasta 7s
+2024-10-06T03:11:45.722Z info: Objeto detectado: packaged goods desde 6s hasta 6s
+2024-10-06T03:11:45.722Z info: Objeto detectado: packaged goods desde 7s hasta 7s
+2024-10-06T03:11:45.722Z info: Objeto detectado: shoe desde 7s hasta 7s
+2024-10-06T03:11:45.722Z info: Objeto detectado: top desde 7s hasta 7s
+2024-10-06T03:11:45.722Z info: Objeto detectado: baby desde 8s hasta 9s
+2024-10-06T03:11:45.722Z info: Objeto detectado: top desde 8s hasta 8s
+2024-10-06T03:11:45.722Z info: Objeto detectado: toy desde 8s hasta 8s
+2024-10-06T03:11:45.722Z info: Objeto detectado: toy desde 8s hasta 9s
+2024-10-06T03:11:45.722Z info: Objeto detectado: person desde 8s hasta 9s
+2024-10-06T03:11:45.722Z info: Objeto detectado: person desde 9s hasta 9s
+2024-10-06T03:11:45.722Z info: Objeto detectado: packaged goods desde 9s hasta 11s
+2024-10-06T03:11:45.722Z info: Objeto detectado: person desde 10s hasta 11s
+2024-10-06T03:11:45.722Z info: Objeto detectado: toy desde 11s hasta 11s
+2024-10-06T03:11:46.511Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-06T03:12:01.612Z info: Detectadas 3 escenas clave y 25 objetos.
+2024-10-06T03:12:01.613Z info: Objeto detectado: packaged goods desde 0s hasta 0s
+2024-10-06T03:12:01.613Z info: Objeto detectado: baby desde 0s hasta 4s
+2024-10-06T03:12:01.613Z info: Objeto detectado: table top desde 0s hasta 1s
+2024-10-06T03:12:01.613Z info: Objeto detectado: toy desde 0s hasta 0s
+2024-10-06T03:12:01.613Z info: Objeto detectado: toy desde 0s hasta 1s
+2024-10-06T03:12:01.613Z info: Objeto detectado: stuffed toy desde 0s hasta 3s
+2024-10-06T03:12:01.613Z info: Objeto detectado: baby desde 0s hasta 2s
+2024-10-06T03:12:01.613Z info: Objeto detectado: table desde 0s hasta 1s
+2024-10-06T03:12:01.613Z info: Objeto detectado: baby desde 1s hasta 1s
+2024-10-06T03:12:01.613Z info: Objeto detectado: clothing desde 1s hasta 1s
+2024-10-06T03:12:01.613Z info: Objeto detectado: toy desde 1s hasta 1s
+2024-10-06T03:12:01.613Z info: Objeto detectado: pillow desde 2s hasta 2s
+2024-10-06T03:12:01.613Z info: Objeto detectado: pillow desde 3s hasta 3s
+2024-10-06T03:12:01.613Z info: Objeto detectado: clothing desde 3s hasta 3s
+2024-10-06T03:12:01.613Z info: Objeto detectado: toy desde 3s hasta 3s
+2024-10-06T03:12:01.613Z info: Objeto detectado: plant desde 4s hasta 4s
+2024-10-06T03:12:01.613Z info: Objeto detectado: baby desde 4s hasta 8s
+2024-10-06T03:12:01.613Z info: Objeto detectado: packaged goods desde 4s hasta 4s
+2024-10-06T03:12:01.614Z info: Objeto detectado: top desde 4s hasta 4s
+2024-10-06T03:12:01.614Z info: Objeto detectado: toy block desde 5s hasta 5s
+2024-10-06T03:12:01.614Z info: Objeto detectado: baby desde 5s hasta 5s
+2024-10-06T03:12:01.614Z info: Objeto detectado: box desde 5s hasta 8s
+2024-10-06T03:12:01.614Z info: Objeto detectado: toy block desde 7s hasta 7s
+2024-10-06T03:12:01.614Z info: Objeto detectado: baby desde 8s hasta 8s
+2024-10-06T03:12:01.614Z info: Objeto detectado: toy block desde 8s hasta 8s
+2024-10-06T03:12:01.828Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=10:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T03:12:02.286Z info: Videos unidos exitosamente.
+2024-10-06T03:12:02.286Z info: Video merge completed, sending response
+2024-10-06T20:40:56.472Z info: Received upload request
+2024-10-06T20:40:56.521Z info: Received 2 files
+2024-10-06T20:40:56.529Z info: Comenzando los recortes inteligentes basados en escenas clave.
+2024-10-06T20:40:57.488Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-06T20:41:22.429Z info: Detectadas 19 escenas clave y 77 objetos.
+2024-10-06T20:41:22.431Z info: Objeto detectado: power outlet desde 0s hasta 0s
+2024-10-06T20:41:22.431Z info: Objeto detectado: tire desde 0s hasta 0s
+2024-10-06T20:41:22.431Z info: Objeto detectado: light switch desde 1s hasta 1s
+2024-10-06T20:41:22.431Z info: Objeto detectado: can opener desde 1s hasta 1s
+2024-10-06T20:41:22.431Z info: Objeto detectado: person desde 1s hasta 1s
+2024-10-06T20:41:22.431Z info: Objeto detectado: person desde 2s hasta 2s
+2024-10-06T20:41:22.431Z info: Objeto detectado: packaged goods desde 2s hasta 2s
+2024-10-06T20:41:22.432Z info: Objeto detectado: ratchet desde 2s hasta 2s
+2024-10-06T20:41:22.432Z info: Objeto detectado: ratchet desde 2s hasta 3s
+2024-10-06T20:41:22.432Z info: Objeto detectado: shoe desde 3s hasta 4s
+2024-10-06T20:41:22.432Z info: Objeto detectado: vacuum desde 3s hasta 3s
+2024-10-06T20:41:22.432Z info: Objeto detectado: luggage & bags desde 4s hasta 4s
+2024-10-06T20:41:22.432Z info: Objeto detectado: vacuum desde 4s hasta 6s
+2024-10-06T20:41:22.432Z info: Objeto detectado: helmet desde 6s hasta 6s
+2024-10-06T20:41:22.432Z info: Objeto detectado: weapon desde 6s hasta 7s
+2024-10-06T20:41:22.432Z info: Objeto detectado: luggage & bags desde 6s hasta 6s
+2024-10-06T20:41:22.432Z info: Objeto detectado: camera desde 6s hasta 6s
+2024-10-06T20:41:22.432Z info: Objeto detectado: grooming trimmer desde 7s hasta 7s
+2024-10-06T20:41:22.432Z info: Objeto detectado: drill desde 7s hasta 7s
+2024-10-06T20:41:22.432Z info: Objeto detectado: helmet desde 7s hasta 7s
+2024-10-06T20:41:22.432Z info: Objeto detectado: camera desde 7s hasta 7s
+2024-10-06T20:41:22.432Z info: Objeto detectado: clock desde 7s hasta 7s
+2024-10-06T20:41:22.432Z info: Objeto detectado: luggage & bags desde 7s hasta 7s
+2024-10-06T20:41:22.432Z info: Objeto detectado: luggage & bags desde 7s hasta 7s
+2024-10-06T20:41:22.432Z info: Objeto detectado: weapon desde 7s hasta 7s
+2024-10-06T20:41:22.432Z info: Objeto detectado: weapon desde 8s hasta 8s
+2024-10-06T20:41:22.432Z info: Objeto detectado: light fixture desde 8s hasta 8s
+2024-10-06T20:41:22.432Z info: Objeto detectado: high heels desde 8s hasta 8s
+2024-10-06T20:41:22.432Z info: Objeto detectado: tableware desde 8s hasta 8s
+2024-10-06T20:41:22.433Z info: Objeto detectado: animal desde 8s hasta 8s
+2024-10-06T20:41:22.433Z info: Objeto detectado: weapon desde 9s hasta 9s
+2024-10-06T20:41:22.433Z info: Objeto detectado: person desde 9s hasta 9s
+2024-10-06T20:41:22.433Z info: Objeto detectado: ratchet desde 9s hasta 9s
+2024-10-06T20:41:22.433Z info: Objeto detectado: display device desde 10s hasta 10s
+2024-10-06T20:41:22.433Z info: Objeto detectado: sewing machine desde 11s hasta 12s
+2024-10-06T20:41:22.433Z info: Objeto detectado: sewing machine desde 11s hasta 12s
+2024-10-06T20:41:22.433Z info: Objeto detectado: person desde 12s hasta 13s
+2024-10-06T20:41:22.433Z info: Objeto detectado: kitchen appliance desde 12s hasta 12s
+2024-10-06T20:41:22.433Z info: Objeto detectado: shoe desde 13s hasta 13s
+2024-10-06T20:41:22.433Z info: Objeto detectado: mirror desde 13s hasta 13s
+2024-10-06T20:41:22.433Z info: Objeto detectado: vacuum desde 13s hasta 13s
+2024-10-06T20:41:22.433Z info: Objeto detectado: kitchen appliance desde 13s hasta 15s
+2024-10-06T20:41:22.433Z info: Objeto detectado: vacuum desde 13s hasta 14s
+2024-10-06T20:41:22.433Z info: Objeto detectado: lighting desde 14s hasta 14s
+2024-10-06T20:41:22.433Z info: Objeto detectado: home appliance desde 14s hasta 14s
+2024-10-06T20:41:22.433Z info: Objeto detectado: shoe desde 15s hasta 15s
+2024-10-06T20:41:22.433Z info: Objeto detectado: vacuum desde 15s hasta 15s
+2024-10-06T20:41:22.433Z info: Objeto detectado: belt desde 15s hasta 15s
+2024-10-06T20:41:22.433Z info: Objeto detectado: shoe desde 15s hasta 16s
+2024-10-06T20:41:22.433Z info: Objeto detectado: lighting desde 16s hasta 16s
+2024-10-06T20:41:22.433Z info: Objeto detectado: camera desde 16s hasta 17s
+2024-10-06T20:41:22.433Z info: Objeto detectado: person desde 17s hasta 17s
+2024-10-06T20:41:22.434Z info: Objeto detectado: person desde 17s hasta 17s
+2024-10-06T20:41:22.434Z info: Objeto detectado: person desde 17s hasta 17s
+2024-10-06T20:41:22.434Z info: Objeto detectado: home appliance desde 18s hasta 18s
+2024-10-06T20:41:22.434Z info: Objeto detectado: kitchen appliance desde 18s hasta 18s
+2024-10-06T20:41:22.434Z info: Objeto detectado: person desde 18s hasta 19s
+2024-10-06T20:41:22.434Z info: Objeto detectado: food desde 19s hasta 19s
+2024-10-06T20:41:22.434Z info: Objeto detectado: animal desde 19s hasta 19s
+2024-10-06T20:41:22.434Z info: Objeto detectado: axe desde 19s hasta 19s
+2024-10-06T20:41:22.434Z info: Objeto detectado: car desde 19s hasta 19s
+2024-10-06T20:41:22.434Z info: Objeto detectado: home appliance desde 19s hasta 19s
+2024-10-06T20:41:22.434Z info: Objeto detectado: tap desde 19s hasta 19s
+2024-10-06T20:41:22.434Z info: Objeto detectado: can opener desde 20s hasta 20s
+2024-10-06T20:41:22.434Z info: Objeto detectado: grooming trimmer desde 20s hasta 20s
+2024-10-06T20:41:22.434Z info: Objeto detectado: home appliance desde 20s hasta 21s
+2024-10-06T20:41:22.434Z info: Objeto detectado: person desde 20s hasta 21s
+2024-10-06T20:41:22.434Z info: Objeto detectado: door handle desde 21s hasta 21s
+2024-10-06T20:41:22.434Z info: Objeto detectado: animal desde 21s hasta 21s
+2024-10-06T20:41:22.434Z info: Objeto detectado: packaged goods desde 22s hasta 22s
+2024-10-06T20:41:22.434Z info: Objeto detectado: sneakers desde 22s hasta 22s
+2024-10-06T20:41:22.434Z info: Objeto detectado: food desde 22s hasta 22s
+2024-10-06T20:41:22.434Z info: Objeto detectado: animal desde 22s hasta 23s
+2024-10-06T20:41:22.434Z info: Objeto detectado: hat desde 23s hasta 23s
+2024-10-06T20:41:22.434Z info: Objeto detectado: electronic device desde 23s hasta 24s
+2024-10-06T20:41:22.435Z info: Objeto detectado: vacuum desde 23s hasta 24s
+2024-10-06T20:41:22.435Z info: Objeto detectado: display device desde 23s hasta 24s
+2024-10-06T20:41:24.696Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-06T20:41:49.689Z info: Detectadas 10 escenas clave y 94 objetos.
+2024-10-06T20:41:49.690Z info: Objeto detectado: top desde 0s hasta 1s
+2024-10-06T20:41:49.690Z info: Objeto detectado: luggage & bags desde 0s hasta 2s
+2024-10-06T20:41:49.690Z info: Objeto detectado: tire desde 0s hasta 3s
+2024-10-06T20:41:49.690Z info: Objeto detectado: luggage & bags desde 0s hasta 0s
+2024-10-06T20:41:49.690Z info: Objeto detectado: tire desde 0s hasta 2s
+2024-10-06T20:41:49.690Z info: Objeto detectado: luggage & bags desde 0s hasta 0s
+2024-10-06T20:41:49.690Z info: Objeto detectado: bag desde 1s hasta 2s
+2024-10-06T20:41:49.690Z info: Objeto detectado: top desde 1s hasta 3s
+2024-10-06T20:41:49.690Z info: Objeto detectado: person desde 1s hasta 3s
+2024-10-06T20:41:49.690Z info: Objeto detectado: shoe desde 1s hasta 1s
+2024-10-06T20:41:49.690Z info: Objeto detectado: luggage & bags desde 1s hasta 2s
+2024-10-06T20:41:49.690Z info: Objeto detectado: wheel desde 1s hasta 2s
+2024-10-06T20:41:49.690Z info: Objeto detectado: luggage & bags desde 2s hasta 3s
+2024-10-06T20:41:49.690Z info: Objeto detectado: top desde 3s hasta 3s
+2024-10-06T20:41:49.690Z info: Objeto detectado: tire desde 3s hasta 4s
+2024-10-06T20:41:49.690Z info: Objeto detectado: pants desde 3s hasta 3s
+2024-10-06T20:41:49.690Z info: Objeto detectado: person desde 3s hasta 3s
+2024-10-06T20:41:49.690Z info: Objeto detectado: shoe desde 3s hasta 3s
+2024-10-06T20:41:49.690Z info: Objeto detectado: tire desde 3s hasta 4s
+2024-10-06T20:41:49.691Z info: Objeto detectado: packaged goods desde 3s hasta 3s
+2024-10-06T20:41:49.691Z info: Objeto detectado: wheel desde 4s hasta 4s
+2024-10-06T20:41:49.691Z info: Objeto detectado: tire desde 4s hasta 4s
+2024-10-06T20:41:49.691Z info: Objeto detectado: luggage & bags desde 4s hasta 5s
+2024-10-06T20:41:49.691Z info: Objeto detectado: shoe desde 4s hasta 4s
+2024-10-06T20:41:49.691Z info: Objeto detectado: shoe desde 4s hasta 5s
+2024-10-06T20:41:49.691Z info: Objeto detectado: person desde 4s hasta 4s
+2024-10-06T20:41:49.691Z info: Objeto detectado: top desde 4s hasta 4s
+2024-10-06T20:41:49.691Z info: Objeto detectado: pants desde 4s hasta 4s
+2024-10-06T20:41:49.691Z info: Objeto detectado: shoe desde 5s hasta 5s
+2024-10-06T20:41:49.691Z info: Objeto detectado: tire desde 5s hasta 5s
+2024-10-06T20:41:49.691Z info: Objeto detectado: wheel desde 5s hasta 5s
+2024-10-06T20:41:49.691Z info: Objeto detectado: outerwear desde 5s hasta 9s
+2024-10-06T20:41:49.691Z info: Objeto detectado: chair desde 5s hasta 9s
+2024-10-06T20:41:49.691Z info: Objeto detectado: person desde 6s hasta 9s
+2024-10-06T20:41:49.691Z info: Objeto detectado: bag desde 6s hasta 8s
+2024-10-06T20:41:49.691Z info: Objeto detectado: luggage & bags desde 6s hasta 7s
+2024-10-06T20:41:49.691Z info: Objeto detectado: shoe desde 6s hasta 6s
+2024-10-06T20:41:49.691Z info: Objeto detectado: belt desde 6s hasta 6s
+2024-10-06T20:41:49.691Z info: Objeto detectado: person desde 6s hasta 8s
+2024-10-06T20:41:49.691Z info: Objeto detectado: bag desde 7s hasta 7s
+2024-10-06T20:41:49.691Z info: Objeto detectado: bag desde 8s hasta 9s
+2024-10-06T20:41:49.691Z info: Objeto detectado: chair desde 9s hasta 9s
+2024-10-06T20:41:49.691Z info: Objeto detectado: luggage & bags desde 9s hasta 9s
+2024-10-06T20:41:49.691Z info: Objeto detectado: pants desde 9s hasta 9s
+2024-10-06T20:41:49.691Z info: Objeto detectado: pants desde 9s hasta 9s
+2024-10-06T20:41:49.691Z info: Objeto detectado: person desde 9s hasta 9s
+2024-10-06T20:41:49.691Z info: Objeto detectado: person desde 9s hasta 9s
+2024-10-06T20:41:49.691Z info: Objeto detectado: shoe desde 9s hasta 9s
+2024-10-06T20:41:49.691Z info: Objeto detectado: bag desde 9s hasta 9s
+2024-10-06T20:41:49.692Z info: Objeto detectado: shoe desde 9s hasta 9s
+2024-10-06T20:41:49.692Z info: Objeto detectado: chair desde 10s hasta 10s
+2024-10-06T20:41:49.692Z info: Objeto detectado: person desde 10s hasta 10s
+2024-10-06T20:41:49.692Z info: Objeto detectado: person desde 10s hasta 10s
+2024-10-06T20:41:49.692Z info: Objeto detectado: pants desde 10s hasta 10s
+2024-10-06T20:41:49.692Z info: Objeto detectado: shoe desde 10s hasta 10s
+2024-10-06T20:41:49.692Z info: Objeto detectado: bag desde 10s hasta 11s
+2024-10-06T20:41:49.692Z info: Objeto detectado: bag desde 10s hasta 11s
+2024-10-06T20:41:49.692Z info: Objeto detectado: bag desde 10s hasta 10s
+2024-10-06T20:41:49.692Z info: Objeto detectado: couch desde 11s hasta 12s
+2024-10-06T20:41:49.692Z info: Objeto detectado: pants desde 12s hasta 12s
+2024-10-06T20:41:49.692Z info: Objeto detectado: stool desde 12s hasta 13s
+2024-10-06T20:41:49.692Z info: Objeto detectado: outerwear desde 12s hasta 13s
+2024-10-06T20:41:49.692Z info: Objeto detectado: person desde 12s hasta 13s
+2024-10-06T20:41:49.692Z info: Objeto detectado: bag desde 13s hasta 13s
+2024-10-06T20:41:49.692Z info: Objeto detectado: glasses desde 14s hasta 14s
+2024-10-06T20:41:49.692Z info: Objeto detectado: person desde 14s hasta 15s
+2024-10-06T20:41:49.692Z info: Objeto detectado: packaged goods desde 14s hasta 14s
+2024-10-06T20:41:49.693Z info: Objeto detectado: couch desde 14s hasta 15s
+2024-10-06T20:41:49.693Z info: Objeto detectado: top desde 14s hasta 15s
+2024-10-06T20:41:49.693Z info: Objeto detectado: glasses desde 14s hasta 15s
+2024-10-06T20:41:49.693Z info: Objeto detectado: outerwear desde 15s hasta 15s
+2024-10-06T20:41:49.693Z info: Objeto detectado: necklace desde 15s hasta 15s
+2024-10-06T20:41:49.693Z info: Objeto detectado: luggage & bags desde 15s hasta 15s
+2024-10-06T20:41:49.693Z info: Objeto detectado: person desde 16s hasta 16s
+2024-10-06T20:41:49.693Z info: Objeto detectado: top desde 16s hasta 16s
+2024-10-06T20:41:49.693Z info: Objeto detectado: bed desde 16s hasta 16s
+2024-10-06T20:41:49.693Z info: Objeto detectado: pants desde 16s hasta 16s
+2024-10-06T20:41:49.693Z info: Objeto detectado: couch desde 16s hasta 17s
+2024-10-06T20:41:49.693Z info: Objeto detectado: pants desde 16s hasta 17s
+2024-10-06T20:41:49.693Z info: Objeto detectado: top desde 16s hasta 17s
+2024-10-06T20:41:49.693Z info: Objeto detectado: picture frame desde 16s hasta 17s
+2024-10-06T20:41:49.693Z info: Objeto detectado: person desde 16s hasta 17s
+2024-10-06T20:41:49.693Z info: Objeto detectado: person desde 17s hasta 17s
+2024-10-06T20:41:49.693Z info: Objeto detectado: shoe desde 17s hasta 17s
+2024-10-06T20:41:49.693Z info: Objeto detectado: picture frame desde 17s hasta 17s
+2024-10-06T20:41:49.693Z info: Objeto detectado: shorts desde 17s hasta 17s
+2024-10-06T20:41:49.693Z info: Objeto detectado: luggage & bags desde 17s hasta 17s
+2024-10-06T20:41:49.693Z info: Objeto detectado: bag desde 17s hasta 18s
+2024-10-06T20:41:49.693Z info: Objeto detectado: person desde 18s hasta 19s
+2024-10-06T20:41:49.693Z info: Objeto detectado: bag desde 18s hasta 18s
+2024-10-06T20:41:49.693Z info: Objeto detectado: shorts desde 18s hasta 18s
+2024-10-06T20:41:49.693Z info: Objeto detectado: couch desde 18s hasta 19s
+2024-10-06T20:41:49.693Z info: Objeto detectado: top desde 18s hasta 19s
+2024-10-06T20:41:49.693Z info: Objeto detectado: person desde 19s hasta 19s
+2024-10-06T20:41:50.966Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 4 -to 6 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 6 -to 7 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 7 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 10 -to 10 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 10 -to 12 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 12 -to 13 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 13 -to 15 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 15 -to 16 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 16 -to 16 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 16 -to 17 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 17 -to 19 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 19 -to 21 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 21 -to 23 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 23 -to 25 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 3 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 5 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 9 -to 10 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 10 -to 12 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 12 -to 13 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 13 -to 15 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 15 -to 17 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 17 -to 19 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=29:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T20:41:51.032Z error: Error al unir los videos: ffmpeg exited with code 234: Error opening input file /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4.
+Error opening input files: Invalid argument
+
+2024-10-06T20:41:51.034Z error: Error merging videos: ffmpeg exited with code 234: Error opening input file /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4.
+Error opening input files: Invalid argument
+
+2024-10-06T21:13:54.380Z info: Received upload request
+2024-10-06T21:13:54.407Z info: Received 2 files
+2024-10-06T21:13:54.407Z info: Comenzando los recortes inteligentes basados en escenas clave.
+2024-10-06T21:13:55.181Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-06T21:14:35.255Z info: Detectadas 19 escenas clave y 77 objetos.
+2024-10-06T21:14:35.256Z info: Objeto detectado: power outlet desde 0s hasta 0s
+2024-10-06T21:14:35.256Z info: Objeto detectado: tire desde 0s hasta 0s
+2024-10-06T21:14:35.256Z info: Objeto detectado: light switch desde 1s hasta 1s
+2024-10-06T21:14:35.256Z info: Objeto detectado: can opener desde 1s hasta 1s
+2024-10-06T21:14:35.256Z info: Objeto detectado: person desde 1s hasta 1s
+2024-10-06T21:14:35.256Z info: Objeto detectado: person desde 2s hasta 2s
+2024-10-06T21:14:35.256Z info: Objeto detectado: packaged goods desde 2s hasta 2s
+2024-10-06T21:14:35.256Z info: Objeto detectado: ratchet desde 2s hasta 2s
+2024-10-06T21:14:35.256Z info: Objeto detectado: ratchet desde 2s hasta 3s
+2024-10-06T21:14:35.256Z info: Objeto detectado: shoe desde 3s hasta 4s
+2024-10-06T21:14:35.256Z info: Objeto detectado: vacuum desde 3s hasta 3s
+2024-10-06T21:14:35.256Z info: Objeto detectado: luggage & bags desde 4s hasta 4s
+2024-10-06T21:14:35.256Z info: Objeto detectado: vacuum desde 4s hasta 6s
+2024-10-06T21:14:35.256Z info: Objeto detectado: helmet desde 6s hasta 6s
+2024-10-06T21:14:35.256Z info: Objeto detectado: weapon desde 6s hasta 7s
+2024-10-06T21:14:35.256Z info: Objeto detectado: luggage & bags desde 6s hasta 6s
+2024-10-06T21:14:35.256Z info: Objeto detectado: camera desde 6s hasta 6s
+2024-10-06T21:14:35.256Z info: Objeto detectado: grooming trimmer desde 7s hasta 7s
+2024-10-06T21:14:35.256Z info: Objeto detectado: drill desde 7s hasta 7s
+2024-10-06T21:14:35.256Z info: Objeto detectado: helmet desde 7s hasta 7s
+2024-10-06T21:14:35.256Z info: Objeto detectado: camera desde 7s hasta 7s
+2024-10-06T21:14:35.256Z info: Objeto detectado: clock desde 7s hasta 7s
+2024-10-06T21:14:35.256Z info: Objeto detectado: luggage & bags desde 7s hasta 7s
+2024-10-06T21:14:35.256Z info: Objeto detectado: luggage & bags desde 7s hasta 7s
+2024-10-06T21:14:35.256Z info: Objeto detectado: weapon desde 7s hasta 7s
+2024-10-06T21:14:35.256Z info: Objeto detectado: weapon desde 8s hasta 8s
+2024-10-06T21:14:35.256Z info: Objeto detectado: light fixture desde 8s hasta 8s
+2024-10-06T21:14:35.256Z info: Objeto detectado: high heels desde 8s hasta 8s
+2024-10-06T21:14:35.256Z info: Objeto detectado: tableware desde 8s hasta 8s
+2024-10-06T21:14:35.256Z info: Objeto detectado: animal desde 8s hasta 8s
+2024-10-06T21:14:35.256Z info: Objeto detectado: weapon desde 9s hasta 9s
+2024-10-06T21:14:35.256Z info: Objeto detectado: person desde 9s hasta 9s
+2024-10-06T21:14:35.256Z info: Objeto detectado: ratchet desde 9s hasta 9s
+2024-10-06T21:14:35.256Z info: Objeto detectado: display device desde 10s hasta 10s
+2024-10-06T21:14:35.256Z info: Objeto detectado: sewing machine desde 11s hasta 12s
+2024-10-06T21:14:35.256Z info: Objeto detectado: sewing machine desde 11s hasta 12s
+2024-10-06T21:14:35.256Z info: Objeto detectado: person desde 12s hasta 13s
+2024-10-06T21:14:35.256Z info: Objeto detectado: kitchen appliance desde 12s hasta 12s
+2024-10-06T21:14:35.256Z info: Objeto detectado: shoe desde 13s hasta 13s
+2024-10-06T21:14:35.256Z info: Objeto detectado: mirror desde 13s hasta 13s
+2024-10-06T21:14:35.256Z info: Objeto detectado: vacuum desde 13s hasta 13s
+2024-10-06T21:14:35.256Z info: Objeto detectado: kitchen appliance desde 13s hasta 15s
+2024-10-06T21:14:35.256Z info: Objeto detectado: vacuum desde 13s hasta 14s
+2024-10-06T21:14:35.256Z info: Objeto detectado: lighting desde 14s hasta 14s
+2024-10-06T21:14:35.256Z info: Objeto detectado: home appliance desde 14s hasta 14s
+2024-10-06T21:14:35.256Z info: Objeto detectado: shoe desde 15s hasta 15s
+2024-10-06T21:14:35.256Z info: Objeto detectado: vacuum desde 15s hasta 15s
+2024-10-06T21:14:35.256Z info: Objeto detectado: belt desde 15s hasta 15s
+2024-10-06T21:14:35.256Z info: Objeto detectado: shoe desde 15s hasta 16s
+2024-10-06T21:14:35.256Z info: Objeto detectado: lighting desde 16s hasta 16s
+2024-10-06T21:14:35.256Z info: Objeto detectado: camera desde 16s hasta 17s
+2024-10-06T21:14:35.256Z info: Objeto detectado: person desde 17s hasta 17s
+2024-10-06T21:14:35.256Z info: Objeto detectado: person desde 17s hasta 17s
+2024-10-06T21:14:35.256Z info: Objeto detectado: person desde 17s hasta 17s
+2024-10-06T21:14:35.256Z info: Objeto detectado: home appliance desde 18s hasta 18s
+2024-10-06T21:14:35.256Z info: Objeto detectado: kitchen appliance desde 18s hasta 18s
+2024-10-06T21:14:35.256Z info: Objeto detectado: person desde 18s hasta 19s
+2024-10-06T21:14:35.256Z info: Objeto detectado: food desde 19s hasta 19s
+2024-10-06T21:14:35.256Z info: Objeto detectado: animal desde 19s hasta 19s
+2024-10-06T21:14:35.256Z info: Objeto detectado: axe desde 19s hasta 19s
+2024-10-06T21:14:35.256Z info: Objeto detectado: car desde 19s hasta 19s
+2024-10-06T21:14:35.256Z info: Objeto detectado: home appliance desde 19s hasta 19s
+2024-10-06T21:14:35.256Z info: Objeto detectado: tap desde 19s hasta 19s
+2024-10-06T21:14:35.256Z info: Objeto detectado: can opener desde 20s hasta 20s
+2024-10-06T21:14:35.256Z info: Objeto detectado: grooming trimmer desde 20s hasta 20s
+2024-10-06T21:14:35.256Z info: Objeto detectado: home appliance desde 20s hasta 21s
+2024-10-06T21:14:35.257Z info: Objeto detectado: person desde 20s hasta 21s
+2024-10-06T21:14:35.257Z info: Objeto detectado: door handle desde 21s hasta 21s
+2024-10-06T21:14:35.257Z info: Objeto detectado: animal desde 21s hasta 21s
+2024-10-06T21:14:35.257Z info: Objeto detectado: packaged goods desde 22s hasta 22s
+2024-10-06T21:14:35.257Z info: Objeto detectado: sneakers desde 22s hasta 22s
+2024-10-06T21:14:35.257Z info: Objeto detectado: food desde 22s hasta 22s
+2024-10-06T21:14:35.257Z info: Objeto detectado: animal desde 22s hasta 23s
+2024-10-06T21:14:35.257Z info: Objeto detectado: hat desde 23s hasta 23s
+2024-10-06T21:14:35.257Z info: Objeto detectado: electronic device desde 23s hasta 24s
+2024-10-06T21:14:35.257Z info: Objeto detectado: vacuum desde 23s hasta 24s
+2024-10-06T21:14:35.257Z info: Objeto detectado: display device desde 23s hasta 24s
+2024-10-06T21:14:36.615Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-06T21:14:56.224Z info: Detectadas 10 escenas clave y 94 objetos.
+2024-10-06T21:14:56.225Z info: Objeto detectado: top desde 0s hasta 1s
+2024-10-06T21:14:56.225Z info: Objeto detectado: luggage & bags desde 0s hasta 2s
+2024-10-06T21:14:56.225Z info: Objeto detectado: tire desde 0s hasta 3s
+2024-10-06T21:14:56.225Z info: Objeto detectado: luggage & bags desde 0s hasta 0s
+2024-10-06T21:14:56.225Z info: Objeto detectado: tire desde 0s hasta 2s
+2024-10-06T21:14:56.225Z info: Objeto detectado: luggage & bags desde 0s hasta 0s
+2024-10-06T21:14:56.225Z info: Objeto detectado: bag desde 1s hasta 2s
+2024-10-06T21:14:56.225Z info: Objeto detectado: top desde 1s hasta 3s
+2024-10-06T21:14:56.225Z info: Objeto detectado: person desde 1s hasta 3s
+2024-10-06T21:14:56.225Z info: Objeto detectado: shoe desde 1s hasta 1s
+2024-10-06T21:14:56.225Z info: Objeto detectado: luggage & bags desde 1s hasta 2s
+2024-10-06T21:14:56.225Z info: Objeto detectado: wheel desde 1s hasta 2s
+2024-10-06T21:14:56.225Z info: Objeto detectado: luggage & bags desde 2s hasta 3s
+2024-10-06T21:14:56.225Z info: Objeto detectado: top desde 3s hasta 3s
+2024-10-06T21:14:56.225Z info: Objeto detectado: tire desde 3s hasta 4s
+2024-10-06T21:14:56.225Z info: Objeto detectado: pants desde 3s hasta 3s
+2024-10-06T21:14:56.225Z info: Objeto detectado: person desde 3s hasta 3s
+2024-10-06T21:14:56.225Z info: Objeto detectado: shoe desde 3s hasta 3s
+2024-10-06T21:14:56.225Z info: Objeto detectado: tire desde 3s hasta 4s
+2024-10-06T21:14:56.225Z info: Objeto detectado: packaged goods desde 3s hasta 3s
+2024-10-06T21:14:56.225Z info: Objeto detectado: wheel desde 4s hasta 4s
+2024-10-06T21:14:56.225Z info: Objeto detectado: tire desde 4s hasta 4s
+2024-10-06T21:14:56.225Z info: Objeto detectado: luggage & bags desde 4s hasta 5s
+2024-10-06T21:14:56.225Z info: Objeto detectado: shoe desde 4s hasta 4s
+2024-10-06T21:14:56.225Z info: Objeto detectado: shoe desde 4s hasta 5s
+2024-10-06T21:14:56.225Z info: Objeto detectado: person desde 4s hasta 4s
+2024-10-06T21:14:56.225Z info: Objeto detectado: top desde 4s hasta 4s
+2024-10-06T21:14:56.225Z info: Objeto detectado: pants desde 4s hasta 4s
+2024-10-06T21:14:56.225Z info: Objeto detectado: shoe desde 5s hasta 5s
+2024-10-06T21:14:56.225Z info: Objeto detectado: tire desde 5s hasta 5s
+2024-10-06T21:14:56.225Z info: Objeto detectado: wheel desde 5s hasta 5s
+2024-10-06T21:14:56.225Z info: Objeto detectado: outerwear desde 5s hasta 9s
+2024-10-06T21:14:56.225Z info: Objeto detectado: chair desde 5s hasta 9s
+2024-10-06T21:14:56.225Z info: Objeto detectado: person desde 6s hasta 9s
+2024-10-06T21:14:56.226Z info: Objeto detectado: bag desde 6s hasta 8s
+2024-10-06T21:14:56.226Z info: Objeto detectado: luggage & bags desde 6s hasta 7s
+2024-10-06T21:14:56.226Z info: Objeto detectado: shoe desde 6s hasta 6s
+2024-10-06T21:14:56.226Z info: Objeto detectado: belt desde 6s hasta 6s
+2024-10-06T21:14:56.226Z info: Objeto detectado: person desde 6s hasta 8s
+2024-10-06T21:14:56.226Z info: Objeto detectado: bag desde 7s hasta 7s
+2024-10-06T21:14:56.226Z info: Objeto detectado: bag desde 8s hasta 9s
+2024-10-06T21:14:56.226Z info: Objeto detectado: chair desde 9s hasta 9s
+2024-10-06T21:14:56.226Z info: Objeto detectado: luggage & bags desde 9s hasta 9s
+2024-10-06T21:14:56.226Z info: Objeto detectado: pants desde 9s hasta 9s
+2024-10-06T21:14:56.226Z info: Objeto detectado: pants desde 9s hasta 9s
+2024-10-06T21:14:56.226Z info: Objeto detectado: person desde 9s hasta 9s
+2024-10-06T21:14:56.226Z info: Objeto detectado: person desde 9s hasta 9s
+2024-10-06T21:14:56.226Z info: Objeto detectado: shoe desde 9s hasta 9s
+2024-10-06T21:14:56.226Z info: Objeto detectado: bag desde 9s hasta 9s
+2024-10-06T21:14:56.226Z info: Objeto detectado: shoe desde 9s hasta 9s
+2024-10-06T21:14:56.226Z info: Objeto detectado: chair desde 10s hasta 10s
+2024-10-06T21:14:56.226Z info: Objeto detectado: person desde 10s hasta 10s
+2024-10-06T21:14:56.226Z info: Objeto detectado: person desde 10s hasta 10s
+2024-10-06T21:14:56.226Z info: Objeto detectado: pants desde 10s hasta 10s
+2024-10-06T21:14:56.226Z info: Objeto detectado: shoe desde 10s hasta 10s
+2024-10-06T21:14:56.226Z info: Objeto detectado: bag desde 10s hasta 11s
+2024-10-06T21:14:56.226Z info: Objeto detectado: bag desde 10s hasta 11s
+2024-10-06T21:14:56.226Z info: Objeto detectado: bag desde 10s hasta 10s
+2024-10-06T21:14:56.226Z info: Objeto detectado: couch desde 11s hasta 12s
+2024-10-06T21:14:56.226Z info: Objeto detectado: pants desde 12s hasta 12s
+2024-10-06T21:14:56.226Z info: Objeto detectado: stool desde 12s hasta 13s
+2024-10-06T21:14:56.226Z info: Objeto detectado: outerwear desde 12s hasta 13s
+2024-10-06T21:14:56.226Z info: Objeto detectado: person desde 12s hasta 13s
+2024-10-06T21:14:56.226Z info: Objeto detectado: bag desde 13s hasta 13s
+2024-10-06T21:14:56.226Z info: Objeto detectado: glasses desde 14s hasta 14s
+2024-10-06T21:14:56.226Z info: Objeto detectado: person desde 14s hasta 15s
+2024-10-06T21:14:56.226Z info: Objeto detectado: packaged goods desde 14s hasta 14s
+2024-10-06T21:14:56.226Z info: Objeto detectado: couch desde 14s hasta 15s
+2024-10-06T21:14:56.226Z info: Objeto detectado: top desde 14s hasta 15s
+2024-10-06T21:14:56.226Z info: Objeto detectado: glasses desde 14s hasta 15s
+2024-10-06T21:14:56.226Z info: Objeto detectado: outerwear desde 15s hasta 15s
+2024-10-06T21:14:56.226Z info: Objeto detectado: necklace desde 15s hasta 15s
+2024-10-06T21:14:56.226Z info: Objeto detectado: luggage & bags desde 15s hasta 15s
+2024-10-06T21:14:56.226Z info: Objeto detectado: person desde 16s hasta 16s
+2024-10-06T21:14:56.226Z info: Objeto detectado: top desde 16s hasta 16s
+2024-10-06T21:14:56.226Z info: Objeto detectado: bed desde 16s hasta 16s
+2024-10-06T21:14:56.226Z info: Objeto detectado: pants desde 16s hasta 16s
+2024-10-06T21:14:56.226Z info: Objeto detectado: couch desde 16s hasta 17s
+2024-10-06T21:14:56.226Z info: Objeto detectado: pants desde 16s hasta 17s
+2024-10-06T21:14:56.226Z info: Objeto detectado: top desde 16s hasta 17s
+2024-10-06T21:14:56.226Z info: Objeto detectado: picture frame desde 16s hasta 17s
+2024-10-06T21:14:56.226Z info: Objeto detectado: person desde 16s hasta 17s
+2024-10-06T21:14:56.227Z info: Objeto detectado: person desde 17s hasta 17s
+2024-10-06T21:14:56.228Z info: Objeto detectado: shoe desde 17s hasta 17s
+2024-10-06T21:14:56.228Z info: Objeto detectado: picture frame desde 17s hasta 17s
+2024-10-06T21:14:56.228Z info: Objeto detectado: shorts desde 17s hasta 17s
+2024-10-06T21:14:56.228Z info: Objeto detectado: luggage & bags desde 17s hasta 17s
+2024-10-06T21:14:56.228Z info: Objeto detectado: bag desde 17s hasta 18s
+2024-10-06T21:14:56.228Z info: Objeto detectado: person desde 18s hasta 19s
+2024-10-06T21:14:56.228Z info: Objeto detectado: bag desde 18s hasta 18s
+2024-10-06T21:14:56.228Z info: Objeto detectado: shorts desde 18s hasta 18s
+2024-10-06T21:14:56.228Z info: Objeto detectado: couch desde 18s hasta 19s
+2024-10-06T21:14:56.228Z info: Objeto detectado: top desde 18s hasta 19s
+2024-10-06T21:14:56.228Z info: Objeto detectado: person desde 19s hasta 19s
+2024-10-06T21:14:56.351Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 4 -to 6 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 6 -to 7 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 7 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 10 -to 10 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 10 -to 12 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 12 -to 13 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 13 -to 15 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 15 -to 16 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 16 -to 16 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 16 -to 17 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 17 -to 19 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 19 -to 21 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 21 -to 23 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 23 -to 25 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 3 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 5 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 9 -to 10 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 10 -to 12 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 12 -to 13 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 13 -to 15 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 15 -to 17 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 17 -to 19 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=29:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T21:14:56.403Z error: Error al unir los videos: ffmpeg exited with code 234: Error opening input file /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4.
+Error opening input files: Invalid argument
+
+2024-10-06T21:14:56.404Z error: Error merging videos: ffmpeg exited with code 234: Error opening input file /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4.
+Error opening input files: Invalid argument
+
+2024-10-06T22:28:56.329Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T22:29:01.021Z info: Received upload request
+2024-10-06T22:29:01.036Z info: Received 2 files
+2024-10-06T22:29:01.037Z info: Comenzando los recortes inteligentes basados en escenas clave.
+2024-10-06T22:29:02.467Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-06T22:29:33.772Z info: Detectadas 7 escenas clave y 36 objetos.
+2024-10-06T22:29:33.775Z info: Objeto detectado: microwave oven desde 0s hasta 0s
+2024-10-06T22:29:33.775Z info: Objeto detectado: packaged goods desde 0s hasta 0s
+2024-10-06T22:29:33.775Z info: Objeto detectado: painting desde 0s hasta 0s
+2024-10-06T22:29:33.776Z info: Objeto detectado: luggage & bags desde 0s hasta 1s
+2024-10-06T22:29:33.776Z info: Objeto detectado: person desde 1s hasta 2s
+2024-10-06T22:29:33.776Z info: Objeto detectado: shoe desde 1s hasta 2s
+2024-10-06T22:29:33.776Z info: Objeto detectado: luggage & bags desde 1s hasta 2s
+2024-10-06T22:29:33.776Z info: Objeto detectado: sunglasses desde 1s hasta 1s
+2024-10-06T22:29:33.776Z info: Objeto detectado: packaged goods desde 1s hasta 2s
+2024-10-06T22:29:33.776Z info: Objeto detectado: person desde 2s hasta 2s
+2024-10-06T22:29:33.776Z info: Objeto detectado: bag desde 2s hasta 3s
+2024-10-06T22:29:33.776Z info: Objeto detectado: bag desde 2s hasta 3s
+2024-10-06T22:29:33.776Z info: Objeto detectado: bracelet desde 2s hasta 2s
+2024-10-06T22:29:33.776Z info: Objeto detectado: shoe desde 2s hasta 2s
+2024-10-06T22:29:33.776Z info: Objeto detectado: shoe desde 2s hasta 2s
+2024-10-06T22:29:33.776Z info: Objeto detectado: bracelet desde 3s hasta 3s
+2024-10-06T22:29:33.776Z info: Objeto detectado: baby desde 4s hasta 5s
+2024-10-06T22:29:33.776Z info: Objeto detectado: lunch box desde 4s hasta 4s
+2024-10-06T22:29:33.776Z info: Objeto detectado: toy desde 4s hasta 4s
+2024-10-06T22:29:33.776Z info: Objeto detectado: packaged goods desde 4s hasta 5s
+2024-10-06T22:29:33.776Z info: Objeto detectado: clothing desde 5s hasta 5s
+2024-10-06T22:29:33.776Z info: Objeto detectado: baby desde 5s hasta 8s
+2024-10-06T22:29:33.776Z info: Objeto detectado: furniture desde 5s hasta 7s
+2024-10-06T22:29:33.776Z info: Objeto detectado: packaged goods desde 6s hasta 6s
+2024-10-06T22:29:33.776Z info: Objeto detectado: packaged goods desde 7s hasta 7s
+2024-10-06T22:29:33.776Z info: Objeto detectado: shoe desde 7s hasta 7s
+2024-10-06T22:29:33.776Z info: Objeto detectado: top desde 7s hasta 7s
+2024-10-06T22:29:33.777Z info: Objeto detectado: baby desde 8s hasta 9s
+2024-10-06T22:29:33.777Z info: Objeto detectado: top desde 8s hasta 8s
+2024-10-06T22:29:33.777Z info: Objeto detectado: toy desde 8s hasta 8s
+2024-10-06T22:29:33.777Z info: Objeto detectado: toy desde 8s hasta 9s
+2024-10-06T22:29:33.777Z info: Objeto detectado: person desde 8s hasta 9s
+2024-10-06T22:29:33.777Z info: Objeto detectado: person desde 9s hasta 9s
+2024-10-06T22:29:33.777Z info: Objeto detectado: packaged goods desde 9s hasta 11s
+2024-10-06T22:29:33.777Z info: Objeto detectado: person desde 10s hasta 11s
+2024-10-06T22:29:33.777Z info: Objeto detectado: toy desde 11s hasta 11s
+2024-10-06T22:29:35.081Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-06T22:30:06.185Z info: Detectadas 3 escenas clave y 25 objetos.
+2024-10-06T22:30:06.186Z info: Objeto detectado: packaged goods desde 0s hasta 0s
+2024-10-06T22:30:06.186Z info: Objeto detectado: baby desde 0s hasta 4s
+2024-10-06T22:30:06.186Z info: Objeto detectado: table top desde 0s hasta 1s
+2024-10-06T22:30:06.186Z info: Objeto detectado: toy desde 0s hasta 0s
+2024-10-06T22:30:06.186Z info: Objeto detectado: toy desde 0s hasta 1s
+2024-10-06T22:30:06.186Z info: Objeto detectado: stuffed toy desde 0s hasta 3s
+2024-10-06T22:30:06.186Z info: Objeto detectado: baby desde 0s hasta 2s
+2024-10-06T22:30:06.186Z info: Objeto detectado: table desde 0s hasta 1s
+2024-10-06T22:30:06.186Z info: Objeto detectado: baby desde 1s hasta 1s
+2024-10-06T22:30:06.186Z info: Objeto detectado: clothing desde 1s hasta 1s
+2024-10-06T22:30:06.186Z info: Objeto detectado: toy desde 1s hasta 1s
+2024-10-06T22:30:06.186Z info: Objeto detectado: pillow desde 2s hasta 2s
+2024-10-06T22:30:06.186Z info: Objeto detectado: pillow desde 3s hasta 3s
+2024-10-06T22:30:06.186Z info: Objeto detectado: clothing desde 3s hasta 3s
+2024-10-06T22:30:06.186Z info: Objeto detectado: toy desde 3s hasta 3s
+2024-10-06T22:30:06.186Z info: Objeto detectado: plant desde 4s hasta 4s
+2024-10-06T22:30:06.186Z info: Objeto detectado: baby desde 4s hasta 8s
+2024-10-06T22:30:06.186Z info: Objeto detectado: packaged goods desde 4s hasta 4s
+2024-10-06T22:30:06.186Z info: Objeto detectado: top desde 4s hasta 4s
+2024-10-06T22:30:06.186Z info: Objeto detectado: toy block desde 5s hasta 5s
+2024-10-06T22:30:06.186Z info: Objeto detectado: baby desde 5s hasta 5s
+2024-10-06T22:30:06.186Z info: Objeto detectado: box desde 5s hasta 8s
+2024-10-06T22:30:06.186Z info: Objeto detectado: toy block desde 7s hasta 7s
+2024-10-06T22:30:06.186Z info: Objeto detectado: baby desde 8s hasta 8s
+2024-10-06T22:30:06.186Z info: Objeto detectado: toy block desde 8s hasta 8s
+2024-10-06T22:30:06.440Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 4 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 4 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=10:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/edited-video.mp4
+2024-10-06T22:30:07.090Z info: Videos unidos exitosamente.
+2024-10-06T22:30:07.091Z info: Video merge completed, sending response
+2024-10-06T22:46:08.059Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T22:46:16.912Z info: Received upload request
+2024-10-06T22:46:16.928Z warn: No prompt received
+2024-10-06T22:46:18.015Z info: Received upload request
+2024-10-06T22:46:18.020Z warn: No prompt received
