@@ -1,11 +1,10 @@
 const express = require('express');
 
-const multer = require('multer');
-const path = require('path');
-const ffmpeg = require('fluent-ffmpeg');
-const fs = require('fs');
-
-const os = require('os');
+const multer = require('multer'); // Multer se utiliza para manejar la subida de archivos en las solicitudes HTTP.
+const path = require('path'); // Path proporciona utilidades para trabajar con rutas de archivos y directorios.
+const ffmpeg = require('fluent-ffmpeg'); // Fluent-ffmpeg se utiliza para manipular y procesar archivos de video.
+const fs = require('fs'); // FS (File System) se utiliza para interactuar con el sistema de archivos, como leer y escribir archivos.
+const os = require('os'); // OS proporciona información sobre el sistema operativo, como directorios temporales.
 
 const app = express();
 

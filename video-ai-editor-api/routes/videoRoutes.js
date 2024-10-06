@@ -3,13 +3,6 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 
-// Configuración de Google Cloud Storage
-const storage = new Storage({
-  keyFilename: './bucket-credentials.json'
-});
-
-const bucket = storage.bucket('draft-videos');
-
 // Configurar Multer para almacenamiento en memoria
 const multerStorage = multer.memoryStorage();
 const upload = multer({ storage: multerStorage });
@@ -21,6 +14,8 @@ function initializeGoogleCloudStorage() {
   });
   return storage.bucket('draft-videos');
 }
+
+initializeGoogleCloudStorage();
 
 // Function to handle file upload to Google Cloud Storage
 async function uploadFileToGCS(file, bucket) {
