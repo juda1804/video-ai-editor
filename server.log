@@ -1,131 +1,14 @@
-2024-10-05T21:47:32.511Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T21:47:37.545Z info: Received upload request
-2024-10-05T21:47:37.556Z info: Received 1 files
-2024-10-05T21:47:37.556Z info: Starting video merge
-2024-10-05T21:47:37.560Z error: Error al unir los videos: Cannot find ffprobe
-2024-10-05T21:47:37.561Z error: Error merging videos: Cannot find ffprobe
-2024-10-05T21:49:36.801Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T21:49:39.195Z info: Received upload request
-2024-10-05T21:49:39.207Z info: Received 1 files
-2024-10-05T21:49:39.207Z info: Starting video merge
-2024-10-05T21:49:39.210Z error: Error al unir los videos: Cannot find ffprobe
-2024-10-05T21:49:39.211Z error: Error merging videos: Cannot find ffprobe
-2024-10-05T21:54:22.945Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T21:54:30.735Z info: Received upload request
-2024-10-05T21:54:30.751Z info: Received 2 files
-2024-10-05T21:54:30.751Z info: Starting video merge
-2024-10-05T21:54:42.330Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165270740.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165270745.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T21:54:42.716Z info: Videos unidos exitosamente
-2024-10-05T21:54:42.716Z info: Video merge completed, sending response
-2024-10-05T21:57:52.708Z info: Received upload request
-2024-10-05T21:57:52.718Z info: Received 2 files
-2024-10-05T21:57:52.718Z info: Starting video merge
-2024-10-05T21:57:52.824Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165472710.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165472714.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T21:57:53.274Z info: Videos unidos exitosamente
-2024-10-05T21:57:53.274Z info: Video merge completed, sending response
-2024-10-05T21:58:38.756Z info: Received upload request
-2024-10-05T21:58:38.763Z info: Received 2 files
-2024-10-05T21:58:38.763Z info: Starting video merge
-2024-10-05T21:58:38.874Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165518758.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165518760.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T21:58:39.270Z info: Videos unidos exitosamente
-2024-10-05T21:58:39.270Z info: Video merge completed, sending response
-2024-10-05T21:58:45.417Z info: Received upload request
-2024-10-05T21:58:45.423Z info: Received 2 files
-2024-10-05T21:58:45.423Z info: Starting video merge
-2024-10-05T21:58:45.476Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165525418.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165525420.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T21:58:45.864Z info: Videos unidos exitosamente
-2024-10-05T21:58:45.864Z info: Video merge completed, sending response
-2024-10-05T22:00:09.663Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T22:00:27.684Z info: Received upload request
-2024-10-05T22:00:27.703Z info: Received 2 files
-2024-10-05T22:00:27.703Z info: Starting video merge
-2024-10-05T22:00:27.871Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165627688.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165627699.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T22:00:28.264Z info: Videos unidos exitosamente
-2024-10-05T22:00:28.264Z info: Video merge completed, sending response
-2024-10-05T22:03:22.715Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T22:03:25.912Z info: Received upload request
-2024-10-05T22:03:25.926Z info: Received 2 files
-2024-10-05T22:03:25.926Z info: Starting video merge
-2024-10-05T22:03:26.090Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165805917.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165805922.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T22:03:26.504Z info: Videos unidos exitosamente
-2024-10-05T22:03:26.504Z info: Video merge completed, sending response
-2024-10-05T22:03:28.725Z info: Received upload request
-2024-10-05T22:03:28.734Z info: Received 2 files
-2024-10-05T22:03:28.735Z info: Starting video merge
-2024-10-05T22:03:28.784Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165808727.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728165808730.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T22:03:29.163Z info: Videos unidos exitosamente
-2024-10-05T22:03:29.163Z info: Video merge completed, sending response
-2024-10-05T22:07:04.918Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T22:07:20.792Z info: Received upload request
-2024-10-05T22:07:20.805Z info: Received 2 files
-2024-10-05T22:07:20.806Z info: Starting video merge
-2024-10-05T22:07:20.979Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166040796.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166040802.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T22:07:21.367Z info: Videos unidos exitosamente
-2024-10-05T22:07:21.367Z info: Video merge completed, sending response
-2024-10-05T22:11:20.287Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T22:12:31.896Z info: Received upload request
-2024-10-05T22:12:31.912Z info: Received 2 files
-2024-10-05T22:12:31.912Z info: Starting video merge
-2024-10-05T22:12:32.081Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166351902.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166351908.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T22:12:32.470Z info: Videos unidos exitosamente
-2024-10-05T22:12:32.470Z info: Video merge completed, sending response
-2024-10-05T22:15:59.203Z info: Server running at http://localhost:3000
-2024-10-05T22:16:16.138Z info: Received upload request
-2024-10-05T22:17:11.018Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T22:17:14.282Z info: Received upload request
-2024-10-05T22:17:14.295Z info: Received 2 files
-2024-10-05T22:17:14.295Z info: Starting video merge
-2024-10-05T22:17:14.461Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166634286.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166634291.mp4 -y -filter_complex concat=n=2:v=1:a=1 /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T22:17:14.855Z info: Videos unidos exitosamente
-2024-10-05T22:17:14.855Z info: Video merge completed, sending response
-2024-10-05T22:18:35.719Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T22:18:40.958Z info: Received upload request
-2024-10-05T22:18:40.959Z warn: No files received
-2024-10-05T22:18:51.001Z info: Received upload request
-2024-10-05T22:18:51.002Z warn: No files received
-2024-10-05T22:20:25.377Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T22:20:28.576Z info: Received upload request
-2024-10-05T22:20:28.590Z info: Received 2 files
-2024-10-05T22:20:28.590Z info: Starting video merge
-2024-10-05T22:20:28.762Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166828580.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166828586.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T22:20:28.871Z info: Videos unidos exitosamente
-2024-10-05T22:20:28.871Z info: Video merge completed, sending response
-2024-10-05T22:21:43.910Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T22:21:53.154Z info: Received upload request
-2024-10-05T22:21:53.169Z info: Received 2 files
-2024-10-05T22:21:53.169Z info: Starting video merge
-2024-10-05T22:21:53.344Z info: FFmpeg ejecutando comando: ffmpeg -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166913160.mp4 -i /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/videos-1728166913165.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /Users/juandavidcadavid/Documents/JDC/dropshipping/draft-react-project/video-ai-editor-api/uploads/edited-video.mp4
-2024-10-05T22:21:53.449Z info: Videos unidos exitosamente
-2024-10-05T22:21:53.450Z info: Video merge completed, sending response
-2024-10-05T22:25:16.196Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T22:25:20.587Z info: Received upload request
-2024-10-05T22:25:20.601Z info: Received 2 files
-2024-10-05T22:25:20.602Z info: Starting video merge
-2024-10-05T22:25:20.783Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-0.mp4 -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/edited-video.mp4
-2024-10-05T22:25:20.901Z info: Videos unidos exitosamente
-2024-10-05T22:25:20.902Z info: Video merge completed, sending response
-2024-10-05T22:26:54.040Z info: Received upload request
-2024-10-05T22:26:54.050Z info: Received 2 files
-2024-10-05T22:26:54.050Z info: Starting video merge
-2024-10-05T22:26:54.160Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-0.mp4 -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/edited-video.mp4
-2024-10-05T22:26:54.268Z info: Videos unidos exitosamente
-2024-10-05T22:26:54.268Z info: Video merge completed, sending response
-2024-10-05T22:28:46.562Z info: Received upload request
-2024-10-05T22:28:46.568Z info: Received 2 files
-2024-10-05T22:28:46.568Z info: Starting video merge
-2024-10-05T22:28:46.677Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-0.mp4 -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/edited-video.mp4
-2024-10-05T22:28:46.788Z info: Videos unidos exitosamente
-2024-10-05T22:28:46.789Z info: Video merge completed, sending response
-2024-10-05T22:29:39.074Z info: Servidor corriendo en http://localhost:3000
-2024-10-05T22:30:15.605Z info: Received upload request
-2024-10-05T22:30:15.621Z info: Received 2 files
-2024-10-05T22:30:15.621Z info: Starting video merge
-2024-10-05T22:30:15.805Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-0.mp4 -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/edited-video.mp4
-2024-10-05T22:30:15.916Z info: Videos unidos exitosamente
-2024-10-05T22:30:15.916Z info: Video merge completed, sending response
-2024-10-05T22:32:44.119Z info: Received upload request
-2024-10-05T22:32:44.125Z info: Received 2 files
-2024-10-05T22:32:44.126Z info: Starting video merge
-2024-10-05T22:32:44.247Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-0.mp4 -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/edited-video.mp4
-2024-10-05T22:32:44.374Z info: Videos unidos exitosamente
-2024-10-05T22:32:44.374Z info: Video merge completed, sending response
+2024-10-06T16:16:06.891Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T16:17:45.723Z info: Received upload request
+2024-10-06T16:17:45.745Z info: Received 2 files
+2024-10-06T16:17:45.746Z info: Starting video merge
+2024-10-06T16:17:46.040Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-0.mp4 -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/edited-video.mp4
+2024-10-06T16:17:46.665Z info: Videos unidos exitosamente
+2024-10-06T16:17:46.666Z info: Video merge completed, sending response
+2024-10-06T16:20:49.899Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T16:21:22.213Z info: Received upload request
+2024-10-06T16:21:22.239Z info: Received 2 files
+2024-10-06T16:21:22.240Z info: Starting video merge
+2024-10-06T16:21:22.431Z info: FFmpeg ejecutando comando: ffmpeg -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-0.mp4 -i /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=2:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /var/folders/rg/nn0m1md933gc7wd4p55hdz9h0000gn/T/edited-video.mp4
+2024-10-06T16:21:23.038Z info: Videos unidos exitosamente
+2024-10-06T16:21:23.039Z info: Video merge completed, sending response

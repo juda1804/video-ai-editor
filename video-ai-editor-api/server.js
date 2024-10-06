@@ -1,32 +1,18 @@
 const express = require('express');
+
 const multer = require('multer');
 const path = require('path');
 const ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
-const winston = require('winston');
-const cors = require('cors');
+
 const os = require('os');
+
 const app = express();
 
-app.use(cors({
-  origin: 'http://localhost:3001', // Replace with your frontend URL
-  credentials: true, // If you're using cookies or authentication headers
-}));
+const logger = require('./logger');
+const corsMiddleware = require('./cors');
 
-// Configure winston logger
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.printf(({ timestamp, level, message }) => {
-      return `${timestamp} ${level}: ${message}`;
-    })
-  ),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: 'server.log' })
-  ]
-});
+app.use(corsMiddleware);
 
 // Asegurarse de que la carpeta 'uploads' existe
 const uploadsFolderPath = path.join(__dirname, 'uploads');
@@ -41,7 +27,7 @@ const upload = multer({
 }).array('videos', 10);
 
 // Función para unir múltiples videos
-function mergeVideos(videoBuffers, outputVideoPath, callback) {
+const mergeVideos = (videoBuffers, outputVideoPath, callback) => {
   const ffmpegCommand = ffmpeg();
 
   videoBuffers.forEach((buffer, index) => {
