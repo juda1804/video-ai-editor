@@ -841,3 +841,86 @@ Error opening input files: Invalid argument
 2024-10-06T22:46:16.928Z warn: No prompt received
 2024-10-06T22:46:18.015Z info: Received upload request
 2024-10-06T22:46:18.020Z warn: No prompt received
+2024-10-06T23:03:28.416Z info: Servidor corriendo en http://localhost:3000
+2024-10-06T23:18:57.407Z info: Received upload request
+2024-10-06T23:18:59.260Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-06T23:19:08.802Z info: Received upload request
+2024-10-06T23:19:09.935Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-06T23:19:25.619Z info: Detectadas 9 escenas clave, 35 objetos, 3 etiquetas.
+2024-10-06T23:19:25.619Z info: Transcripción de voz y detección de contenido explícito completadas.
+2024-10-06T23:19:25.619Z info: Analizando video con el prompt: "undefined"
+2024-10-06T23:19:25.622Z info: Objeto detectado: boxed packaged goods desde 0s hasta 1s
+2024-10-06T23:19:25.622Z info: Objeto detectado: person desde 0s hasta 1s
+2024-10-06T23:19:25.622Z info: Objeto detectado: bag desde 1s hasta 1s
+2024-10-06T23:19:25.622Z info: Objeto detectado: packaged goods desde 1s hasta 2s
+2024-10-06T23:19:25.622Z info: Objeto detectado: top desde 2s hasta 2s
+2024-10-06T23:19:25.622Z info: Objeto detectado: person desde 2s hasta 2s
+2024-10-06T23:19:25.622Z info: Objeto detectado: packaged goods desde 2s hasta 4s
+2024-10-06T23:19:25.623Z info: Objeto detectado: packaged goods desde 3s hasta 4s
+2024-10-06T23:19:25.623Z info: Objeto detectado: packaged goods desde 3s hasta 4s
+2024-10-06T23:19:25.623Z info: Objeto detectado: person desde 4s hasta 5s
+2024-10-06T23:19:25.623Z info: Objeto detectado: packaged goods desde 4s hasta 5s
+2024-10-06T23:19:25.623Z info: Objeto detectado: shoe desde 5s hasta 6s
+2024-10-06T23:19:25.623Z info: Objeto detectado: watch desde 5s hasta 5s
+2024-10-06T23:19:25.623Z info: Objeto detectado: packaged goods desde 5s hasta 7s
+2024-10-06T23:19:25.623Z info: Objeto detectado: person desde 5s hasta 6s
+2024-10-06T23:19:25.623Z info: Objeto detectado: luggage & bags desde 5s hasta 5s
+2024-10-06T23:19:25.623Z info: Objeto detectado: bracelet desde 5s hasta 5s
+2024-10-06T23:19:25.623Z info: Objeto detectado: pants desde 6s hasta 6s
+2024-10-06T23:19:25.623Z info: Objeto detectado: hat desde 6s hasta 6s
+2024-10-06T23:19:25.623Z info: Objeto detectado: bag desde 6s hasta 8s
+2024-10-06T23:19:25.623Z info: Objeto detectado: pencil case desde 7s hasta 8s
+2024-10-06T23:19:25.623Z info: Objeto detectado: person desde 7s hasta 8s
+2024-10-06T23:19:25.623Z info: Objeto detectado: clothing desde 8s hasta 8s
+2024-10-06T23:19:25.623Z info: Objeto detectado: baby desde 8s hasta 11s
+2024-10-06T23:19:25.623Z info: Objeto detectado: packaged goods desde 9s hasta 10s
+2024-10-06T23:19:25.623Z info: Objeto detectado: toy desde 9s hasta 9s
+2024-10-06T23:19:25.623Z info: Objeto detectado: toy desde 10s hasta 10s
+2024-10-06T23:19:25.623Z info: Objeto detectado: baby desde 11s hasta 13s
+2024-10-06T23:19:25.623Z info: Objeto detectado: toy desde 11s hasta 11s
+2024-10-06T23:19:25.624Z info: Objeto detectado: packaged goods desde 11s hasta 13s
+2024-10-06T23:19:25.624Z info: Objeto detectado: car desde 12s hasta 12s
+2024-10-06T23:19:25.624Z info: Objeto detectado: clothing desde 12s hasta 12s
+2024-10-06T23:19:25.624Z info: Objeto detectado: baby desde 13s hasta 15s
+2024-10-06T23:19:25.624Z info: Objeto detectado: clothing desde 13s hasta 15s
+2024-10-06T23:19:25.624Z info: Objeto detectado: packaged goods desde 13s hasta 14s
+2024-10-06T23:19:26.471Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-06T23:20:03.677Z info: Detectadas 9 escenas clave, 35 objetos, 3 etiquetas.
+2024-10-06T23:20:03.677Z info: Transcripción de voz y detección de contenido explícito completadas.
+2024-10-06T23:20:03.677Z info: Analizando video con el prompt: "undefined"
+2024-10-06T23:20:03.677Z info: Objeto detectado: boxed packaged goods desde 0s hasta 1s
+2024-10-06T23:20:03.677Z info: Objeto detectado: person desde 0s hasta 1s
+2024-10-06T23:20:03.677Z info: Objeto detectado: bag desde 1s hasta 1s
+2024-10-06T23:20:03.677Z info: Objeto detectado: packaged goods desde 1s hasta 2s
+2024-10-06T23:20:03.677Z info: Objeto detectado: top desde 2s hasta 2s
+2024-10-06T23:20:03.677Z info: Objeto detectado: person desde 2s hasta 2s
+2024-10-06T23:20:03.677Z info: Objeto detectado: packaged goods desde 2s hasta 4s
+2024-10-06T23:20:03.677Z info: Objeto detectado: packaged goods desde 3s hasta 4s
+2024-10-06T23:20:03.677Z info: Objeto detectado: packaged goods desde 3s hasta 4s
+2024-10-06T23:20:03.677Z info: Objeto detectado: person desde 4s hasta 5s
+2024-10-06T23:20:03.677Z info: Objeto detectado: packaged goods desde 4s hasta 5s
+2024-10-06T23:20:03.677Z info: Objeto detectado: shoe desde 5s hasta 6s
+2024-10-06T23:20:03.677Z info: Objeto detectado: watch desde 5s hasta 5s
+2024-10-06T23:20:03.677Z info: Objeto detectado: packaged goods desde 5s hasta 7s
+2024-10-06T23:20:03.677Z info: Objeto detectado: person desde 5s hasta 6s
+2024-10-06T23:20:03.677Z info: Objeto detectado: luggage & bags desde 5s hasta 5s
+2024-10-06T23:20:03.677Z info: Objeto detectado: bracelet desde 5s hasta 5s
+2024-10-06T23:20:03.677Z info: Objeto detectado: pants desde 6s hasta 6s
+2024-10-06T23:20:03.677Z info: Objeto detectado: hat desde 6s hasta 6s
+2024-10-06T23:20:03.677Z info: Objeto detectado: bag desde 6s hasta 8s
+2024-10-06T23:20:03.677Z info: Objeto detectado: pencil case desde 7s hasta 8s
+2024-10-06T23:20:03.678Z info: Objeto detectado: person desde 7s hasta 8s
+2024-10-06T23:20:03.678Z info: Objeto detectado: clothing desde 8s hasta 8s
+2024-10-06T23:20:03.678Z info: Objeto detectado: baby desde 8s hasta 11s
+2024-10-06T23:20:03.678Z info: Objeto detectado: packaged goods desde 9s hasta 10s
+2024-10-06T23:20:03.678Z info: Objeto detectado: toy desde 9s hasta 9s
+2024-10-06T23:20:03.678Z info: Objeto detectado: toy desde 10s hasta 10s
+2024-10-06T23:20:03.678Z info: Objeto detectado: baby desde 11s hasta 13s
+2024-10-06T23:20:03.678Z info: Objeto detectado: toy desde 11s hasta 11s
+2024-10-06T23:20:03.678Z info: Objeto detectado: packaged goods desde 11s hasta 13s
+2024-10-06T23:20:03.678Z info: Objeto detectado: car desde 12s hasta 12s
+2024-10-06T23:20:03.678Z info: Objeto detectado: clothing desde 12s hasta 12s
+2024-10-06T23:20:03.678Z info: Objeto detectado: baby desde 13s hasta 15s
+2024-10-06T23:20:03.678Z info: Objeto detectado: clothing desde 13s hasta 15s
+2024-10-06T23:20:03.678Z info: Objeto detectado: packaged goods desde 13s hasta 14s
+2024-10-06T23:20:04.522Z info: Analizando el video con Google Cloud Video Intelligence...

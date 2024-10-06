@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Box, Button, Typography, TextField, Paper, Container, CircularProgress } from '@mui/material';
-import ChatGPT from '../../service/ChatGPTIntegration'; // Este es el archivo de la integración con ChatGPT
+import ChatGPT from '../../service/ChatGPTIntegration';
 
-const ProductInfoBanner = () => {
+interface ProductInfoBannerProps {
+  setSalesAngles: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setSalesAngles }) => {
   const [productDescription, setProductDescription] = useState('');
-  const [salesAngles, setSalesAngles] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-
+  const salesAngles: string[] = [];
   const handleGenerateAngles = async () => {
     if (!productDescription) {
       setErrorMessage('Por favor, ingresa una descripción del producto.');
@@ -17,9 +20,8 @@ const ProductInfoBanner = () => {
     setErrorMessage('');
     setIsLoading(true);
     try {
-      // Llamar a ChatGPT para generar los ángulos de venta
       const angles = await ChatGPT.generateSalesAngles(productDescription);
-      setSalesAngles(angles);
+      setSalesAngles(angles); // Update sales angles in DefaultPage
     } catch (error) {
       setErrorMessage('Hubo un error al generar los ángulos de venta. Inténtalo de nuevo.');
     } finally {
