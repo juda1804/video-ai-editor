@@ -924,3 +924,159 @@ Error opening input files: Invalid argument
 2024-10-06T23:20:03.678Z info: Objeto detectado: clothing desde 13s hasta 15s
 2024-10-06T23:20:03.678Z info: Objeto detectado: packaged goods desde 13s hasta 14s
 2024-10-06T23:20:04.522Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-07T00:15:12.447Z info: Servidor corriendo en http://localhost:3000
+2024-10-07T00:22:16.233Z info: Received upload request
+2024-10-07T00:22:21.475Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-07T00:22:47.044Z info: Detectadas 10 escenas clave, 58 objetos, 5 etiquetas.
+2024-10-07T00:22:47.044Z info: Transcripción de voz y detección de contenido explícito completadas.
+2024-10-07T00:22:47.044Z info: Analizando video con el prompt: "undefined"
+2024-10-07T00:22:47.046Z info: Objeto detectado: painting desde 0s hasta 0s
+2024-10-07T00:22:47.046Z info: Objeto detectado: microwave oven desde 0s hasta 0s
+2024-10-07T00:22:47.046Z info: Objeto detectado: pencil case desde 0s hasta 0s
+2024-10-07T00:22:47.046Z info: Objeto detectado: packaged goods desde 0s hasta 1s
+2024-10-07T00:22:47.046Z info: Objeto detectado: display device desde 0s hasta 0s
+2024-10-07T00:22:47.046Z info: Objeto detectado: vacuum desde 1s hasta 1s
+2024-10-07T00:22:47.046Z info: Objeto detectado: packaged goods desde 1s hasta 2s
+2024-10-07T00:22:47.046Z info: Objeto detectado: luggage & bags desde 1s hasta 1s
+2024-10-07T00:22:47.046Z info: Objeto detectado: shoe desde 1s hasta 2s
+2024-10-07T00:22:47.046Z info: Objeto detectado: person desde 1s hasta 2s
+2024-10-07T00:22:47.046Z info: Objeto detectado: person desde 1s hasta 1s
+2024-10-07T00:22:47.047Z info: Objeto detectado: luggage & bags desde 2s hasta 2s
+2024-10-07T00:22:47.047Z info: Objeto detectado: display device desde 2s hasta 2s
+2024-10-07T00:22:47.047Z info: Objeto detectado: bag desde 2s hasta 3s
+2024-10-07T00:22:47.047Z info: Objeto detectado: shoe desde 2s hasta 2s
+2024-10-07T00:22:47.047Z info: Objeto detectado: shoe desde 2s hasta 2s
+2024-10-07T00:22:47.047Z info: Objeto detectado: packaged goods desde 2s hasta 3s
+2024-10-07T00:22:47.047Z info: Objeto detectado: bracelet desde 3s hasta 3s
+2024-10-07T00:22:47.047Z info: Objeto detectado: luggage & bags desde 3s hasta 3s
+2024-10-07T00:22:47.047Z info: Objeto detectado: person desde 3s hasta 3s
+2024-10-07T00:22:47.047Z info: Objeto detectado: baby desde 4s hasta 5s
+2024-10-07T00:22:47.047Z info: Objeto detectado: toy desde 4s hasta 4s
+2024-10-07T00:22:47.047Z info: Objeto detectado: clothing desde 4s hasta 4s
+2024-10-07T00:22:47.047Z info: Objeto detectado: packaged goods desde 4s hasta 5s
+2024-10-07T00:22:47.047Z info: Objeto detectado: video game console desde 4s hasta 4s
+2024-10-07T00:22:47.047Z info: Objeto detectado: home appliance desde 4s hasta 4s
+2024-10-07T00:22:47.047Z info: Objeto detectado: diaper desde 4s hasta 5s
+2024-10-07T00:22:47.047Z info: Objeto detectado: baby desde 5s hasta 7s
+2024-10-07T00:22:47.047Z info: Objeto detectado: shelf desde 5s hasta 7s
+2024-10-07T00:22:47.047Z info: Objeto detectado: packaged goods desde 6s hasta 7s
+2024-10-07T00:22:47.047Z info: Objeto detectado: baby desde 7s hasta 8s
+2024-10-07T00:22:47.047Z info: Objeto detectado: packaged goods desde 7s hasta 7s
+2024-10-07T00:22:47.047Z info: Objeto detectado: infant bed desde 7s hasta 8s
+2024-10-07T00:22:47.047Z info: Objeto detectado: baby desde 8s hasta 9s
+2024-10-07T00:22:47.047Z info: Objeto detectado: toy desde 8s hasta 8s
+2024-10-07T00:22:47.047Z info: Objeto detectado: toy desde 8s hasta 9s
+2024-10-07T00:22:47.047Z info: Objeto detectado: toy desde 8s hasta 8s
+2024-10-07T00:22:47.047Z info: Objeto detectado: clothing desde 8s hasta 8s
+2024-10-07T00:22:47.047Z info: Objeto detectado: packaged goods desde 9s hasta 10s
+2024-10-07T00:22:47.047Z info: Objeto detectado: person desde 10s hasta 10s
+2024-10-07T00:22:47.047Z info: Objeto detectado: person desde 10s hasta 10s
+2024-10-07T00:22:47.047Z info: Objeto detectado: display device desde 11s hasta 11s
+2024-10-07T00:22:47.048Z info: Objeto detectado: packaged goods desde 11s hasta 11s
+2024-10-07T00:22:47.048Z info: Objeto detectado: person desde 11s hasta 14s
+2024-10-07T00:22:47.048Z info: Objeto detectado: furniture desde 11s hasta 12s
+2024-10-07T00:22:47.048Z info: Objeto detectado: animal desde 12s hasta 12s
+2024-10-07T00:22:47.048Z info: Objeto detectado: baby desde 12s hasta 15s
+2024-10-07T00:22:47.048Z info: Objeto detectado: baby desde 12s hasta 12s
+2024-10-07T00:22:47.048Z info: Objeto detectado: stuffed toy desde 12s hasta 14s
+2024-10-07T00:22:47.048Z info: Objeto detectado: clothing desde 14s hasta 15s
+2024-10-07T00:22:47.048Z info: Objeto detectado: houseplant desde 14s hasta 14s
+2024-10-07T00:22:47.048Z info: Objeto detectado: toy desde 14s hasta 14s
+2024-10-07T00:22:47.048Z info: Objeto detectado: baby desde 15s hasta 19s
+2024-10-07T00:22:47.048Z info: Objeto detectado: box desde 15s hasta 15s
+2024-10-07T00:22:47.048Z info: Objeto detectado: baby desde 16s hasta 17s
+2024-10-07T00:22:47.048Z info: Objeto detectado: box desde 16s hasta 19s
+2024-10-07T00:22:47.048Z info: Objeto detectado: clothing desde 17s hasta 17s
+2024-10-07T00:22:47.048Z info: Objeto detectado: baby desde 18s hasta 19s
+2024-10-07T00:22:51.828Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-08T14:52:25.662Z info: Servidor corriendo en http://localhost:3000
+2024-10-08T15:10:53.489Z info: Servidor corriendo en http://localhost:3000
+2024-10-08T15:24:09.301Z info: Servidor corriendo en http://localhost:3000
+2024-10-08T15:32:41.975Z info: Servidor corriendo en http://localhost:3000
+2024-10-08T15:46:46.406Z info: Servidor corriendo en http://localhost:3000
+2024-10-08T16:31:38.631Z info: Received upload request
+2024-10-08T16:31:40.433Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-08T16:32:01.950Z info: Detectadas 5 escenas clave, 37 objetos, 3 etiquetas.
+2024-10-08T16:32:01.951Z info: Transcripción de voz y detección de contenido explícito completadas.
+2024-10-08T16:32:01.951Z info: Analizando video con el prompt: "undefined"
+2024-10-08T16:32:01.953Z info: Objeto detectado: person desde 0s hasta 1s
+2024-10-08T16:32:01.953Z info: Objeto detectado: top desde 0s hasta 3s
+2024-10-08T16:32:01.953Z info: Objeto detectado: shoe desde 0s hasta 0s
+2024-10-08T16:32:01.953Z info: Objeto detectado: packaged goods desde 0s hasta 2s
+2024-10-08T16:32:01.953Z info: Objeto detectado: baby desde 1s hasta 3s
+2024-10-08T16:32:01.953Z info: Objeto detectado: hat desde 1s hasta 2s
+2024-10-08T16:32:01.954Z info: Objeto detectado: table desde 3s hasta 3s
+2024-10-08T16:32:01.954Z info: Objeto detectado: person desde 3s hasta 5s
+2024-10-08T16:32:01.954Z info: Objeto detectado: person desde 3s hasta 7s
+2024-10-08T16:32:01.954Z info: Objeto detectado: top desde 3s hasta 4s
+2024-10-08T16:32:01.954Z info: Objeto detectado: top desde 3s hasta 7s
+2024-10-08T16:32:01.954Z info: Objeto detectado: shorts desde 3s hasta 7s
+2024-10-08T16:32:01.954Z info: Objeto detectado: top desde 3s hasta 5s
+2024-10-08T16:32:01.954Z info: Objeto detectado: packaged goods desde 4s hasta 6s
+2024-10-08T16:32:01.954Z info: Objeto detectado: person desde 4s hasta 5s
+2024-10-08T16:32:01.954Z info: Objeto detectado: packaged goods desde 6s hasta 7s
+2024-10-08T16:32:01.954Z info: Objeto detectado: toy desde 7s hasta 7s
+2024-10-08T16:32:01.954Z info: Objeto detectado: top desde 7s hasta 9s
+2024-10-08T16:32:01.954Z info: Objeto detectado: skirt desde 7s hasta 9s
+2024-10-08T16:32:01.954Z info: Objeto detectado: packaged goods desde 7s hasta 9s
+2024-10-08T16:32:01.954Z info: Objeto detectado: person desde 7s hasta 9s
+2024-10-08T16:32:01.954Z info: Objeto detectado: packaged goods desde 7s hasta 9s
+2024-10-08T16:32:01.954Z info: Objeto detectado: packaged goods desde 8s hasta 9s
+2024-10-08T16:32:01.954Z info: Objeto detectado: packaged goods desde 9s hasta 12s
+2024-10-08T16:32:01.954Z info: Objeto detectado: top desde 9s hasta 9s
+2024-10-08T16:32:01.954Z info: Objeto detectado: pants desde 9s hasta 12s
+2024-10-08T16:32:01.954Z info: Objeto detectado: luggage & bags desde 9s hasta 12s
+2024-10-08T16:32:01.954Z info: Objeto detectado: person desde 10s hasta 11s
+2024-10-08T16:32:01.954Z info: Objeto detectado: person desde 10s hasta 12s
+2024-10-08T16:32:01.954Z info: Objeto detectado: pants desde 11s hasta 12s
+2024-10-08T16:32:01.954Z info: Objeto detectado: person desde 11s hasta 12s
+2024-10-08T16:32:01.954Z info: Objeto detectado: top desde 11s hasta 12s
+2024-10-08T16:32:01.954Z info: Objeto detectado: shorts desde 12s hasta 14s
+2024-10-08T16:32:01.954Z info: Objeto detectado: packaged goods desde 12s hasta 14s
+2024-10-08T16:32:01.954Z info: Objeto detectado: top desde 12s hasta 13s
+2024-10-08T16:32:01.954Z info: Objeto detectado: person desde 12s hasta 14s
+2024-10-08T16:32:01.954Z info: Objeto detectado: person desde 14s hasta 14s
+2024-10-08T16:32:03.578Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-08T16:32:57.732Z info: Detectadas 7 escenas clave, 34 objetos, 5 etiquetas.
+2024-10-08T16:32:57.732Z info: Transcripción de voz y detección de contenido explícito completadas.
+2024-10-08T16:32:57.732Z info: Analizando video con el prompt: "undefined"
+2024-10-08T16:32:57.732Z info: Objeto detectado: packaged goods desde 0s hasta 0s
+2024-10-08T16:32:57.733Z info: Objeto detectado: luggage & bags desde 0s hasta 1s
+2024-10-08T16:32:57.733Z info: Objeto detectado: sunglasses desde 1s hasta 1s
+2024-10-08T16:32:57.733Z info: Objeto detectado: shoe desde 1s hasta 2s
+2024-10-08T16:32:57.733Z info: Objeto detectado: packaged goods desde 1s hasta 2s
+2024-10-08T16:32:57.733Z info: Objeto detectado: person desde 1s hasta 2s
+2024-10-08T16:32:57.733Z info: Objeto detectado: luggage & bags desde 1s hasta 1s
+2024-10-08T16:32:57.733Z info: Objeto detectado: bag desde 2s hasta 2s
+2024-10-08T16:32:57.733Z info: Objeto detectado: luggage & bags desde 2s hasta 3s
+2024-10-08T16:32:57.733Z info: Objeto detectado: luggage & bags desde 2s hasta 2s
+2024-10-08T16:32:57.733Z info: Objeto detectado: shoe desde 2s hasta 2s
+2024-10-08T16:32:57.733Z info: Objeto detectado: shoe desde 2s hasta 2s
+2024-10-08T16:32:57.733Z info: Objeto detectado: bracelet desde 3s hasta 3s
+2024-10-08T16:32:57.733Z info: Objeto detectado: luggage & bags desde 3s hasta 3s
+2024-10-08T16:32:57.733Z info: Objeto detectado: person desde 4s hasta 5s
+2024-10-08T16:32:57.733Z info: Objeto detectado: packaged goods desde 4s hasta 5s
+2024-10-08T16:32:57.733Z info: Objeto detectado: toy desde 4s hasta 4s
+2024-10-08T16:32:57.733Z info: Objeto detectado: person desde 5s hasta 5s
+2024-10-08T16:32:57.733Z info: Objeto detectado: clothing desde 5s hasta 5s
+2024-10-08T16:32:57.733Z info: Objeto detectado: packaged goods desde 5s hasta 8s
+2024-10-08T16:32:57.733Z info: Objeto detectado: baby desde 5s hasta 8s
+2024-10-08T16:32:57.733Z info: Objeto detectado: packaged goods desde 6s hasta 6s
+2024-10-08T16:32:57.733Z info: Objeto detectado: packaged goods desde 7s hasta 7s
+2024-10-08T16:32:57.733Z info: Objeto detectado: shoe desde 7s hasta 7s
+2024-10-08T16:32:57.733Z info: Objeto detectado: person desde 8s hasta 8s
+2024-10-08T16:32:57.733Z info: Objeto detectado: top desde 8s hasta 8s
+2024-10-08T16:32:57.733Z info: Objeto detectado: packaged goods desde 8s hasta 8s
+2024-10-08T16:32:57.734Z info: Objeto detectado: person desde 8s hasta 9s
+2024-10-08T16:32:57.734Z info: Objeto detectado: packaged goods desde 8s hasta 8s
+2024-10-08T16:32:57.734Z info: Objeto detectado: toy desde 9s hasta 9s
+2024-10-08T16:32:57.734Z info: Objeto detectado: person desde 9s hasta 9s
+2024-10-08T16:32:57.734Z info: Objeto detectado: bagged packaged goods desde 9s hasta 11s
+2024-10-08T16:32:57.734Z info: Objeto detectado: person desde 10s hasta 11s
+2024-10-08T16:32:57.734Z info: Objeto detectado: packaged goods desde 10s hasta 10s
+2024-10-08T16:32:58.358Z info: FFmpeg ejecutando comando: ffmpeg -ss 0 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 3 -to 7 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 7 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 9 -to 12 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 12 -to 14 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-0.mp4 -ss 0 -to 1 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 1 -to 2 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 2 -to 3 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 3 -to 5 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 5 -to 8 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 8 -to 9 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -ss 9 -to 11 -i /var/folders/gb/jck4t3892rl8231cs6sk1b6h0000gn/T/temp-video-1.mp4 -y -filter_complex concat=n=12:v=1:a=1 -c:v libx264 -c:a aac -preset ultrafast -crf 23 -shortest /Users/josedavidgiraldobedoya/Documents/video-ai-editor/video-ai-editor-api/uploads/output.mp4
+2024-10-08T16:32:59.655Z info: Videos unidos exitosamente.
+2024-10-08T16:33:06.692Z info: Analizando el video con Google Cloud Video Intelligence...
+2024-10-08T16:34:01.094Z info: Detectadas 12 escenas clave, 73 objetos, 4 etiquetas.
+2024-10-08T16:34:01.095Z info: Transcripción de voz y detección de contenido explícito completadas.
+2024-10-08T16:34:01.095Z info: Analizando video con el prompt: ""¡Transforma tu cocina en un oasis de organización y frescura con nuestros contenedores de almacenamiento de alimentos! Dale a tus ingredientes el hogar que se merecen y mantén su frescura por más tiempo. ¡Haz que cocinar sea una experiencia más fácil y deliciosa ahora!""

@@ -10,18 +10,30 @@ const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setSalesAngles })
   const [productDescription, setProductDescription] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const salesAngles: string[] = [];
+
+  // Variables para controlar las solicitudes
+  let lastRequestTime = 0;
+  const REQUEST_LIMIT_INTERVAL = 60000; // Limitar a 60 segundos
+
   const handleGenerateAngles = async () => {
     if (!productDescription) {
       setErrorMessage('Por favor, ingresa una descripción del producto.');
       return;
     }
 
+    const currentTime = Date.now();
+    if (currentTime - lastRequestTime < REQUEST_LIMIT_INTERVAL) {
+      setErrorMessage('Por favor, espera antes de hacer otra solicitud.');
+      return;
+    }
+
     setErrorMessage('');
     setIsLoading(true);
+
     try {
+      lastRequestTime = currentTime; // Actualizar el tiempo de la última solicitud
       const angles = await ChatGPT.generateSalesAngles(productDescription);
-      setSalesAngles(angles); // Update sales angles in DefaultPage
+      setSalesAngles(angles); // Pasar los ángulos de venta generados al componente padre
     } catch (error) {
       setErrorMessage('Hubo un error al generar los ángulos de venta. Inténtalo de nuevo.');
     } finally {
@@ -62,17 +74,6 @@ const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setSalesAngles })
           <Typography variant="body2" color="error" align="center" sx={{ marginBottom: 2 }}>
             {errorMessage}
           </Typography>
-        )}
-
-        {salesAngles.length > 0 && (
-          <Box sx={{ marginTop: 4 }}>
-            <Typography variant="h6">Ángulos de Venta Generados:</Typography>
-            {salesAngles.map((angle, index) => (
-              <Typography key={index} sx={{ marginTop: 1 }}>
-                {index + 1}. {angle}
-              </Typography>
-            ))}
-          </Box>
         )}
       </Paper>
     </Container>

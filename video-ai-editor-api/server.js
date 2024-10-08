@@ -11,12 +11,12 @@ const app = express();
 
 // Inicializar el cliente de Google Cloud Video Intelligence
 const videoClient = new VideoIntelligenceServiceClient({
-  keyFilename: path.join(__dirname, 'config', 'google-cloud-credentials.json') // Asegúrate de tener la ruta correcta del archivo de credenciales
+  keyFilename: path.join(__dirname, 'config', 'google-cloud-credentials.json')
 });
 
 app.use(cors({
   origin: 'http://localhost:3002', // Reemplaza con la URL de tu frontend
-  credentials: true, 
+  credentials: true,
 }));
 
 // Configuración del logger
@@ -47,7 +47,7 @@ const upload = multer({
 }).array('videos', 10);
 
 // Función para analizar las escenas clave utilizando Google Cloud Video Intelligence
-async function analyzeVideoForKeyScenes(videoBuffer, prompt) {
+async function analyzeVideoForKeyScenes(videoBuffer) {
   const request = {
     inputContent: videoBuffer.toString('base64'),
     features: [
@@ -59,15 +59,11 @@ async function analyzeVideoForKeyScenes(videoBuffer, prompt) {
     ],
     videoContext: {
       speechTranscriptionConfig: {
-        languageCode: 'en-US',  // Ajusta esto al idioma principal del video
+        languageCode: 'en-US',
         enableAutomaticPunctuation: true,
       },
       labelDetectionConfig: {
         labelDetectionMode: 'SHOT_MODE'
-      },
-      // Añadir una configuración basada en el prompt
-      textDetectionConfig: {
-        languageHints: [prompt]
       }
     }
   };
@@ -76,100 +72,48 @@ async function analyzeVideoForKeyScenes(videoBuffer, prompt) {
   logger.info('Analizando el video con Google Cloud Video Intelligence...');
 
   const [operationResult] = await operation.promise();
-  
-  // Extraer cambios de escena
+
   const shotChanges = operationResult.annotationResults[0].shotAnnotations.map(shot => ({
     startTime: shot.startTimeOffset.seconds || 0,
     endTime: shot.endTimeOffset.seconds || 0
   }));
 
-  // Extraer objetos detectados
-  const objectAnnotations = operationResult.annotationResults[0].objectAnnotations.map(object => ({
-    entity: object.entity.description,
-    startTime: object.segment.startTimeOffset.seconds || 0,
-    endTime: object.segment.endTimeOffset.seconds || 0,
-  }));
-
-  // Extraer etiquetas detectadas
-  const labels = operationResult.annotationResults[0].segmentLabelAnnotations.map(label => ({
-    description: label.entity.description,
-    segments: label.segments.map(segment => ({
-      startTime: segment.segment.startTimeOffset.seconds || 0,
-      endTime: segment.segment.endTimeOffset.seconds || 0,
-      confidence: segment.confidence,
-    }))
-  }));
-
-  // Extraer transcripción de voz
-  const speechTranscription = operationResult.annotationResults[0].speechTranscriptions.map(transcription => 
-    transcription.alternatives[0].transcript
-  ).join(' ');
-
-  // Extraer detección de contenido explícito
-  const explicitContent = operationResult.annotationResults[0].explicitAnnotation.frames.map(frame => ({
-    timeOffset: frame.timeOffset.seconds || 0,
-    pornographyLikelihood: frame.pornographyLikelihood,
-  }));
-
-  logger.info(`Detectadas ${shotChanges.length} escenas clave, ${objectAnnotations.length} objetos, ${labels.length} etiquetas.`);
-  logger.info(`Transcripción de voz y detección de contenido explícito completadas.`);
-  logger.info(`Analizando video con el prompt: "${prompt}"`);
-
-  return { shotChanges, objectAnnotations, labels, speechTranscription, explicitContent };
+  return { shotChanges };
 }
 
-// Función para hacer recortes inteligentes basados en eventos clave
-async function mergeVideosWithSmartCuts(videoBuffers, outputVideoPath, callback) {
+// Función para unir videos con un copy específico
+async function mergeVideoWithCopy(videoBuffer, salesCopy, outputVideoPath, callback) {
   const ffmpegCommand = ffmpeg();
+  const tempFilePath = path.join(os.tmpdir(), `temp-video.mp4`);
+  fs.writeFileSync(tempFilePath, videoBuffer);
 
-  // Iterar sobre cada video y sus escenas clave
-  for (const [index, buffer] of videoBuffers.entries()) {
-    const tempFilePath = path.join(os.tmpdir(), `temp-video-${index}.mp4`);
-    fs.writeFileSync(tempFilePath, buffer);
-    
-    // Obtener las escenas clave de cada video
-    const { shotChanges, objectAnnotations } = await analyzeVideoForKeyScenes(buffer);
+  const { shotChanges } = await analyzeVideoForKeyScenes(videoBuffer);
 
-    // Si no hay suficientes escenas clave, cortar cada 2.68 segundos
-    if (shotChanges.length === 0) {
-      const durationPerCut = 2.68;
-      ffmpegCommand.input(tempFilePath).inputOptions([`-ss 0`, `-t ${durationPerCut}`]);
-    } else {
-      // Usar las escenas clave detectadas por Google Cloud para hacer los cortes
-      shotChanges.forEach(shot => {
-        ffmpegCommand.input(tempFilePath)
-          .inputOptions([
-            `-ss ${shot.startTime}`, // Tiempo de inicio de la escena clave
-            `-to ${shot.endTime}`    // Tiempo de fin de la escena clave
-          ]);
-      });
-
-      // También se pueden usar los objetos detectados para hacer recortes
-      objectAnnotations.forEach(object => {
-        logger.info(`Objeto detectado: ${object.entity} desde ${object.startTime}s hasta ${object.endTime}s`);
-        // Si quisieras recortar en función de objetos, puedes agregar lógica aquí
-      });
-    }
+  if (shotChanges.length === 0) {
+    const durationPerCut = 20; // 20 segundos por versión del video
+    ffmpegCommand.input(tempFilePath).inputOptions([`-ss 0`, `-t ${durationPerCut}`]);
+  } else {
+    shotChanges.forEach(shot => {
+      ffmpegCommand.input(tempFilePath)
+        .inputOptions([`-ss ${shot.startTime}`, `-to ${shot.endTime}`])
+        .outputOptions(`-vf "drawtext=text='${salesCopy}':fontcolor=white:fontsize=24:x=(w-text_w)/2:y=h-th-10"`);
+    });
   }
 
-  // Configuración de salida del video
   ffmpegCommand
     .outputOptions([
-      '-c:v libx264',  // Usar codec H.264 para video
-      '-c:a aac',      // Usar codec AAC para audio
-      '-preset ultrafast',  // Usar preset ultrafast para codificación más rápida
-      '-crf 23',       // Calidad constante, balance entre calidad y tamaño
-      '-shortest'      // Terminar con el video más corto si las duraciones son diferentes
+      '-c:v libx264',
+      '-c:a aac',
+      '-preset ultrafast',
+      '-crf 23',
+      '-shortest'
     ])
     .on('start', (commandLine) => {
       logger.info(`FFmpeg ejecutando comando: ${commandLine}`);
     })
     .on('end', () => {
-      logger.info('Videos unidos exitosamente.');
-      // Limpiar archivos temporales
-      videoBuffers.forEach((_, index) => {
-        fs.unlinkSync(path.join(os.tmpdir(), `temp-video-${index}.mp4`));
-      });
+      logger.info(`Video con copy "${salesCopy}" generado exitosamente.`);
+      fs.unlinkSync(tempFilePath);
       callback(null, outputVideoPath);
     })
     .on('error', (err) => {
@@ -179,15 +123,28 @@ async function mergeVideosWithSmartCuts(videoBuffers, outputVideoPath, callback)
     .mergeToFile(outputVideoPath, uploadsFolderPath);
 }
 
-// Añade esta nueva función para generar el video basado en el prompt
-async function generateVideoFromPrompt(prompt) {
-  // Aquí iría la lógica para generar el video basado en el prompt
-  // Por ahora, simplemente registramos el prompt y devolvemos un mensaje
-  logger.info(`Generando video basado en el prompt: ${prompt}`);
-  return "Video generado basado en el prompt (simulado)";
+// Función para generar múltiples versiones del video
+async function generateMultipleVideosWithCopies(videoBuffers, salesAngles, callback) {
+  const versions = [];
+
+  for (let i = 0; i < salesAngles.length; i++) {
+    const outputVideoPath = path.join(uploadsFolderPath, `output_version_${i + 1}.mp4`);
+    const copy = salesAngles[i];
+
+    await mergeVideoWithCopy(videoBuffers[0], copy, outputVideoPath, (err, result) => {
+      if (err) {
+        logger.error('Error procesando el video:', err);
+        callback(err, null);
+        return;
+      }
+      versions.push(outputVideoPath);
+    });
+  }
+
+  callback(null, versions);
 }
 
-// Modificar la ruta de upload para incluir el prompt en el análisis
+// Ruta para subir videos y generar múltiples versiones con copys diferentes
 app.post('/upload', (req, res) => {
   logger.info('Received upload request');
   upload(req, res, async function (err) {
@@ -196,29 +153,25 @@ app.post('/upload', (req, res) => {
       return res.status(500).send('Error al subir los archivos: ' + err.message);
     }
 
-    const prompt = req.body.prompt; // Asume que el prompt se envía en el cuerpo de la solicitud
+    const salesAngles = req.body.salesAngles;
 
-    if (!prompt) {
-      logger.warn('No prompt received');
-      return res.status(400).send('Se requiere un prompt para analizar el video.');
+    if (!salesAngles || salesAngles.length === 0) {
+      logger.warn('No sales angles received');
+      return res.status(400).send('No se recibieron copys de venta.');
     }
 
     try {
       const videoBuffers = req.files.map(file => file.buffer);
-      const outputVideoPath = path.join(uploadsFolderPath, 'output.mp4');
 
-      mergeVideosWithSmartCuts(videoBuffers, outputVideoPath, async (err, result) => {
+      generateMultipleVideosWithCopies(videoBuffers, salesAngles, (err, versions) => {
         if (err) {
-          logger.error('Error processing videos:', err);
+          logger.error('Error procesando videos:', err);
           return res.status(500).send('Error al procesar los videos: ' + err.message);
         }
 
-        // Analizar el video resultante con el prompt
-        const analysisResult = await analyzeVideoForKeyScenes(fs.readFileSync(outputVideoPath), prompt);
-
         res.status(200).json({
-          message: 'Videos procesados y analizados con éxito',
-          analysis: analysisResult
+          message: 'Videos procesados con éxito',
+          versions: versions
         });
       });
     } catch (error) {
