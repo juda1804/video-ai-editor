@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Button, Typography, TextField, Paper, Container, CircularProgress, List, ListItem } from '@mui/material';
-import SalesAngleGenerator from '../service/SalesAngleGenerator';
+import SalesAngleGenerator from '../agents/SalesAngleGenerator';
 
 interface ProductInfoBannerProps {
   setSalesAngles: React.Dispatch<React.SetStateAction<string[]>>;
