@@ -39,8 +39,52 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+### `npm run server`
+
+Runs the server for the application. This is typically used in conjunction with `npm start` to run both the frontend and backend of your application.
+
+Before running the server, make sure to set up your credentials:
+
+1. Create a directory for your credentials:
+   ```
+   mkdir -p ~/dev/credentials
+   cd ~/dev/credentials
+   ```
+
+2. Create and edit the Google Cloud credentials file:
+   ```
+   touch google-cloud-credentials.json
+   nano google-cloud-credentials.json
+   ```
+   Add your Google Cloud credentials to this file.
+
+3. Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable:
+   ```
+   export GOOGLE_APPLICATION_CREDENTIALS=~/dev/credentials/google-cloud-credentials.json
+   ```
+
+4. Verify the environment variable is set correctly:
+   ```
+   echo $GOOGLE_APPLICATION_CREDENTIALS
+   ```
+
+5. Set your ChatGPT API key:
+   ```
+   export CHAT_GPT_API_KEY=<your-api-key>
+   ```
+
+After setting up your credentials, you can run the server using:
+
+```
+npm run server
+```
+
+This will start your backend server, allowing your React application to communicate with it.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
