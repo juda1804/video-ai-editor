@@ -1,68 +1,73 @@
-const { Storage } = require('@google-cloud/storage');
+// routes/videoRoutes.js
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
+const { analyzeVideoHandler } = require('../controllers/videoController');
 
-// Configuración de Google Cloud Storage
-const storage = new Storage({
-  keyFilename: './bucket-credentials.json'
-});
+/**
+ * @swagger
+ * tags:
+ *   - name: Video
+ *     description: Operaciones relacionadas con análisis de video.
+ */
 
-const bucket = storage.bucket('draft-videos');
-
-// Configurar Multer para almacenamiento en memoria
-const multerStorage = multer.memoryStorage();
-const upload = multer({ storage: multerStorage });
-
-// Function to initialize Google Cloud Storage
-function initializeGoogleCloudStorage() {
-  const storage = new Storage({
-    keyFilename: './video-ai-editor-api/bucket-credentials.json'
-  });
-  return storage.bucket('draft-videos');
-}
-
-// Function to handle file upload to Google Cloud Storage
-async function uploadFileToGCS(file, bucket) {
-  const fileName = file.originalname;
-  const gcsFile = bucket.file(fileName);
-
-  return new Promise((resolve, reject) => {
-    const stream = gcsFile.createWriteStream({
-      metadata: {
-        contentType: file.mimetype,
-      },
-      resumable: false
-    });
-
-    stream.on('error', reject);
-    stream.on('finish', () => resolve(gcsFile));
-    stream.end(file.buffer);
-  });
-}
-
-// Function to make file public and get public URL
-async function makeFilePublicAndGetUrl(file, bucketName) {
-  await file.makePublic();
-  return `https://storage.googleapis.com/${bucketName}/${file.name}`;
-}
-
-// Ruta para subir archivos directamente a Google Cloud Storage
-router.post('/upload', upload.single('video'), async (req, res) => {
-  if (!req.file) {
-    return res.status(400).send('No file uploaded.');
-  }
-
-  try {
-    //const bucket = initializeGoogleCloudStorage();
-    //const uploadedFile = await uploadFileToGCS(req.file, bucket);
-    //const publicUrl = await makeFilePublicAndGetUrl(uploadedFile, 'draft-videos');
-
-    res.status(200).json({ message: 'File uploaded successfully', url: "" });
-  } catch (error) {
-    console.error('Error in file upload:', error);
-    res.status(500).send('An error occurred during file upload');
-  }
-});
+/**
+ * @swagger
+ * /video/analyze:
+ *   post:
+ *     summary: Analiza un video utilizando Google Video Intelligence API.
+ *     tags:
+ *       - Video
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               bucketUri:
+ *                 type: string
+ *                 description: URI del video en Google Cloud Storage.
+ *                 example: gs://tu-bucket/tu-video.mp4
+ *               features:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *                 description: Lista de características para analizar.
+ *                 example: ["LABEL_DETECTION", "SPEECH_TRANSCRIPTION"]
+ *               languageHints:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *                 description: Pistas de idioma para la transcripción.
+ *                 example: ["es-ES"]
+ *               context:
+ *                 type: object
+ *                 description: Configuración adicional para el análisis.
+ *                 properties:
+ *                   labelDetectionConfig:
+ *                     type: object
+ *                     properties:
+ *                       labelDetectionMode:
+ *                         type: string
+ *                         example: "SHOT_AND_FRAME_MODE"
+ *                       stationaryCamera:
+ *                         type: boolean
+ *                         example: false
+ *                       model:
+ *                         type: string
+ *                         example: "builtin/latest"
+ *     responses:
+ *       200:
+ *         description: Análisis exitoso.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/AnalysisResult'
+ *       400:
+ *         $ref: '#/components/responses/BadRequest'
+ *       500:
+ *         $ref: '#/components/responses/InternalServerError'
+ */
+router.post('/analyze', analyzeVideoHandler);
 
 module.exports = router;
