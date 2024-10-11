@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Button, Typography, TextField, Paper, Container, CircularProgress } from '@mui/material';
-import ChatGPT from '../../service/ChatGPTIntegration';
+import { Box, Button, Typography, TextField, Paper, Container, CircularProgress, List, ListItem } from '@mui/material';
+import SalesAngleGenerator from '../service/SalesAngleGenerator';
 
 interface ProductInfoBannerProps {
   setSalesAngles: React.Dispatch<React.SetStateAction<string[]>>;
@@ -10,6 +10,7 @@ const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setSalesAngles })
   const [productDescription, setProductDescription] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [generatedAngles, setGeneratedAngles] = useState<string[]>([]);
 
   // Variables para controlar las solicitudes
   let lastRequestTime = 0;
@@ -32,7 +33,8 @@ const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setSalesAngles })
 
     try {
       lastRequestTime = currentTime; // Actualizar el tiempo de la última solicitud
-      const angles = await ChatGPT.generateSalesAngles(productDescription);
+      const angles = await SalesAngleGenerator.generateSalesAngles(productDescription);
+      setGeneratedAngles(angles);
       setSalesAngles(angles); // Pasar los ángulos de venta generados al componente padre
     } catch (error) {
       setErrorMessage('Hubo un error al generar los ángulos de venta. Inténtalo de nuevo.');
@@ -42,8 +44,8 @@ const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setSalesAngles })
   };
 
   return (
-    <Container maxWidth="md">
-      <Paper elevation={3} sx={{ padding: 3, marginTop: 4 }}>
+    <Container>
+      <Paper elevation={3} sx={{ padding: 3, marginTop: 4}}>
         <Typography variant="h4" gutterBottom align="center">
           Agregar Información del Producto
         </Typography>
@@ -74,6 +76,21 @@ const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setSalesAngles })
           <Typography variant="body2" color="error" align="center" sx={{ marginBottom: 2 }}>
             {errorMessage}
           </Typography>
+        )}
+
+        {generatedAngles.length > 0 && (
+          <Box sx={{ marginTop: 3 }}>
+            <Typography variant="h6" gutterBottom>
+              Ángulos de Venta Generados:
+            </Typography>
+            <List>
+              {generatedAngles.map((angle, index) => (
+                <ListItem key={index}>
+                  <Typography>{angle}</Typography>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
         )}
       </Paper>
     </Container>

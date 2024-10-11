@@ -14,7 +14,6 @@ import {
   CardActions,
   Container,
   createTheme,
-  ThemeProvider,
   Alert,
   Collapse,
 } from '@mui/material';
@@ -113,18 +112,6 @@ const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ sal
     return <InsertDriveFile />;
   };
 
-  const darkTheme = createTheme({
-    palette: {
-      mode: 'dark',
-      primary: {
-        main: '#FF00FF', // Fucsia
-      },
-      background: {
-        default: '#121212',
-        paper: '#1E1E1E',
-      },
-    },
-  });
 
   const ResponseMessage: React.FC<{ message: string; success: boolean }> = ({ message, success }) => (
     <Collapse in={!!message}>
@@ -159,7 +146,6 @@ const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ sal
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
       <Container maxWidth="sm">
         <Card elevation={3} sx={{ mt: 4, mb: 4, borderRadius: 2, bgcolor: 'background.paper' }}>
           <CardContent>
@@ -308,7 +294,6 @@ const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ sal
           )}
         </Card>
       </Container>
-    </ThemeProvider>
   );
 };
 

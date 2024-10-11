@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Paper, Typography, Stepper, Step, StepLabel, Button, Box, createTheme, ThemeProvider } from '@mui/material';
 import MultiFileUploadComponent from './carga-ordenes/MultiFileUploadComponent';
-import ProductInfoBanner from './carga-ordenes/ProductInfoBanner';
+import ProductInfoBanner from './ProductInfoBanner';
 import TikTokLinkUploadComponent from './TikTokLinkUploadComponent';
 
 const DefaultPage: React.FC = () => {
@@ -24,9 +24,7 @@ const DefaultPage: React.FC = () => {
   };
 
   return (
-    
       <Container 
-        maxWidth="md" 
         sx={{ 
           mt: 4, 
           mb: 4, 
