@@ -14,20 +14,29 @@ import {
   CardActions,
   Container,
   createTheme,
-  ThemeProvider,
   Alert,
   Collapse,
 } from '@mui/material';
 import { AttachFile, VideoFile, InsertDriveFile, Clear } from '@mui/icons-material';
+import { Grid, TextField } from '@mui/material'; // Import Grid and TextField
+import { IconButton } from '@mui/material'; // Import IconButton
+import { Delete } from '@mui/icons-material'; // Import Delete icon
 
 const ALLOWED_EXTENSIONS = ['.mp4'];
 
-const MultiFileUploadComponent: React.FC = () => {
+interface MultiFileUploadComponentProps {
+  salesAngles: string[];
+}
+
+const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ salesAngles }) => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [responseMessage, setResponseMessage] = useState<string>('');
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [uploadSuccess, setUploadSuccess] = useState<boolean>(false);
+  const [prompt, setPrompt] = useState<string>(''); // This will be managed by CopySelector
+  const [isCustom, setIsCustom] = useState<boolean>(false); // Track if custom copy is selected
+
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const isFileAllowed = useCallback((file: File) => {
@@ -66,12 +75,18 @@ const MultiFileUploadComponent: React.FC = () => {
       setResponseMessage('Por favor, selecciona archivos para cargar.');
       return;
     }
+
+    if (!prompt.trim()) {
+      setResponseMessage('Por favor, ingresa un prompt.');
+      return;
+    }
     
     setIsUploading(true);
     setResponseMessage('');
     setDownloadUrl(null);
 
     const formData = new FormData();
+    formData.append('prompt', prompt); // Ensure the prompt is added to the form data
     selectedFiles.forEach((file) => {
       formData.append('videos', file);
     });
@@ -97,18 +112,6 @@ const MultiFileUploadComponent: React.FC = () => {
     return <InsertDriveFile />;
   };
 
-  const darkTheme = createTheme({
-    palette: {
-      mode: 'dark',
-      primary: {
-        main: '#FF00FF', // Fucsia
-      },
-      background: {
-        default: '#121212',
-        paper: '#1E1E1E',
-      },
-    },
-  });
 
   const ResponseMessage: React.FC<{ message: string; success: boolean }> = ({ message, success }) => (
     <Collapse in={!!message}>
@@ -137,14 +140,56 @@ const MultiFileUploadComponent: React.FC = () => {
     }
   };
 
+  const handleDeleteCopy = (index: number) => {
+    // Logic to delete the copy at the given index
+    // This could involve updating the state or calling a prop function
+  };
+
   return (
-    <ThemeProvider theme={darkTheme}>
       <Container maxWidth="sm">
         <Card elevation={3} sx={{ mt: 4, mb: 4, borderRadius: 2, bgcolor: 'background.paper' }}>
           <CardContent>
             <Typography variant="h5" gutterBottom align="center" sx={{ fontWeight: 'bold', mb: 3, color: 'text.primary' }}>
               Cargar Múltiples Archivos
             </Typography>
+            <Grid container spacing={2}>
+              {salesAngles.length > 0 && (
+                <Grid item xs={6}>
+                  <List sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 2 }}>
+                    {salesAngles.map((copy, index) => (
+                      <ListItem 
+                        key={index} 
+                        sx={{ borderBottom: '1px solid', borderColor: 'divider' }}
+                      >
+                        <ListItemText 
+                          primary={copy} 
+                          onClick={() => {
+                            setPrompt(copy);
+                            setIsCustom(false);
+                          }}
+                          sx={{ cursor: 'pointer' }}
+                        />
+                        <IconButton edge="end" onClick={() => handleDeleteCopy(index)}>
+                          <Delete />
+                        </IconButton>
+                      </ListItem>
+                    ))}
+                  </List>
+                </Grid>
+              )}
+              <Grid item xs={salesAngles.length > 0 ? 6 : 12}>
+                <TextField
+                  label="Prompt"
+                  multiline
+                  fullWidth
+                  rows={4}
+                  value={prompt}
+                  onChange={(e) => setPrompt(e.target.value)}
+                  variant="outlined"
+                  sx={{ bgcolor: 'background.default' }}
+                />
+              </Grid>
+            </Grid>
             <Box sx={{ marginY: 2 }}>
               <Button
                 variant="contained"
@@ -249,7 +294,6 @@ const MultiFileUploadComponent: React.FC = () => {
           )}
         </Card>
       </Container>
-    </ThemeProvider>
   );
 };
 
