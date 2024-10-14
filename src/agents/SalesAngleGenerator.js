@@ -1,5 +1,8 @@
 import ChatGPT from '../adapters/ChatGptClient';
 
+
+const DEFAULT_MODEL = "gpt-3.5-turbo";
+
 const SalesAngleGenerator = {
   generateSalesAngles: async (description) => {
     const messages = [
@@ -8,7 +11,7 @@ const SalesAngleGenerator = {
     ];
 
     try {
-      const response = await ChatGPT.generateResponse("gpt-3.5-turbo", messages);
+      const response = await ChatGPT.generateResponse(DEFAULT_MODEL, messages);
       const salesAngles = response.split('\n').filter(angle => angle.trim() !== '');
       return salesAngles;
     } catch (error) {
