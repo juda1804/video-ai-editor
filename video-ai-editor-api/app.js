@@ -3,11 +3,13 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 
+// Ruta para la documentación Swagger
+const swaggerSpec = require('./routes/swagger');
+const healthRoutes = require('./routes/healthRoutes');
 const videoRoutes = require('./routes/videoRoutes');
 
 // Importar Swagger
 const swaggerUi = require('swagger-ui-express');
-
 
 // Middlewares
 app.use(express.json());
@@ -15,11 +17,6 @@ app.use(express.json());
 // Rutas
 app.use('/api/video', videoRoutes);
 app.use('/api/health', healthRoutes);
-
-
-// Ruta para la documentación Swagger
-const swaggerSpec = require('./routes/swagger');
-const healthRoutes = require('./routes/healthRoutes');
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Iniciar el servidor

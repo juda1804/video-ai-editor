@@ -18,7 +18,7 @@ const readCredentials = () => {
     return JSON.parse(credentialsContent);
   } catch (error) {
     logger.error(`Error reading credentials file: ${error.message}`);
-    return null;
+    throw new Error(`Error reading credentials file: ${error.message}`);
   }
 }
 
@@ -28,8 +28,6 @@ const credentials = readCredentials();
 if (credentials) {
   logger.info('Credentials loaded successfully');
   logger.debug(`Credentials content: ${JSON.stringify(credentials, null, 2)}`);
-} else {
-  logger.warn('Failed to load credentials');
 }
 
 const client = new VideoIntelligenceServiceClient({
