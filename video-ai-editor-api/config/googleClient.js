@@ -37,7 +37,7 @@ const videoAIIntelligenceClient = new VideoIntelligenceServiceClient({
 });
 
 const googleStorage = new Storage({
-  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS
+  credentials: credentials
 });
 
 module.exports = { videoAIIntelligenceClient, googleStorage };
