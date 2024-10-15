@@ -7,14 +7,14 @@ const { analyzeVideoHandler } = require('../controllers/videoController');
  * @swagger
  * tags:
  *   - name: Video
- *     description: Operaciones relacionadas con análisis de video.
+ *     description: Operaciones relacionadas con análisis de video utilizando Vertex AI.
  */
 
 /**
  * @swagger
  * /video/analyze:
  *   post:
- *     summary: Analiza un video utilizando Google Video Intelligence API.
+ *     summary: Analiza un video utilizando Vertex AI.
  *     tags:
  *       - Video
  *     requestBody:
@@ -28,37 +28,9 @@ const { analyzeVideoHandler } = require('../controllers/videoController');
  *                 type: string
  *                 description: URI del video en Google Cloud Storage.
  *                 example: gs://tu-bucket/tu-video.mp4
- *               features:
- *                 type: array
- *                 items:
- *                   type: string
- *                 description: Lista de características para analizar.
- *                 example: ["LABEL_DETECTION", "SPEECH_TRANSCRIPTION"]
- *               languageHints:
- *                 type: array
- *                 items:
- *                   type: string
- *                 description: Pistas de idioma para la transcripción.
- *                 example: ["es-ES"]
- *               context:
- *                 type: object
- *                 description: Configuración adicional para el análisis.
- *                 properties:
- *                   labelDetectionConfig:
- *                     type: object
- *                     properties:
- *                       labelDetectionMode:
- *                         type: string
- *                         example: "SHOT_AND_FRAME_MODE"
- *                       stationaryCamera:
- *                         type: boolean
- *                         example: false
- *                       model:
- *                         type: string
- *                         example: "builtin/latest"
  *     responses:
  *       200:
- *         description: Análisis exitoso.
+ *         description: Análisis exitoso utilizando Vertex AI.
  *         content:
  *           application/json:
  *             schema:
