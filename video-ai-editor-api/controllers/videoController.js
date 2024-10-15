@@ -1,17 +1,22 @@
 // videoController.js
-const { generateContentForVideo } = require('../config/vertexService'); // Cambiado a vertexService
-async function analyzeVideoHandler(req, res) {
-  const { bucketUri } = req.body;
+const { generateVideoDescription } = require('../agents/VideoDescriber'); // Cambiado a vertexService
+const logger = require('../logger');
 
-  if (!bucketUri) {
-    return res.status(400).json({ error: 'bucketUri es requerido.' });
+async function analyzeVideoHandler(req, res) {
+  logger.info('Analizando video');
+  const { videoUri } = req.body;
+
+  if (!videoUri) {
+    return res.status(400).json({ error: 'videoUri es requerido.' });
   }
 
   try {
-    // Llama a la función que interactúa con Vertex AI
-    const analysisResult = await generateContentForVideo(bucketUri);
+    const analysisResult = await generateVideoDescription(videoUri);
+
+    logger.info('Video analizado', analysisResult);
     res.json({ success: true, data: analysisResult });
   } catch (error) {
+    logger.error('Error al analizar video', error);
     res.status(500).json({ success: false, error: error.message });
   }
 }

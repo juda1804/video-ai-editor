@@ -24,10 +24,10 @@ const { analyzeVideoHandler } = require('../controllers/videoController');
  *           schema:
  *             type: object
  *             properties:
- *               bucketUri:
+ *               videoUri:
  *                 type: string
  *                 description: URI del video en Google Cloud Storage.
- *                 example: gs://tu-bucket/tu-video.mp4
+ *                 example: gs://draft-videos/tapete-bebe-agua.mp4
  *     responses:
  *       200:
  *         description: Análisis exitoso utilizando Vertex AI.

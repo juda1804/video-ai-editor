@@ -1,5 +1,5 @@
 // controllers/healthController.js
-const { generateContentForVideo } = require('../config/vertexService');  // Usamos Vertex AI
+const { generateContentForVideo } = require('../services/vertexService');  // Usamos Vertex AI
 
 async function healthCheckHandler(req, res) {
   try {
