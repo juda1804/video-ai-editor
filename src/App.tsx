@@ -55,7 +55,7 @@ const App: React.FC = () => {
               <DefaultPage />
             </ProtectedRoute>
           } />
-          <Route path="/prompt-generator" element={
+          <Route path="/agents/chatbox/prompt-generator" element={
             <ProtectedRoute>
               <PromptGeneratorComponent />
             </ProtectedRoute>
