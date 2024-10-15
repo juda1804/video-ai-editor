@@ -1,5 +1,7 @@
 // config/googleClient.js
 const VideoIntelligenceServiceClient = require('@google-cloud/video-intelligence').v1.VideoIntelligenceServiceClient;
+const { Storage } = require('@google-cloud/storage');
+
 const path = require('path');
 const fs = require('fs');
 require('dotenv').config();
@@ -30,8 +32,12 @@ if (credentials) {
   logger.debug(`Credentials content: ${JSON.stringify(credentials, null, 2)}`);
 }
 
-const client = new VideoIntelligenceServiceClient({
+const videoAIIntelligenceClient = new VideoIntelligenceServiceClient({
   credentials: credentials,
 });
 
-module.exports = client;
+const googleStorage = new Storage({
+  keyFilename: './video-ai-editor-api/bucket-credentials.json'
+});
+
+module.exports = { videoAIIntelligenceClient, googleStorage };
