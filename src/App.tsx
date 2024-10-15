@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Header from './components/Header';
 import Login from './components/security/Login';
 import DefaultPage from './components/DefaultPage';
+import PromptGeneratorComponent from './components/chatbox-ia-prompt-generator/PromptGeneratorComponent'; // Import the component
 import { createTheme, ThemeProvider } from '@mui/material/styles'; // Import MUI components
 import './style.css';
 
@@ -52,6 +53,11 @@ const App: React.FC = () => {
           <Route path="/" element={
             <ProtectedRoute>
               <DefaultPage />
+            </ProtectedRoute>
+          } />
+          <Route path="/prompt-generator" element={
+            <ProtectedRoute>
+              <PromptGeneratorComponent />
             </ProtectedRoute>
           } />
         </Routes>
