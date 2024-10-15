@@ -1,26 +1,22 @@
-const { analyzeVideo } = require('../services/videoService');
+// videoController.js
+const { generateVideoDescription } = require('../agents/VideoDescriber'); // Cambiado a vertexService
+const logger = require('../logger');
 
 async function analyzeVideoHandler(req, res) {
-  const { bucketUri, features, languageHints, context } = req.body;
+  logger.info('Analizando video');
+  const { videoUri } = req.body;
 
-  // Validar parámetros requeridos
-  if (!bucketUri || !features) {
-    return res.status(400).json({ error: 'bucketUri y features son requeridos.' });
-  }
-
-  // Construir el videoContext si se proporcionan languageHints o context
-  const videoContext = context || {};
-
-  if (languageHints) {
-    videoContext.speechTranscriptionConfig = {
-      languageHints: languageHints,
-    };
+  if (!videoUri) {
+    return res.status(400).json({ error: 'videoUri es requerido.' });
   }
 
   try {
-    const analysisResult = await analyzeVideo({ bucketUri, features, context: videoContext });
+    const analysisResult = await generateVideoDescription(videoUri);
+
+    logger.info('Video analizado', analysisResult);
     res.json({ success: true, data: analysisResult });
   } catch (error) {
+    logger.error('Error al analizar video', error);
     res.status(500).json({ success: false, error: error.message });
   }
 }

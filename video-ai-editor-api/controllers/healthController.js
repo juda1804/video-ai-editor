@@ -1,40 +1,21 @@
 // controllers/healthController.js
-const client = require('../config/googleClient');
+const { generateContentForVideo } = require('../services/vertexService');  // Usamos Vertex AI
 
 async function healthCheckHandler(req, res) {
   try {
-    // URI del video de prueba en GCS
-    const inputUri = 'gs://draft-videos/tapete-bebe-agua.mp4'; // Reemplaza con tu URI real
-
-    const request = {
-      inputUri: inputUri,
-      features: ['LABEL_DETECTION'],
-    };
-
-    // Intentar realizar la llamada a la API
-    await client.annotateVideo(request);
+    // Usar Vertex AI para generar contenido y comprobar si funciona
+    const videoUri = 'gs://cloud-samples-data/generative-ai/video/describe_video_content.mp4'; // Video de prueba
+    const result = await generateContentForVideo(videoUri);  // Llamar a Vertex AI
 
     res.status(200).json({
       success: true,
-      message: 'Las credenciales son válidas y tienen permiso para acceder a la API de Video Intelligence.',
+      message: 'El servicio está funcionando correctamente con Vertex AI.',
+      data: result,
     });
   } catch (error) {
-    let statusCode = 500;
-    let message = 'Error al acceder a la API de Video Intelligence.';
-
-    if (error.code === 7) {
-      // PERMISSION_DENIED
-      statusCode = 403;
-      message = 'Permiso denegado. Las credenciales no tienen acceso a la API de Video Intelligence.';
-    } else if (error.code === 16) {
-      // UNAUTHENTICATED
-      statusCode = 401;
-      message = 'No autenticado. Las credenciales son inválidas o han expirado.';
-    }
-
-    res.status(statusCode).json({
+    res.status(500).json({
       success: false,
-      message: message,
+      message: 'Error al acceder a Vertex AI.',
       error: error.message,
     });
   }
