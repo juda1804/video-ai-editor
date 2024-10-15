@@ -37,7 +37,7 @@ const videoAIIntelligenceClient = new VideoIntelligenceServiceClient({
 });
 
 const googleStorage = new Storage({
-  keyFilename: './video-ai-editor-api/bucket-credentials.json'
+  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS
 });
 
 module.exports = { videoAIIntelligenceClient, googleStorage };
