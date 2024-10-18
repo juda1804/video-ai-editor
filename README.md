@@ -88,13 +88,29 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 
-Install Google Cloud SDK
-Seguir 
-Make sure your node.js version is 18 or above.
-Select or create a Google Cloud project.
-Enable billing for your project.
-Enable the Vertex AI API.
-Install the gcloud CLI.
-Initialize the gcloud CLI.
-Create local authentication credentials for your user account:
-https://cloud.google.com/vertex-ai/generative-ai/docs/reference/nodejs/latest?_gl=1*pny18a*_ga*MjcyNzA5MTU4LjE3MjgyNDI0NTI.*_ga_WH2QY8WWF5*MTcyODk2MDIwMi4xNi4xLjE3Mjg5NjEyNTQuNDUuMC4w 
+## Prerequisites
+
+### Install Google Cloud SDK
+Follow the instructions to install the Google Cloud SDK: [Google Cloud SDK Installation Guide](https://cloud.google.com/sdk/docs/install)
+
+### Node.js Version
+Ensure your Node.js version is 18 or above.
+
+### Google Cloud Setup
+1. **Select or Create a Google Cloud Project**  
+   Choose an existing project or create a new one in the Google Cloud Console.
+
+2. **Enable Billing**  
+   Make sure billing is enabled for your project.
+
+3. **Enable the Vertex AI API**  
+   Activate the Vertex AI API for your project.
+
+4. **Install the gcloud CLI**  
+   Download and install the gcloud command-line tool.
+
+5. **Initialize the gcloud CLI**  
+   Run the initialization command to set up the gcloud CLI.
+
+6. **Create Local Authentication Credentials**  
+   Follow the guide to create local authentication credentials for your user account: [Vertex AI Node.js Reference](https://cloud.google.com/vertex-ai/generative-ai/docs/reference/nodejs/latest?_gl=1*pny18a*_ga*MjcyNzA5MTU4LjE3MjgyNDI0NTI.*_ga_WH2QY8WWF5*MTcyODk2MDIwMi4xNi4xLjE3Mjg5NjEyNTQuNDUuMC4w)
