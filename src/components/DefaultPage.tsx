@@ -78,7 +78,7 @@ export const DefaultPage: React.FC = () => {
             <TikTokLinkUploadComponent addTikTokLink={addTikTokLink} />
           )}
           {activeStep === 2 && (
-            <MultiFileUploadComponent salesAngles={salesAngles} />
+            <MultiFileUploadComponent salesAngles={product.angles} />
           )}
           <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
             <Button

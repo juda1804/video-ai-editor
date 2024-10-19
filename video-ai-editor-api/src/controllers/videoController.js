@@ -1,5 +1,5 @@
-// videoController.js
-const { generateVideoDescription } = require('../agents/VideoDescriber'); // Cambiado a vertexService
+const { generateVideoDescription } = require('../agents/VideoDescriber');
+const { uploadVideoToGCS } = require('../services/videoService');
 const logger = require('../logger');
 
 async function analyzeVideoHandler(req, res) {
@@ -21,5 +21,23 @@ async function analyzeVideoHandler(req, res) {
   }
 }
 
+const uploadVideoHandler = async (req, res) => {
+  try {
+    console.log('Request received in uploadVideoHandler');
+    console.log('req.file:', req.file);
 
-module.exports = { analyzeVideoHandler };
+    if (!req.file) {
+      return res.status(400).json({ error: 'No file uploaded' });
+    }
+
+    const gcsUri = await uploadVideoToGCS(req.file);
+    res.json({ gcsUri });
+  } catch (error) {
+    console.error('Error in uploadVideoHandler:', error);
+    logger.error('Error in uploadVideoHandler', error);
+    res.status(500).json({ error: 'Failed to upload video' });
+  }
+};
+
+
+module.exports = { analyzeVideoHandler, uploadVideoHandler };
