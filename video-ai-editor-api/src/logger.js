@@ -5,10 +5,10 @@ const customFormat = winston.format.printf(({ timestamp, level, message, stack, 
   return `${timestamp} [${label}] ${level}: ${message} ${stack ? '\n' + stack : ''}`;
 });
 
-const logger = winston.createLogger({
+const logger = (className = 'server') => winston.createLogger({
   level: 'info',
   format: winston.format.combine(
-    winston.format.label({ label: path.basename(__filename) }),
+    winston.format.label({ label: className }),
     winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
     winston.format.errors({ stack: true }),
     customFormat

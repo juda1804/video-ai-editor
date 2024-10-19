@@ -1,6 +1,8 @@
 // config/db.js
 const mongoose = require('mongoose');
-const logger = require('../logger');
+const logger = require('../logger')('db');
+
+mongoose.set('strictQuery', true);
 
 const clientOptions = { 
     useNewUrlParser: true,

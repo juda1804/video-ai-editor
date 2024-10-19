@@ -1,7 +1,7 @@
 const { v4: uuidv4 } = require('uuid');
-const { storeProduct, getProductByDocumentId, getAllProductsByUsername }  = require('../repository/producService');
+const { storeProduct, getProductByDocumentId, getAllProductsByUsername, updateProductById }  = require('../repository/producRepository');
 
-const logger = require('../logger');
+const logger = require('../logger')('productController');
 
 const Product = require('../models/types');
 
@@ -57,9 +57,29 @@ const getProductsByUsername = async (req, res) => {
     }
 };
 
+const updateProduct = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updateData = req.body;
+        logger.info(`Updating product with ID: ${id}, Data: ${JSON.stringify(updateData)}`);
+
+        const updatedProduct = await updateProductById(id, updateData);
+
+        if (!updatedProduct) {
+            return res.status(404).json({ message: 'Product not found' });
+        }
+
+        res.status(200).json(updatedProduct);
+    } catch (error) {
+        logger.error(`Error updating product: ${error.message}`, error);
+        res.status(500).json({ message: 'Error updating product', error: error.message });
+    }
+};
+
 
 module.exports = {
     createProduct,
     getProductById,
-    getProductsByUsername
+    getProductsByUsername,
+    updateProduct
 };

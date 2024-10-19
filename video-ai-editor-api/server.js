@@ -3,36 +3,24 @@ const multer = require('multer');
 const path = require('path');
 const ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
-const winston = require('winston');
 const cors = require('cors');
 const os = require('os');
 const { VideoIntelligenceServiceClient } = require('@google-cloud/video-intelligence');
-const app = express();
+
+// Configuración del logger
+const logger = require('./src/logger')('server');
 
 // Inicializar el cliente de Google Cloud Video Intelligence
 const videoClient = new VideoIntelligenceServiceClient({
   keyFilename: path.join(__dirname, 'config', 'google-cloud-credentials.json')
 });
 
+const app = express();
+
 app.use(cors({
   origin: 'http://localhost:3002', // Reemplaza con la URL de tu frontend
   credentials: true,
 }));
-
-// Configuración del logger
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.printf(({ timestamp, level, message }) => {
-      return `${timestamp} ${level}: ${message}`;
-    })
-  ),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: 'server.log' })
-  ]
-});
 
 // Asegurarse de que la carpeta 'uploads' existe
 const uploadsFolderPath = path.join(__dirname, 'uploads');

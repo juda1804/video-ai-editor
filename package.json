@@ -17,6 +17,7 @@
     "@types/node": "^16.18.105",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "axios": "^1.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
@@ -29,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemon video-ai-editor-api/app.js",
+    "server": "cd video-ai-editor-api && npm start",
     "dev": "concurrently \"npm run server\" \"npm run start\""
   },
   "eslintConfig": {
@@ -55,6 +56,6 @@
     "concurrently": "^9.0.1",
     "css-loader": "^7.1.2",
     "style-loader": "^4.0.0",
-    "typescript": "^5.6.3"
+    "typescript": "^4.9.5"
   }
 }
