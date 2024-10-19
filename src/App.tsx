@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Header from './components/Header';
 import Login from './components/security/Login';
 import DefaultPage from './components/DefaultPage';
-import PromptGeneratorComponent from './components/chatbox-ia-prompt-generator/PromptGeneratorComponent'; // Import the component
-import { createTheme, ThemeProvider } from '@mui/material/styles'; // Import MUI components
+import ProductSummary from './components/product/Products'; 
+import PromptGeneratorComponent from './components/chatbox-ia-prompt-generator/PromptGeneratorComponent';
+import { createTheme, ThemeProvider } from '@mui/material/styles'; 
 import './style.css';
+
 
 // Create a dark theme
 const darkTheme = createTheme({
@@ -60,11 +62,15 @@ const App: React.FC = () => {
               <PromptGeneratorComponent />
             </ProtectedRoute>
           } />
+          <Route path="/products" element={
+            <ProtectedRoute>
+              <ProductSummary username={"test"} /> 
+            </ProtectedRoute>
+          } />
         </Routes>
       </Router>
     </ThemeProvider>
   );
 }
 
-// Esta es la parte importante: debes asegurarte de exportarlo como default
 export default App;

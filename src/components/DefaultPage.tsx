@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
-import { Container, Paper, Typography, Stepper, Step, StepLabel, Button, Box, createTheme, ThemeProvider } from '@mui/material';
+import { Container, Paper, Typography, Stepper, Step, StepLabel, Button, Box } from '@mui/material';
 import MultiFileUploadComponent from './carga-ordenes/MultiFileUploadComponent';
-import ProductInfoBanner from './ProductInfoBanner';
+import ProductInfoBanner from './product/ProductInfoBanner';
 import TikTokLinkUploadComponent from './TikTokLinkUploadComponent';
+import { Product } from '../types';
+import { saveProduct } from '../service/ProductService';
 
 const DefaultPage: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [salesAngles, setSalesAngles] = useState<string[]>([]); // Add state for sales angles
-  const [tikTokLinks, setTikTokLinks] = useState<string[]>([]); // Add state for TikTok links
+  const [salesAngles, setSalesAngles] = useState<string[]>([]);
+  const [product, setProduct] = useState<Product>({ // Create state for Product
+    name: '',
+    price: '',
+    description: '',
+    copys: [],
+    landings: [],
+    videoUrls: [],
+    tikTokLinks: [],
+    angles: []
+  });
 
   const steps = ['Información del Producto', 'Subir Videos desde TikTok', 'Editor de videos'];
 
@@ -16,11 +27,19 @@ const DefaultPage: React.FC = () => {
   };
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    saveProduct(product)
+      .then(() => {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+      }).catch((error) => {
+        console.error('Error al guardar el producto:', error);
+      });
   };
 
   const addTikTokLink = (link: string) => {
-    setTikTokLinks((prevLinks) => [...prevLinks, link]);
+    setProduct((prevProduct) => ({
+      ...prevProduct,
+      tikTokLinks: [...prevProduct.tikTokLinks, link]
+    }));
   };
 
   return (
@@ -28,7 +47,7 @@ const DefaultPage: React.FC = () => {
         sx={{ 
           mt: 4, 
           mb: 4, 
-          height: '100vh', // Set the height to 100% of the viewport height
+          height: '100vh', 
           display: 'flex', 
           flexDirection: 'column' 
         }}
@@ -45,13 +64,13 @@ const DefaultPage: React.FC = () => {
             ))}
           </Stepper>
           {activeStep === 0 && (
-            <ProductInfoBanner setSalesAngles={setSalesAngles} /> // Pass setSalesAngles as prop
+            <ProductInfoBanner setProduct={setProduct} />
           )}
           {activeStep === 1 && (
             <TikTokLinkUploadComponent addTikTokLink={addTikTokLink} />
           )}
           {activeStep === 2 && (
-            <MultiFileUploadComponent salesAngles={salesAngles} /> // Pass salesAngles as prop
+            <MultiFileUploadComponent salesAngles={salesAngles} />
           )}
           <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
             <Button
@@ -71,7 +90,6 @@ const DefaultPage: React.FC = () => {
           </Box>
         </Paper>
       </Container>
-    
   );
 };
 

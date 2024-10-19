@@ -14,6 +14,7 @@ const Header: React.FC<HeaderProps> = ({ onLogout }) => {
           Editor de videos
         </Typography>
         <Button color="inherit" component={Link} to="/">Inicio</Button>
+        <Button color="inherit" component={Link} to="/products">Mis productos</Button>
         <Button color="inherit" component={Link} to="/agents/chatbox/prompt-generator">Prompt Generator</Button>
         <Button color="inherit" onClick={onLogout}>Cerrar sesión</Button>
       </Toolbar>
