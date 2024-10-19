@@ -38,5 +38,5 @@ export interface Pedido {
   }
 
   export function isValidProduct(product: Product): boolean {
-    return product.name !== '' && product.description !== '' && product.angles.length === 0;
+    return product.name !== '' && product.description !== '' && product.angles.length >= 0;
   }

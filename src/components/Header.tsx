@@ -1,6 +1,7 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 interface HeaderProps {
   onLogout: () => void;
@@ -22,7 +23,9 @@ const Header: React.FC<HeaderProps> = ({ onLogout }) => {
         <Button color="inherit" component={Link} to="/">Inicio</Button>
         <Button color="inherit" component={Link} to="/products">Mis productos</Button>
         <Button color="inherit" component={Link} to="/agents/chatbox/prompt-generator">Prompt Generator</Button>
-        <Button color="inherit" onClick={onLogout}>Cerrar sesión</Button>
+        <IconButton color="inherit" onClick={onLogout}>
+          <LogoutIcon />
+        </IconButton>
       </Toolbar>
     </AppBar>
   );

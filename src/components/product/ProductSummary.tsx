@@ -25,6 +25,9 @@ const ProductSummary: React.FC<{ username: string }> = ({ username }) => {
 
     return (
         <>
+            <Typography variant="h4" color="black" sx={{ textAlign: 'center', marginBottom: '20px' }}>
+                Resumen de productos
+            </Typography>
             {products.length === 0 ? (
                 <Box 
                     sx={{ 
@@ -70,7 +73,13 @@ const ProductSummary: React.FC<{ username: string }> = ({ username }) => {
                             margin: '10px',
                             display: 'inline-block',
                             position: 'relative',
-                            overflow: 'hidden'
+                            overflow: 'hidden',
+                            borderRadius: '8px',
+                            transition: 'transform 0.2s, box-shadow 0.2s', // Add transition for smooth effect
+                            '&:hover': {
+                                transform: 'scale(1.05)', // Slightly scale up the card
+                                boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)', // Add a shadow on hover
+                            }
                         }}
                         key={product.id}
                     >
@@ -80,7 +89,7 @@ const ProductSummary: React.FC<{ username: string }> = ({ username }) => {
                         >
                             <DeleteIcon />
                         </IconButton>
-                        <CardContent sx={{ height: '100%', boxSizing: 'border-box' }}>
+                        <CardContent sx={{ height: '100%', boxSizing: 'border-box', display: 'flex', flexDirection: 'column' }}>
                             <Typography variant="h5">
                                 {product.name}
                             </Typography>

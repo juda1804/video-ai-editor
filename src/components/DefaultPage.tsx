@@ -28,8 +28,15 @@ export const DefaultPage: React.FC = () => {
   const dispatch = useDispatch();
 
   const error = useSelector((state: RootState) => state.alert.message); // Adjust according to your state structure
+  const steps = ['Vomito de mercado','Informacion adicional del producto', 'Recursos de la campaña', 'Analisis de videos', 'Produccion de videos', 'Editor de videos'];
 
-  const steps = ['Información del Producto', 'Subir Videos desde TikTok', 'Editor de videos'];
+  //const validateGeneralStep = (): boolean => {
+  //  return true;
+  //}
+  
+  //const validationsSteps = new Map([
+  //  [0, validateGeneralStep]
+  //]);
 
   const handleNext = () => {
     saveProduct(product)
@@ -40,6 +47,30 @@ export const DefaultPage: React.FC = () => {
       dispatch(setError('Failed to save product. Please try again.'));
     });
   };
+
+  //const handleNext = (): void => {
+  //  const isValid = validationsSteps.get(activeStep)?.() || false;
+  //  if (isValid) {
+  //    applyStep(activeStep)
+  //      .catch((error) => {
+  //        console.error(error);
+  //        setError(`Error processing step ${steps[activeStep]}`);
+  //        });
+  //  }else{
+  //    setError(`Ooops, there are some errors. Please check and correct them below `);
+  //  }
+  //};
+
+  //const applyStep = (activeStep: number): Promise<void> => {
+  //  switch (activeStep) {
+  //    case 0:
+  //      return applyGeneralStep();
+  //    case 1:
+  //      return Promise.resolve();
+  //    default:
+  //      return Promise.resolve();
+  //  }
+  //}
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
