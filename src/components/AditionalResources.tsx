@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Box, TextField, Button } from '@mui/material';
 
-interface TikTokLinkUploadComponentProps {
+interface AditionalResourcesProps {
   addTikTokLink: (link: string) => void;
 }
 
-const TikTokLinkUploadComponent: React.FC<TikTokLinkUploadComponentProps> = ({ addTikTokLink }) => {
+const AditionalResources: React.FC<AditionalResourcesProps> = ({ addTikTokLink }) => {
   const [links, setLinks] = useState<string[]>(['']);
 
   const handleAddLink = (index: number) => {
@@ -41,4 +41,4 @@ const TikTokLinkUploadComponent: React.FC<TikTokLinkUploadComponentProps> = ({ a
   );
 };
 
-export default TikTokLinkUploadComponent;
+export default AditionalResources;
