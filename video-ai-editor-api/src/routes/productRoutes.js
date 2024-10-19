@@ -11,5 +11,7 @@ router.get('/:id', ProductController.getProductById);
 // Route to get all products by username
 router.get('/username/:username', ProductController.getProductsByUsername);
 
-module.exports = router;
+// Route to update a product by ID
+router.put('/:id', ProductController.updateProduct);
 
+module.exports = router;

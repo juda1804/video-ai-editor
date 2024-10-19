@@ -2,7 +2,7 @@ const { Storage } = require('@google-cloud/storage');
 
 const fs = require('fs');
 require('dotenv').config();
-const logger = require('../logger');
+const logger = require('../logger')('googleClient');
 
 const readCredentials = () => {
   const credentialsPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;

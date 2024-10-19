@@ -1,6 +1,6 @@
 // config/db.js
 const mongoose = require('mongoose');
-const logger = require('../logger');
+const logger = require('../logger')('db');
 
 const clientOptions = { 
     useNewUrlParser: true,

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const connectDB = require('../config/db');
 const ProductSchema = require('../models/Product');
-const logger = require('../logger');
+const logger = require('../logger')('productService');
 
 async function storeProduct(productData) {
     try {
@@ -72,10 +72,37 @@ async function getAllProductsByUsername(username) {
     }
 }
 
+// ... existing code ...
+
+async function updateProductById(productId, updateData) {
+    logger.info(`Updating product by document ID: ${productId}`);
+    try {
+        await connectDB();
+
+        const objectId = mongoose.Types.ObjectId(productId);
+
+        const updatedProduct = await ProductSchema.findByIdAndUpdate(objectId, updateData, { new: true });
+
+        if (!updatedProduct) {
+            console.log('Product not found');
+            return undefined;
+        }
+
+        console.log('Product updated successfully:', updatedProduct);
+        return updatedProduct;
+    } catch (error) {
+        console.error('Error updating product:', error);
+        return undefined;
+    } finally {
+        await mongoose.connection.close();
+    }
+}
+
 
 
 module.exports = {
     storeProduct,
     getProductByDocumentId,
-    getAllProductsByUsername
+    getAllProductsByUsername,
+    updateProductById
 };

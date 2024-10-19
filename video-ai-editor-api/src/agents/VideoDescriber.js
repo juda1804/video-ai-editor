@@ -1,6 +1,6 @@
 const { getGenerativeModel } = require('../services/vertexService');
 const { agenteVentasWhatsappPrompt } = require('./AgentsPrompt');
-const logger = require('../logger');
+const logger = require('../logger')('VideoDescriber');
 
 const model = 'gemini-1.5-flash-002';
 const generationConfig = {

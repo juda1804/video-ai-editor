@@ -1,6 +1,6 @@
 const { generateVideoDescription } = require('../agents/VideoDescriber');
 const { uploadVideoToGCS } = require('../services/videoService');
-const logger = require('../logger');
+const logger = require('../logger')('videoController');
 
 async function analyzeVideoHandler(req, res) {
   logger.info('Analizando video');
