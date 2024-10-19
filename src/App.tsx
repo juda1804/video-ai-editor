@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Login from './components/security/Login';
-import DefaultPage from './components/DefaultPage';
-import ProductSummary from './components/product/Products'; 
+import {DefaultPage} from './components/DefaultPage';
+import ProductSummary from './components/product/ProductsSumary'; 
 import PromptGeneratorComponent from './components/chatbox-ia-prompt-generator/PromptGeneratorComponent';
 import { createTheme, ThemeProvider } from '@mui/material/styles'; 
 import './style.css';
@@ -54,8 +54,13 @@ const App: React.FC = () => {
           <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login onLogin={login} />} />
           <Route path="/" element={
             <ProtectedRoute>
-              <DefaultPage />
+              <DefaultPage/>
             </ProtectedRoute>
+          } />
+            <Route path="/products/:id" element={
+              <ProtectedRoute>
+                <DefaultPage/>
+              </ProtectedRoute>
           } />
           <Route path="/agents/chatbox/prompt-generator" element={
             <ProtectedRoute>

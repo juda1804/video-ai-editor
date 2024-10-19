@@ -1,5 +1,5 @@
 const { v4: uuidv4 } = require('uuid');
-const { storeProduct, getProductByDocumentId, getAllProductsByUsername }  = require('../services/producService');
+const { storeProduct, getProductByDocumentId, getAllProductsByUsername }  = require('../repository/producService');
 
 const logger = require('../logger');
 

@@ -4,12 +4,14 @@ import MultiFileUploadComponent from './carga-ordenes/MultiFileUploadComponent';
 import ProductInfoBanner from './product/ProductInfoBanner';
 import TikTokLinkUploadComponent from './TikTokLinkUploadComponent';
 import { Product } from '../types';
-import { saveProduct } from '../service/ProductService';
+import { getProductById, saveProduct } from '../service/ProductService';
+import { useParams } from 'react-router-dom';
 
-const DefaultPage: React.FC = () => {
+export const DefaultPage: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
   const [activeStep, setActiveStep] = useState(0);
   const [salesAngles, setSalesAngles] = useState<string[]>([]);
-  const [product, setProduct] = useState<Product>({ // Create state for Product
+  const [product, setProduct] = useState<Product>({
     name: '',
     price: '',
     description: '',
@@ -23,16 +25,16 @@ const DefaultPage: React.FC = () => {
   const steps = ['Información del Producto', 'Subir Videos desde TikTok', 'Editor de videos'];
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    saveProduct(product)
+    .then(() => {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }).catch((error) => {
+      console.error('Error al guardar el producto:', error);
+    });
   };
 
   const handleBack = () => {
-    saveProduct(product)
-      .then(() => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
-      }).catch((error) => {
-        console.error('Error al guardar el producto:', error);
-      });
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
   const addTikTokLink = (link: string) => {
@@ -41,6 +43,12 @@ const DefaultPage: React.FC = () => {
       tikTokLinks: [...prevProduct.tikTokLinks, link]
     }));
   };
+
+  React.useEffect(() => {
+    if (id) {
+      getProductById(id).then(setProduct);
+    }
+  }, [id]);
 
   return (
       <Container 
@@ -92,5 +100,3 @@ const DefaultPage: React.FC = () => {
       </Container>
   );
 };
-
-export default DefaultPage;

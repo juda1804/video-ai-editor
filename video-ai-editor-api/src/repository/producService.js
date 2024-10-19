@@ -3,13 +3,10 @@ const connectDB = require('../config/db');
 const ProductSchema = require('../models/Product');
 const logger = require('../logger');
 
-// Function to store an object in MongoDB
 async function storeProduct(productData) {
     try {
-        // Connect to MongoDB
         await connectDB();
-
-        // Create a new product instance
+    
         const product = new ProductSchema(productData);
 
         const validationError = product.validateSync();
@@ -17,8 +14,7 @@ async function storeProduct(productData) {
             console.error('Validation error:', validationError);
             return { error: 'Validation failed', details: validationError.errors };
         }
-
-        // Save the product to the database
+    
         const savedProduct = await product.save();
 
         console.log('Product saved successfully:', savedProduct);
@@ -26,7 +22,6 @@ async function storeProduct(productData) {
     } catch (error) {
         console.error('Error saving product:', error);
     } finally {
-        // Close the connection
         await mongoose.connection.close();
     }
 }
@@ -34,10 +29,8 @@ async function storeProduct(productData) {
 async function getProductByDocumentId(productId) {
     logger.info(`Getting product by document ID: ${productId}`);
     try {
-        // Connect to MongoDB
         await connectDB();
 
-        // Find the product by ID
         const objectId = mongoose.Types.ObjectId(productId);
 
         const product = await ProductSchema.findById(objectId);
@@ -52,8 +45,7 @@ async function getProductByDocumentId(productId) {
     } catch (error) {
         console.error('Error retrieving product:', error);
         return undefined;
-    } finally {
-        // Close the connection
+    } finally {        
         await mongoose.connection.close();
     }
 }
@@ -68,14 +60,13 @@ async function getAllProductsByUsername(username) {
 
         if (!products) {
             console.log('Product not found');
-            return undefined;
+            return [];
         }
-
-        console.log('Products retrieved successfully:', products);
+        
         return products;
     } catch (error) {
         console.error('Error retrieving product:', error);
-        return undefined;
+        throw error;
     } finally {
         await mongoose.connection.close();
     }

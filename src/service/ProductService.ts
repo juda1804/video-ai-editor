@@ -15,3 +15,7 @@ export async function getAllProductsByUsername(username: string): Promise<Produc
         .then(response => response.json());
 }
 
+export async function getProductById(productId: string): Promise<Product> {
+    return fetch(`http://localhost:3000/api/products/${productId}`)
+        .then(response => response.json());
+}
