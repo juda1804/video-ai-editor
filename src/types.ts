@@ -23,3 +23,16 @@ export interface Pedido {
     posicion: number;
     font?: string;
   }
+
+  export interface Product {
+    _id?: string;
+    id?: string;
+    name: string;
+    price: string;
+    description: string;
+    copys: string[];
+    landings: string[];
+    videoUrls: string[];
+    tikTokLinks: string[];
+    angles: string[];
+  }

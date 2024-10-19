@@ -6,7 +6,7 @@ const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 console.log('API_KEY:', API_KEY); 
 
 const ChatGPT = {
-  generateResponse: (model, messages, temperature = 0.7, maxTokens = 200) => {
+  generateResponse: (model, messages, temperature = 0.7, maxTokens = 400) => {
     return new Promise((resolve, reject) => {
       axios.post(
         API_URL,
@@ -27,13 +27,13 @@ const ChatGPT = {
         const { choices, usage } = response.data;
         const result = choices[0].message.content;
         
-        console.log('Response generated successfully');
-        console.log('Model used:', model);
-        console.log('Prompt tokens:', usage.prompt_tokens);
-        console.log('Completion tokens:', usage.completion_tokens);
-        console.log('Total tokens:', usage.total_tokens);
-        console.log('Temperature:', temperature);
-        console.log('Max tokens:', maxTokens);
+        console.log(`Response generated successfully
+          Model used: ${model}
+          Prompt tokens: ${usage.prompt_tokens}
+          Completion tokens: ${usage.completion_tokens}
+          Total tokens: ${usage.total_tokens}
+          Temperature: ${temperature}
+          Max tokens: ${maxTokens}`);
 
         resolve(result);
       })

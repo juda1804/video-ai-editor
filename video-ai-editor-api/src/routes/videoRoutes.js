@@ -1,7 +1,14 @@
 // routes/videoRoutes.js
 const express = require('express');
 const router = express.Router();
-const { analyzeVideoHandler } = require('../controllers/videoController');
+const { analyzeVideoHandler, uploadVideoHandler } = require('../controllers/videoController');
+const multer = require('multer');
+
+// Configure multer for file uploads
+const upload = multer({
+  dest: 'uploads/',
+  limits: { fileSize: 50 * 1024 * 1024 } // Limita el tamaño del archivo a 50MB
+});
 
 /**
  * @swagger
@@ -41,5 +48,7 @@ const { analyzeVideoHandler } = require('../controllers/videoController');
  *         $ref: '#/components/responses/InternalServerError'
  */
 router.post('/analyze', analyzeVideoHandler);
+
+router.post('/upload', upload.single('video'), uploadVideoHandler);
 
 module.exports = router;

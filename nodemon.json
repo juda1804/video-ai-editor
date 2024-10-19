@@ -1,6 +1,0 @@
-{
-    "watch": ["video-ai-editor-api"],
-    "ext": "js,json",
-    "ignore": ["node_modules"],
-    "exec": "node video-ai-editor-api/app.js"
-}

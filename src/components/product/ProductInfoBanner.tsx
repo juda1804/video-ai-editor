@@ -1,20 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Button, Typography, TextField, Paper, Container, CircularProgress, List, ListItem } from '@mui/material';
-import SalesAngleGenerator from '../agents/SalesAngleGenerator';
+import SalesAngleGenerator from '../../agents/SalesAngleGenerator';
+import { Product } from '../../types';
 
 interface ProductInfoBannerProps {
-  setSalesAngles: React.Dispatch<React.SetStateAction<string[]>>;
+  setProduct: React.Dispatch<React.SetStateAction<Product>>;
 }
 
-const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setSalesAngles }) => {
+const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setProduct }) => {
+  const [productName, setProductName] = useState('');
   const [productDescription, setProductDescription] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [generatedAngles, setGeneratedAngles] = useState<string[]>([]);
 
-  // Variables para controlar las solicitudes
-  let lastRequestTime = 0;
-  const REQUEST_LIMIT_INTERVAL = 60000; // Limitar a 60 segundos
+  useEffect(() => {
+    setProduct((prevProduct) => ({
+      ...prevProduct,
+      name: productName,
+      description: productDescription,
+      angles: generatedAngles
+    }));
+  }, [productName, productDescription, generatedAngles]);
 
   const handleGenerateAngles = async () => {
     if (!productDescription) {
@@ -22,20 +29,12 @@ const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setSalesAngles })
       return;
     }
 
-    const currentTime = Date.now();
-    if (currentTime - lastRequestTime < REQUEST_LIMIT_INTERVAL) {
-      setErrorMessage('Por favor, espera antes de hacer otra solicitud.');
-      return;
-    }
-
     setErrorMessage('');
     setIsLoading(true);
 
     try {
-      lastRequestTime = currentTime; // Actualizar el tiempo de la última solicitud
       const angles = await SalesAngleGenerator.generateSalesAngles(productDescription);
       setGeneratedAngles(angles);
-      setSalesAngles(angles); // Pasar los ángulos de venta generados al componente padre
     } catch (error) {
       setErrorMessage('Hubo un error al generar los ángulos de venta. Inténtalo de nuevo.');
     } finally {
@@ -49,6 +48,15 @@ const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setSalesAngles })
         <Typography variant="h4" gutterBottom align="center">
           Agregar Información del Producto
         </Typography>
+
+        <TextField
+          label="Nombre del Producto"
+          variant="outlined"
+          fullWidth
+          value={productName}
+          onChange={(e) => setProductName(e.target.value)}
+          sx={{ marginBottom: 3 }}
+        />
 
         <TextField
           label="Descripción del Producto"
