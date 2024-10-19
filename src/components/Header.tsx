@@ -8,10 +8,16 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onLogout }) => {
   return (
-    <AppBar position="static">
+    <AppBar 
+      position="static" 
+      sx={{         
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Custom shadow
+        padding: '0 20px' // Custom padding
+      }}
+    >
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          Editor de videos
+          Triniti AI
         </Typography>
         <Button color="inherit" component={Link} to="/">Inicio</Button>
         <Button color="inherit" component={Link} to="/products">Mis productos</Button>

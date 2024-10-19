@@ -1,10 +1,11 @@
 // src/components/product/ProductSummary.tsx
 
 import React from 'react';
-import { Card, CardContent, Typography, List, ListItem, Button, Box } from '@mui/material';
+import { Card, CardContent, Typography, List, ListItem, Button, Box, IconButton } from '@mui/material';
 import { Product } from '../../types';
 import { getAllProductsByUsername } from '../../service/ProductService';
 import { useNavigate } from 'react-router-dom';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const ProductSummary: React.FC<{ username: string }> = ({ username }) => {
     const navigate = useNavigate();
@@ -14,25 +15,72 @@ const ProductSummary: React.FC<{ username: string }> = ({ username }) => {
         navigate(`/products/${selectedProduct._id}`);
     };
 
+    const handleDelete = (productId: string | undefined) => {
+        console.log(`Delete product with id: ${productId}`);
+    };
+
     React.useEffect(() => {
         getAllProductsByUsername(username).then(setProducts);
     }, []);
 
     return (
         <>
-            {
-                products.map((product: Product) => (
-                    <Card 
+            {products.length === 0 ? (
+                <Box 
+                    sx={{ 
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        alignItems: 'center', 
+                        justifyContent: 'center', 
+                        height: '100vh', 
+                        textAlign: 'center', 
+                        margin: '20px' 
+                    }}
+                >
+                    <Typography variant="h6" color="black">
+                        No products created
+                    </Typography>
+                    <Button
+                        variant="contained"
+                        color="primary"
                         sx={{ 
-                            maxWidth: 300, 
-                            margin: '10px', 
-                            display: 'inline-block', 
-                            position: 'relative', 
-                            overflow: 'hidden' 
-                        }} 
+                            marginTop: '20px',
+                            boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+                            transform: 'translateY(-2px)',
+                            transition: 'transform 0.2s',
+                            '&:hover': {
+                                transform: 'translateY(-4px)',
+                                boxShadow: '0px 6px 8px rgba(0, 0, 0, 0.2)',
+                            }
+                        }}
+                        onClick={(event) => {
+                            event.preventDefault();
+                            navigate('/');
+                        }}
+                    >
+                        Create Product
+                    </Button>
+                </Box>
+            ) : (
+                products.map((product: Product) => (
+                    <Card
+                        sx={{
+                            width: 300, // Set a fixed width
+                            height: 400, // Set a fixed height
+                            margin: '10px',
+                            display: 'inline-block',
+                            position: 'relative',
+                            overflow: 'hidden'
+                        }}
                         key={product.id}
                     >
-                        <CardContent>
+                        <IconButton
+                            sx={{ position: 'absolute', top: 0, right: 0, padding: 1 }}
+                            onClick={() => handleDelete(product._id)}
+                        >
+                            <DeleteIcon />
+                        </IconButton>
+                        <CardContent sx={{ height: '100%', boxSizing: 'border-box' }}>
                             <Typography variant="h5">
                                 {product.name}
                             </Typography>
@@ -42,24 +90,24 @@ const ProductSummary: React.FC<{ username: string }> = ({ username }) => {
                             <Typography variant="h6">
                                 Stored Angles: {JSON.stringify(product.angles.length)}
                             </Typography>
-                            <Button 
-                                variant="contained" 
-                                color="primary" 
+                            <Button
+                                variant="contained"
+                                color="primary"
                                 sx={{ display: 'block', margin: '10px auto' }}
                                 onClick={() => handleButtonClick(product)}
                             >
                                 Continue Product
                             </Button>
-                            <Box 
-                                sx={{ 
-                                    position: 'absolute', 
-                                    bottom: 0, 
-                                    left: 0, 
-                                    right: 0, 
-                                    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-                                    color: 'white', 
-                                    padding: '5px', 
-                                    textAlign: 'center' 
+                            <Box
+                                sx={{
+                                    position: 'absolute',
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                                    color: 'white',
+                                    padding: '5px',
+                                    textAlign: 'center'
                                 }}
                             >
                                 Preview angles: {JSON.stringify(product?.copys?.length || 0)}
@@ -67,7 +115,7 @@ const ProductSummary: React.FC<{ username: string }> = ({ username }) => {
                         </CardContent>
                     </Card>
                 ))
-            }
+            )}
         </>
     );
 };

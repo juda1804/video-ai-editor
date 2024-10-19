@@ -36,3 +36,7 @@ export interface Pedido {
     tikTokLinks: string[];
     angles: string[];
   }
+
+  export function isValidProduct(product: Product): boolean {
+    return product.name !== '' && product.description !== '' && product.angles.length === 0;
+  }

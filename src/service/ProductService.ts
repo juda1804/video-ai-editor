@@ -1,6 +1,10 @@
-import { Product } from "../types";
+import { isValidProduct, Product } from "../types";
 
 export async function saveProduct(product: Product): Promise<Product> {
+    if (!isValidProduct(product)) {
+        return Promise.reject(new Error('Invalid product data'));
+    }
+    
     return fetch('http://localhost:3000/api/products/', {
         method: 'POST',
         headers: {
