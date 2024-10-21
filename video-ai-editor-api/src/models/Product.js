@@ -6,24 +6,20 @@ const ProductSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    description: {
+    vomitoDeMercadoUrl: {
       type: String,
       required: true,
     },
-    user: {
+    description: {
+      type: String,
+      required: false,
+    },
+    username: {
       type: String,
       required: true,
     },
     name: {
       type: String,
-      required: true,
-    },
-    price: {
-      type: Number,
-      required: false,
-    },
-    copies: {
-      type: [String],
       required: false,
     },
     landings: {
@@ -40,6 +36,10 @@ const ProductSchema = new mongoose.Schema(
     },
     angles: {
       type: [String],
+      required: false,
+    },
+    step: {
+      type: Number,
       required: false,
     },
   },

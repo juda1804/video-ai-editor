@@ -119,7 +119,7 @@ const ProductSummary: React.FC<{ username: string }> = ({ username }) => {
                                     textAlign: 'center'
                                 }}
                             >
-                                Preview angles: {JSON.stringify(product?.copys?.length || 0)}
+                                Preview angles: {JSON.stringify(product?.angles?.length || 0)}
                             </Box>
                         </CardContent>
                     </Card>

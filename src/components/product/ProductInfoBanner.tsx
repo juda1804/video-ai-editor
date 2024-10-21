@@ -4,15 +4,16 @@ import SalesAngleGenerator from '../../agents/SalesAngleGenerator';
 import { Product } from '../../types';
 
 interface ProductInfoBannerProps {
+  product: Product;
   setProduct: React.Dispatch<React.SetStateAction<Product>>;
 }
 
-const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ setProduct }) => {
-  const [productName, setProductName] = useState('');
-  const [productDescription, setProductDescription] = useState('');
+const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ product, setProduct }) => {
+  const [productName, setProductName] = useState(product.name);
+  const [productDescription, setProductDescription] = useState(product.description);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [generatedAngles, setGeneratedAngles] = useState<string[]>([]);
+  const [generatedAngles, setGeneratedAngles] = useState<string[]>(product.angles);
 
   useEffect(() => {
     setProduct((prevProduct) => ({

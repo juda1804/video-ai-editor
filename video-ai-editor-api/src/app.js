@@ -24,6 +24,7 @@ app.use(cors({
 
 // Middlewares
 app.use(express.json());
+app.use(express.text());
 
 // Rutas
 app.use('/api/video', videoRoutes);

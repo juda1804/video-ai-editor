@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Container, Paper, Typography, Stepper, Step, StepLabel, Button, Box, Alert } from '@mui/material';
 import MultiFileUploadComponent from './carga-ordenes/MultiFileUploadComponent';
 import ProductInfoBanner from './product/ProductInfoBanner';
-import TikTokLinkUploadComponent from './AditionalResources';
 import { Product } from '../types';
-import { getProductById, saveProduct } from '../service/ProductService';
+import { getProductById, saveDraftProduct, saveProduct, uploadVomitoDeMercado, VomitoDeMercadoResponse } from '../service/ProductService';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setError } from '../store/slices/AlertSlice';
@@ -15,18 +14,21 @@ import VomitoDeMercado from './product/VomitoDeMercado';
 import VideoAnalysis from './product/VideoAnalysis';
 import VideoProduction from './product/VideoProduction';
 
-export const DefaultPage: React.FC = () => {
+export const IncioRapido: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [activeStep, setActiveStep] = useState(0);
+  const [vomitoMercado, setVomitoMercado] = useState<string>("");
   const [product, setProduct] = useState<Product>({
+    _id: '',
     name: '',
     price: '',
     description: '',
-    copys: [],
     landings: [],
     videoUrls: [],
     tikTokLinks: [],
-    angles: []
+    angles: [], 
+    vomitoDeMercadoUrl: '',
+    username: ''
   });
   
   const dispatch = useDispatch();
@@ -44,22 +46,54 @@ export const DefaultPage: React.FC = () => {
   const validateGeneralStep = (): boolean => {
     return true;
   }
+
+  const validateVomitoDeMercadoStep = (): boolean => {
+    return true;
+  }
   
   const validationsSteps = new Map([
-    [0, validateGeneralStep]
+    [0, validateVomitoDeMercadoStep],
+    [1, validateGeneralStep]
   ]);
 
-  const applyGeneralStep = (): Promise<void> => {
-    return saveProduct(product).then(() => {
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    })
+  const applyVomitoDeMercado = async (): Promise<void> => {
+    try{
+      const result = await uploadVomitoDeMercado(vomitoMercado);
+      const newProduct = {
+        ...product,
+        username: 'test',
+        vomitoDeMercadoUrl: result.bucketUri,
+        step: 0
+      };
+
+      const productSaved = await saveDraftProduct(newProduct);
+      setProduct(productSaved);
+      return Promise.resolve();
+    } catch(error) {
+      dispatch(setError(`Error uploading vomito de mercado: ${error}`));
+      return Promise.reject(error);
+    }
+  }
+
+  const applyGeneralStep = async (): Promise<void> => {
+    try{
+      const productWithStep = {
+        ...product,
+      step: 1
+    }
+      await saveProduct(productWithStep);
+      return Promise.resolve();
+    } catch(error) {
+      dispatch(setError(`Error saving product: ${error}`));
+      return Promise.reject(error);
+    }
   }
 
   const applyStep = (activeStep: number): Promise<void> => {
     switch (activeStep) {
       case 0:
         console.log('step 0');
-        return Promise.resolve();
+        return applyVomitoDeMercado();
       case 1:
         console.log('step 1');
         return applyGeneralStep();
@@ -87,7 +121,11 @@ export const DefaultPage: React.FC = () => {
     const isValid = validationsSteps.get(activeStep)?.() || false;
 
     if (isValid) {
-      applyStep(activeStep).catch((error) => {
+      applyStep(activeStep)
+      .then(() => {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      })
+      .catch((error) => {
         console.error(`Error processing step ${steps[activeStep]}`, error);
         dispatch(setError(`Error processing step ${steps[activeStep]}`));
       });
@@ -119,7 +157,7 @@ export const DefaultPage: React.FC = () => {
         sx={{ 
           mt: 4, 
           mb: 4, 
-          height: '100vh', 
+          height: '90vh', 
           display: 'flex', 
           flexDirection: 'column' 
         }}
@@ -131,32 +169,37 @@ export const DefaultPage: React.FC = () => {
       )}
         <Paper elevation={3} sx={{ p: 3 }}>
           <Typography variant="h4" component="h1" gutterBottom>
-            Batch de videos
+            Creacion de Batch de videos
           </Typography>
-          <Stepper activeStep={activeStep} sx={{ mb: 3 }}>
+          <Stepper activeStep={activeStep} sx={{ mb: 3, '& .MuiStepIcon-root': { fontSize: '3rem' } }}>
             {steps.map((label, index) => (
               <Step key={label} onClick={() => setActiveStep(index)}>
                 <StepLabel 
-                  sx={{ 
-                    '& .MuiStepLabel-icon': { 
-                      width: '30px',
-                      height: '30px' 
-                    },
+                  sx={{   
                     '&:hover': {
                       cursor: 'pointer'
+                    },
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    '& .MuiStepLabel-label': { 
+                      mt: 1,
+                      textAlign: 'center',
                     }
                   }}
+                  StepIconProps={{
+                    sx: { mb: 1 }
+                  }}
                 >
-                  {label}
+                  <Typography variant="caption" sx={{ fontSize: '1rem', textAlign: 'center', width: '100%' }}>{label}</Typography>
                 </StepLabel>
               </Step>
             ))}
           </Stepper>
           {activeStep === 0 && (
-            <VomitoDeMercado />
+            <VomitoDeMercado vomitoMercado={vomitoMercado} setVomitoMercado={setVomitoMercado} />
           )}
           {activeStep === 1 && (
-             <ProductInfoBanner setProduct={setProduct} />
+             <ProductInfoBanner product={product} setProduct={setProduct} />
           )}
           {activeStep === 2 && (
             <>
@@ -165,7 +208,7 @@ export const DefaultPage: React.FC = () => {
             </>
           )}
           {activeStep === 3 && (
-            <VideoAnalysis />
+            <VideoAnalysis/>
           )}
           {activeStep === 4 && (
             <VideoProduction />
