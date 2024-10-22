@@ -27,12 +27,21 @@ export interface Pedido {
   export interface Product {
     _id?: string;
     id?: string;
+    username: string;
     name: string;
     price: string;
     description: string;
-    copys: string[];
     landings: string[];
     videoUrls: string[];
     tikTokLinks: string[];
     angles: string[];
+    vomitoDeMercadoUrl: string;
+  }
+
+  export function isValidProduct(product: Product): boolean {
+    return product.username !== '';
+  }
+
+  export function isValidProductInformation(product: Product): boolean {
+    return product.name !== '' && product.description !== '' && product.angles.length >= 0;
   }

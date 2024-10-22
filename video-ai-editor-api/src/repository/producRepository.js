@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const connectDB = require('../config/db');
 const ProductSchema = require('../models/Product');
-const logger = require('../logger')('productService');
+const { log } = require('console');
+
+const logger = require('../logger')('productRepository');
 
 async function storeProduct(productData) {
     try {
@@ -10,17 +12,28 @@ async function storeProduct(productData) {
         const product = new ProductSchema(productData);
 
         const validationError = product.validateSync();
+
         if (validationError) {
-            console.error('Validation error:', validationError);
+            logger.error('Validation error:', validationError);
             return { error: 'Validation failed', details: validationError.errors };
         }
     
-        const savedProduct = await product.save();
-
-        console.log('Product saved successfully:', savedProduct);
-        return savedProduct;
+        if (!productData._id) {
+            const savedProduct = await product.save();
+            logger.info('New product saved successfully:', JSON.stringify(savedProduct));
+            return savedProduct;
+        } else {
+            const savedProduct = await ProductSchema.findByIdAndUpdate(product._id, product, { new: true });
+            if (savedProduct) {
+                logger.info('Existing product updated successfully:', JSON.stringify(savedProduct));
+            } else {
+                logger.warn('No existing product found with _id:', product._id);
+            }
+            return savedProduct;
+        }
     } catch (error) {
-        console.error('Error saving product:', error);
+        logger.error('Error saving/updating product:', error);
+        throw error;
     } finally {
         await mongoose.connection.close();
     }
@@ -36,14 +49,14 @@ async function getProductByDocumentId(productId) {
         const product = await ProductSchema.findById(objectId);
 
         if (!product) {
-            console.log('Product not found');
+            logger.info('Product not found');
             return undefined;
         }
 
-        console.log('Product retrieved successfully:', product);
+        logger.info('Product retrieved successfully:', product);
         return product;
     } catch (error) {
-        console.error('Error retrieving product:', error);
+        logger.error('Error retrieving product:', error);
         return undefined;
     } finally {        
         await mongoose.connection.close();
@@ -59,13 +72,13 @@ async function getAllProductsByUsername(username) {
         const products = await ProductSchema.find({ user: username });
 
         if (!products) {
-            console.log('Product not found');
+            logger.info('Product not found');
             return [];
         }
         
         return products;
     } catch (error) {
-        console.error('Error retrieving product:', error);
+        logger.error('Error retrieving product:', error);
         throw error;
     } finally {
         await mongoose.connection.close();
@@ -84,14 +97,14 @@ async function updateProductById(productId, updateData) {
         const updatedProduct = await ProductSchema.findByIdAndUpdate(objectId, updateData, { new: true });
 
         if (!updatedProduct) {
-            console.log('Product not found');
+            logger.info('Product not found');
             return undefined;
         }
 
-        console.log('Product updated successfully:', updatedProduct);
+        logger.info('Product updated successfully:', updatedProduct);
         return updatedProduct;
     } catch (error) {
-        console.error('Error updating product:', error);
+        logger.error('Error updating product:', error);
         return undefined;
     } finally {
         await mongoose.connection.close();

@@ -1,4 +1,3 @@
-;
 import loadingReducer, { LoadingState } from './slices/LoadingSlice';
 import alertReducer, { AlertState } from './slices/AlertSlice';
 import { configureStore } from '@reduxjs/toolkit';

@@ -21,7 +21,7 @@ const readCredentials = () => {
   }
 }
 
-logger.info('Initializing Google Video Intelligence client');
+logger.info('Initializing Google Cloud Storage client');
 
 const credentials = readCredentials();
 if (credentials) {
