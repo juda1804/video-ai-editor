@@ -1,5 +1,5 @@
 const { generateVideoDescription } = require('../agents/VideoDescriber');
-const { uploadVideoToGCS } = require('../services/videoService');
+const { uploadVideoToGCS, cutVideo } = require('../services/videoService');
 const logger = require('../logger')('videoController');
 
 async function analyzeVideoHandler(req, res) {
@@ -39,5 +39,20 @@ const uploadVideoHandler = async (req, res) => {
   }
 };
 
+async function cutVideoHandler(req, res) {
+  const { bucketUri, startTime, endTime } = req.body;
 
-module.exports = { analyzeVideoHandler, uploadVideoHandler };
+  if (!bucketUri || startTime === undefined || endTime === undefined) {
+    return res.status(400).json({ error: 'bucketUri, startTime, and endTime are required.' });
+  }
+
+  try {
+    const outputPath = await cutVideo(bucketUri, startTime, endTime);
+    res.json({ success: true, outputPath });
+  } catch (error) {
+    logger.error('Error cutting video', error);
+    res.status(500).json({ success: false, error: error.message });
+  }
+}
+
+module.exports = { analyzeVideoHandler, uploadVideoHandler, cutVideoHandler };
