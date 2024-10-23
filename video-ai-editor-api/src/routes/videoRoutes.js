@@ -1,14 +1,8 @@
 // routes/videoRoutes.js
 const express = require('express');
 const router = express.Router();
-const { analyzeVideoHandler, uploadVideoHandler } = require('../controllers/videoController');
-const multer = require('multer');
-
-// Configure multer for file uploads
-const upload = multer({
-  dest: 'uploads/',
-  limits: { fileSize: 50 * 1024 * 1024 } // Limita el tamaño del archivo a 50MB
-});
+const { analyzeVideoHandler, uploadVideoHandler, cutVideoHandler } = require('../controllers/videoController');
+const upload = require('../middleware/upload');
 
 /**
  * @swagger
@@ -50,5 +44,38 @@ const upload = multer({
 router.post('/analyze', analyzeVideoHandler);
 
 router.post('/upload', upload.single('video'), uploadVideoHandler);
+
+/**
+ * @swagger
+ * /api/video/cut:
+ *   post:
+ *     summary: Cut a video
+ *     tags: [Video]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - bucketUri
+ *               - startTime
+ *               - endTime
+ *             properties:
+ *               bucketUri:
+ *                 type: string
+ *               startTime:
+ *                 type: number
+ *               endTime:
+ *                 type: number
+ *     responses:
+ *       200:
+ *         description: Video cut successfully
+ *       400:
+ *         description: Invalid input
+ *       500:
+ *         description: Server error
+ */
+router.post('/cut', cutVideoHandler);
 
 module.exports = router;
