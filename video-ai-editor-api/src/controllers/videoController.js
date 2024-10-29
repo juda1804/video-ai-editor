@@ -24,18 +24,20 @@ async function analyzeVideoHandler(req, res) {
 const uploadVideoHandler = async (req, res) => {
   try {
     console.log('Request received in uploadVideoHandler');
-    console.log('req.file:', req.file);
+    console.log('req.files:', req.files);
 
-    if (!req.file) {
-      return res.status(400).json({ error: 'No file uploaded' });
+    if (!req.files || req.files.length === 0) {
+      return res.status(400).json({ error: 'No files uploaded' });
     }
 
-    const gcsUri = await uploadVideoToGCS(req.file);
-    res.json({ gcsUri });
+    const uploadPromises = req.files.map(file => uploadVideoToGCS(file));
+    const gcsUris = await Promise.all(uploadPromises);
+
+    res.json({ gcsUris });
   } catch (error) {
     console.error('Error in uploadVideoHandler:', error);
     logger.error('Error in uploadVideoHandler', error);
-    res.status(500).json({ error: 'Failed to upload video' });
+    res.status(500).json({ error: 'Failed to upload videos' });
   }
 };
 
