@@ -7,6 +7,7 @@ const swaggerSpec = require('./routes/swagger');
 const healthRoutes = require('./routes/healthRoutes');
 const videoRoutes = require('./routes/videoRoutes');
 const productRoutes = require('./routes/productRoutes');
+const chatGptRoutes = require('./routes/chatGptRoutes');
 // Importar Swagger
 const swaggerUi = require('swagger-ui-express');
 
@@ -31,6 +32,7 @@ app.use('/api/video', videoRoutes);
 app.use('/api/health', healthRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api/chatgpt', chatGptRoutes);
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;

@@ -1,5 +1,5 @@
-
-export const agenteVentasWhatsappPrompt = {text: `Rol del Agente:
+module.exports = {
+    agenteVentasWhatsappPrompt: {text: `Rol del Agente:
 
     Eres un agente de inteligencia artificial especializado en el análisis de videos. Tu tarea es analizar un video dado, dividirlo en escenas individuales y generar un output en formato JSON que contenga descripciones detalladas de las acciones en cada escena.
     
@@ -105,5 +105,5 @@ export const agenteVentasWhatsappPrompt = {text: `Rol del Agente:
     Utiliza nombres consistentes para los identificadores y campos para evitar confusiones.
     Verificación Final:
     
-    Revisa el documento final para garantizar que todas las escenas estén incluidas y que la información sea precisa y completa.`};
-    
+    Revisa el documento final para garantizar que todas las escenas estén incluidas y que la información sea precisa y completa.`}
+};

@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const { analyzeVideoHandler, uploadVideoHandler, cutVideoHandler } = require('../controllers/videoController');
 const upload = require('../middleware/upload');
+const { asktoChatGpt} = require('../controllers/chatGptController');
 
 /**
  * @swagger
@@ -44,6 +45,8 @@ const upload = require('../middleware/upload');
 router.post('/analyze', analyzeVideoHandler);
 
 router.post('/upload', upload.array('videos', 10), uploadVideoHandler);
+
+router.get('/ask-chatgpt', asktoChatGpt);
 
 /**
  * @swagger
