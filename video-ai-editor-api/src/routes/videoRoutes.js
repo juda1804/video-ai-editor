@@ -43,7 +43,7 @@ const upload = require('../middleware/upload');
  */
 router.post('/analyze', analyzeVideoHandler);
 
-router.post('/upload', upload.single('video'), uploadVideoHandler);
+router.post('/upload', upload.array('videos', 10), uploadVideoHandler);
 
 /**
  * @swagger

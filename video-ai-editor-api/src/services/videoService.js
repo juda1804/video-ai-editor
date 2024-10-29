@@ -29,11 +29,13 @@ async function analyzeVideo(params) {
 
 const uploadVideoToGCS = async (file) => {
   try {
-    const bucket = client.googleStorage.bucket(process.env.GCP_VIDEOS_BUCKET_NAME);
+    if (!file) {
+      throw new Error('No file received');
+    }
+
     const bucket = client.googleStorage.bucket(process.env.GCP_VIDEOS_BUCKET_NAME);
     const fileName = `${uuidv4()}${path.extname(file.originalname)}`;
-    return await uploadFileToGCS(file, bucket, fileName);
-    return await uploadFileToGCS(file, bucket, fileName);
+    return await uploadFileToGCS(file.path, bucket, fileName, file.mimetype);
   } catch (error) {
     console.error('Error in uploadVideoToGCS:', error);
     throw new Error('Failed to upload video to Google Cloud Storage');
