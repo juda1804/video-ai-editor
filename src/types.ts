@@ -24,6 +24,11 @@ export interface Pedido {
     font?: string;
   }
 
+export interface Video {
+  url: string;
+  analysis?: any;
+}
+
   export interface Product {
     _id?: string;
     id?: string;
@@ -36,6 +41,7 @@ export interface Pedido {
     tikTokLinks: string[];
     angles: string[];
     vomitoDeMercadoUrl: string;
+    videos: Video[];
   }
 
   export function isValidProduct(product: Product): boolean {

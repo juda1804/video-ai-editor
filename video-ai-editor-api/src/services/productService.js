@@ -5,11 +5,11 @@ const logger = require('../logger')('productService');
 
 const uploadVomitoDeMercadoToGCS = async (file) => {
     try {
-      const bucket = client.googleStorage.bucket(process.env.GCP_VOMITO_MERCADO_BUCKET_NAME);
+      const bucketName = process.env.GCP_VOMITO_MERCADO_BUCKET_NAME;
       const fileName = `${uuidv4()}.txt`;
 
       logger.info(`Uploading vomito de mercado to GCS: ${fileName}`);
-      return await uploadFileToGCS(file, bucket, fileName);
+      return await uploadFileToGCS(file, bucketName, fileName);
     } catch (error) {
       console.error('Error in uploadVomitoDeMercadoToGCS:', error);
       throw new Error('Failed to upload vomito de mercado to Google Cloud Storage');
