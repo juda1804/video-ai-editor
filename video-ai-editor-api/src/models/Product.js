@@ -26,8 +26,17 @@ const ProductSchema = new mongoose.Schema(
       type: [String],
       required: false,
     },
-    videoUrls: {
-      type: [String],
+    videos: {
+      type: [{
+        url: {
+          type: String,
+          required: true
+        },
+        analysis: {
+          type: Object,
+          required: false
+        }
+      }],
       required: false,
     },
     tikTokLinks: {

@@ -1,5 +1,4 @@
-import ChatGPT from '../adapters/ChatGptClient';
-
+const ChatGPT = require('../adapters/ChatGptClient');
 
 const DEFAULT_MODEL = "gpt-3.5-turbo";
 
@@ -33,4 +32,4 @@ const SalesAngleGenerator = {
   }
 };
 
-export default SalesAngleGenerator;
+module.exports = {SalesAngleGenerator};

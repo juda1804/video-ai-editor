@@ -1,4 +1,4 @@
-import axios from 'axios';
+const axios = require('axios');
 
 const API_URL = 'https://api.openai.com/v1/chat/completions';
 const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
@@ -45,4 +45,4 @@ const ChatGPT = {
   }
 };
 
-export default ChatGPT;
+module.exports = ChatGPT;

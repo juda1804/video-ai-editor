@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Typography, TextField, Paper, Container, CircularProgress, List, ListItem } from '@mui/material';
-import SalesAngleGenerator from '../../agents/SalesAngleGenerator';
+import {SalesAngleGenerator} from '../../agents/SalesAngleGenerator';
 import { Product } from '../../types';
 
 interface ProductInfoBannerProps {
