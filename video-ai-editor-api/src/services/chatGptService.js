@@ -33,6 +33,7 @@ const analizeVideoOptionsByProduct = async (analysis, model = 'gpt-3.5-turbo', t
     try {
       const analysisString = JSON.stringify(analysis);
       // Pendiente organizar el prompt para que sea mas facil de leer (Estructurarlo mucho más facil)
+      // El promt debe venir de parte del cliente
       const copy = '¿Sabías que la cabeza de tu bebé puede aplanarse si siempre duerme del mismo lado? Este problema es más común de lo que imaginas, pero puede prevenirse fácilmente. Dale a tu bebé el tiempo boca abajo que necesita para fortalecer su cuello y evitar la cabeza plana con el tapete Aqua Magia. ¡Disponible en Glow Store!';
       const prompt = agenteAnalizadorDeOpcionesPrompt.text.replace('{analysis}', analysisString).replace('{copy}', copy);
 
