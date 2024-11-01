@@ -1,4 +1,4 @@
-const ChatGPT = require('../adapters/ChatGptClient');
+const { ChatGPT } = require('../config/chatGptClient.js'); 
 
 const DEFAULT_MODEL = "gpt-3.5-turbo";
 

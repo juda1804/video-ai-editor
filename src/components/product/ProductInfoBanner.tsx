@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Typography, TextField, Paper, Container, CircularProgress, List, ListItem } from '@mui/material';
-import {SalesAngleGenerator} from '../../agents/SalesAngleGenerator';
 import { Product } from '../../types';
 
 interface ProductInfoBannerProps {
@@ -34,7 +33,19 @@ const ProductInfoBanner: React.FC<ProductInfoBannerProps> = ({ product, setProdu
     setIsLoading(true);
 
     try {
-      const angles = await SalesAngleGenerator.generateSalesAngles(productDescription);
+      const response = await fetch(`http://localhost:3000/api/sales-angles/generate`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ description: productDescription }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error en la respuesta del servidor');
+      }
+
+      const { angles } = await response.json();
       setGeneratedAngles(angles);
     } catch (error) {
       setErrorMessage('Hubo un error al generar los ángulos de venta. Inténtalo de nuevo.');
