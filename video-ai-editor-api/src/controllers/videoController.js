@@ -26,13 +26,15 @@ const uploadVideoHandler = async (req, res) => {
     console.log('Request received in uploadVideoHandler');
     console.log('req.files:', req.files);
 
-    if (!req.files || req.files.length === 0) {
-      return res.status(400).json({ error: 'No files uploaded' });
+    const videos = req.files.filter(file => file.fieldname === 'videos');
+    if (videos.length === 0) {
+      return res.status(400).json({ error: 'No videos uploaded' });
     }
 
-    const uploadPromises = req.files.map(file => uploadVideoToGCS(file));
+    const uploadPromises = videos.map(video => uploadVideoToGCS(video));
     const gcsUris = await Promise.all(uploadPromises);
-
+    logger.info('Videos subidos', gcsUris);
+    
     res.json({ gcsUris });
   } catch (error) {
     console.error('Error in uploadVideoHandler:', error);

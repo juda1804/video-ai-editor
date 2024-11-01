@@ -111,11 +111,38 @@ async function updateProductById(productId, updateData) {
     }
 }
 
+async function addVideoLinksToProduct(productId, videoLinks) {
+    logger.info(`Adding video links to product ID: ${productId}`);
+    try {
+        await connectDB();
 
+        const objectId = mongoose.Types.ObjectId(productId);
+
+        const updatedProduct = await ProductSchema.findByIdAndUpdate(
+            objectId,
+            { $push: { videoLinks: { $each: videoLinks } } },
+            { new: true }
+        );
+
+        if (!updatedProduct) {
+            logger.info('Product not found');
+            return undefined;
+        }
+
+        logger.info('Video links added successfully:', updatedProduct);
+        return updatedProduct;
+    } catch (error) {
+        logger.error('Error adding video links to product:', error);
+        return undefined;
+    } finally {
+        await mongoose.connection.close();
+    }
+}
 
 module.exports = {
     storeProduct,
     getProductByDocumentId,
     getAllProductsByUsername,
-    updateProductById
+    updateProductById,
+    addVideoLinksToProduct
 };

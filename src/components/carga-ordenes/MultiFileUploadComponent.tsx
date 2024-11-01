@@ -21,20 +21,21 @@ import { AttachFile, VideoFile, InsertDriveFile, Clear } from '@mui/icons-materi
 import { Grid, TextField } from '@mui/material'; // Import Grid and TextField
 import { IconButton } from '@mui/material'; // Import IconButton
 import { Delete } from '@mui/icons-material'; // Import Delete icon
+import { Product } from '../../types';
 
 const ALLOWED_EXTENSIONS = ['.mp4'];
 
 interface MultiFileUploadComponentProps {
-  salesAngles: string[];
+  product: Product
+  setProduct: (product: Product) => void
 }
 
-const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ salesAngles }) => {
+const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ product, setProduct }) => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [responseMessage, setResponseMessage] = useState<string>('');
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [uploadSuccess, setUploadSuccess] = useState<boolean>(false);
-  const [prompt, setPrompt] = useState<string>(''); // This will be managed by CopySelector
   const [isCustom, setIsCustom] = useState<boolean>(false); // Track if custom copy is selected
 
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -56,8 +57,8 @@ const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ sal
     }
   };
 
-  const uploadAndCombineVideos = async (formData: FormData): Promise<string> => {
-    const response = await fetch('http://localhost:3000/upload', {
+  const uploadVideos = async (formData: FormData): Promise<{ gcsUris: string[] }> => {
+    const response = await fetch('http://localhost:3000/api/video/upload', {
       method: 'POST',
       body: formData,
     });
@@ -66,18 +67,12 @@ const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ sal
       throw new Error('Error al subir los videos.');
     }
 
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
+    return response.json();
   };
 
   const handleSubmit = async () => {
     if (selectedFiles.length === 0) {
       setResponseMessage('Por favor, selecciona archivos para cargar.');
-      return;
-    }
-
-    if (!prompt.trim()) {
-      setResponseMessage('Por favor, ingresa un prompt.');
       return;
     }
     
@@ -86,14 +81,22 @@ const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ sal
     setDownloadUrl(null);
 
     const formData = new FormData();
-    formData.append('prompt', prompt); // Ensure the prompt is added to the form data
+    formData.append('productId', product._id || '');
     selectedFiles.forEach((file) => {
       formData.append('videos', file);
     });
 
     try {
-      const url = await uploadAndCombineVideos(formData);
-      setDownloadUrl(url);
+      const response = await uploadVideos(formData);
+      console.log('response', response);
+      const gcsUris = response.gcsUris;
+
+      setProduct({
+        ...product,
+        videos: gcsUris.map((uri: string) => ({ url: uri })),
+      });
+
+      setDownloadUrl(gcsUris[0]);
       setResponseMessage('Videos combinados con éxito.');
       setUploadSuccess(true);
     } catch (error) {
@@ -153,10 +156,10 @@ const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ sal
               Cargar Múltiples Archivos
             </Typography>
             <Grid container spacing={2}>
-              {salesAngles.length > 0 && (
+              {product.angles.length > 0 && (
                 <Grid item xs={6}>
                   <List sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 2 }}>
-                    {salesAngles.map((copy, index) => (
+                    {product.angles.map((copy, index) => (
                       <ListItem 
                         key={index} 
                         sx={{ borderBottom: '1px solid', borderColor: 'divider' }}
@@ -164,7 +167,6 @@ const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ sal
                         <ListItemText 
                           primary={copy} 
                           onClick={() => {
-                            setPrompt(copy);
                             setIsCustom(false);
                           }}
                           sx={{ cursor: 'pointer' }}
@@ -177,18 +179,6 @@ const MultiFileUploadComponent: React.FC<MultiFileUploadComponentProps> = ({ sal
                   </List>
                 </Grid>
               )}
-              <Grid item xs={salesAngles.length > 0 ? 6 : 12}>
-                <TextField
-                  label="Prompt"
-                  multiline
-                  fullWidth
-                  rows={4}
-                  value={prompt}
-                  onChange={(e) => setPrompt(e.target.value)}
-                  variant="outlined"
-                  sx={{ bgcolor: 'background.default' }}
-                />
-              </Grid>
             </Grid>
             <Box sx={{ marginY: 2 }}>
               <Button

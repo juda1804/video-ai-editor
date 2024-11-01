@@ -37,10 +37,11 @@ const handleFileUploadStream = (fileStream, writeStream) => {
  * @param {string} mimetype - File mimetype
  * @returns {Promise<string>} - GCS URL of the uploaded file
  */
-const uploadFileToGCS = async (filePath, bucket, fileName, mimetype) => {
+const uploadFileToGCS = async (filePath, bucketName, fileName, mimetype) => {
   try {
-    logger.info(`Attempting to upload file: ${filePath} to bucket: ${bucket} as ${fileName}`);
+    logger.info(`Attempting to upload file: ${filePath} to bucket: ${bucketName} as ${fileName}`);
 
+    const bucket = client.googleStorage.bucket(bucketName);
     const fileUpload = bucket.file(fileName);
     const fileStream = fs.createReadStream(filePath);
     const writeStream = createGCSWriteStream(fileUpload, mimetype);
@@ -48,7 +49,7 @@ const uploadFileToGCS = async (filePath, bucket, fileName, mimetype) => {
     await handleFileUploadStream(fileStream, writeStream);
     logger.info(`File ${fileName} uploaded successfully.`);
 
-    return `gs://${bucket}/${fileName}`;
+    return `gs://${bucketName}/${fileName}`;
   } catch (error) {
     logUploadError(error);
     throw new Error(`Failed to upload file to Google Cloud Storage: ${error.message}`);

@@ -106,4 +106,21 @@ export const agenteVentasWhatsappPrompt = {text: `Rol del Agente:
     Verificación Final:
     
     Revisa el documento final para garantizar que todas las escenas estén incluidas y que la información sea precisa y completa.`};
-    
+
+export const agenteAnalizadorDeOpcionesPrompt = {text: `
+        Analizame el siguiente json y dime cual es la mejor secuencia para lograr este copy.
+        copy: 
+            {copy}
+            
+        analysis: 
+            {analysis}
+  
+        La forma de responderme va a ser un json con el siguiente formato:
+
+        {
+            "sequenceInit": "0",
+            "sequenceEnd": "8",
+            "source": "video_3_identifier",
+        }
+
+        los datos que tiene el json anterior son de prueba, tu debes analizar el array de objetos y devolver el que mejor se adapte al copy que te pase para el video.`}

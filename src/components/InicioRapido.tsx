@@ -28,7 +28,8 @@ export const IncioRapido: React.FC = () => {
     tikTokLinks: [],
     angles: [], 
     vomitoDeMercadoUrl: '',
-    username: ''
+    username: '',
+    videos: []
   });
   
   const dispatch = useDispatch();
@@ -53,7 +54,8 @@ export const IncioRapido: React.FC = () => {
   
   const validationsSteps = new Map([
     [0, validateVomitoDeMercadoStep],
-    [1, validateGeneralStep]
+    [1, validateGeneralStep],
+    [2, validateGeneralStep]
   ]);
 
   const applyVomitoDeMercado = async (): Promise<void> => {
@@ -75,13 +77,14 @@ export const IncioRapido: React.FC = () => {
     }
   }
 
-  const applyGeneralStep = async (): Promise<void> => {
+  const applyGeneralStep = async (step: number): Promise<void> => {
     try{
       const productWithStep = {
         ...product,
-      step: 1
+      step: step
     }
-      await saveProduct(productWithStep);
+      const result = await saveProduct(productWithStep);
+      console.log('product saved', result);
       return Promise.resolve();
     } catch(error) {
       dispatch(setError(`Error saving product: ${error}`));
@@ -96,10 +99,10 @@ export const IncioRapido: React.FC = () => {
         return applyVomitoDeMercado();
       case 1:
         console.log('step 1');
-        return applyGeneralStep();
+        return applyGeneralStep(activeStep);
       case 2:
         console.log('step 2');
-        return Promise.resolve();
+        return applyGeneralStep(activeStep);
       case 3:
         console.log('step 3');
         return Promise.resolve();
@@ -204,7 +207,7 @@ export const IncioRapido: React.FC = () => {
           {activeStep === 2 && (
             <>
               <AditionalResources addTikTokLink={addTikTokLink} />
-              <MultiFileUploadComponent salesAngles={product.angles} />
+              <MultiFileUploadComponent product={product} setProduct={setProduct} />
             </>
           )}
           {activeStep === 3 && (
