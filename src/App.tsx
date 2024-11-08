@@ -8,6 +8,7 @@ import PromptGeneratorComponent from './components/chatbox-ia-prompt-generator/P
 import { createTheme, ThemeProvider } from '@mui/material/styles'; 
 import './style.css';
 import { Box } from '@mui/material';
+import { InicioRapido as InicioRapidoV2 } from './components/V2/InicioRapido';
 
 
 // Create a dark theme
@@ -44,7 +45,10 @@ const App: React.FC = () => {
   };
 
   const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-    return isAuthenticated ? <>{children}</> : <Navigate to="/login" />;
+    const currentPath = window.location.pathname;
+    const redirectPath = currentPath.startsWith('/v2') ? '/v2' : '/';
+    
+    return isAuthenticated ? <>{children}</> : <Navigate to={`/login?redirect=${redirectPath}`} />;
   };
 
   return (
@@ -53,7 +57,11 @@ const App: React.FC = () => {
       <Router>
         {isAuthenticated && <Header onLogout={logout} />}
         <Routes>
-          <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login onLogin={login} />} />
+          <Route path="/login" element={
+            isAuthenticated ? 
+              <Navigate to={new URLSearchParams(window.location.search).get('redirect') || '/'} /> 
+              : <Login onLogin={login} />
+          } />
           <Route path="/" element={
             <ProtectedRoute>
               <IncioRapido/>
@@ -72,6 +80,11 @@ const App: React.FC = () => {
           <Route path="/products" element={
             <ProtectedRoute>
               <ProductSummary username={"test"} /> 
+            </ProtectedRoute>
+          } />
+          <Route path="/v2/*" element={
+            <ProtectedRoute>
+              <InicioRapidoV2 />
             </ProtectedRoute>
           } />
         </Routes>
